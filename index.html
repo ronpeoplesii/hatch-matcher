@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hatch Matcher</title>
+   <link rel="icon" href="data:,">
+    <style>
+      :root {
+        --bg-main: #121417;
+        --bg-card: #1e222b;
+        --bg-button: #2a303c;
+        --bg-button-hover: #373f4f;
+        --accent-green: #4ade80;
+        --accent-dim: #86efac;
+        --text-primary: #f4f4f5;
+        --text-secondary: #a1a1aa;
+        --border-color: #3f4756;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 16px;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      #app {
+        width: 100%;
+        max-width: 440px;
+        background-color: var(--bg-card);
+        padding: 28px 24px;
+        border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-sizing: border-box;
+      }
+
+      h2 {
+        color: var(--text-primary);
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+      }
+
+      .screen { display: none; }
+      .screen.active { 
+        display: block; 
+        animation: fadeIn 0.25s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .large-btn {
+        width: 100%;
+        padding: 22px 20px;
+        margin-bottom: 14px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background-color: var(--bg-button);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        cursor: pointer;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
+      }
+
+      .large-btn:hover {
+        background-color: var(--bg-button-hover);
+        border-color: var(--accent-dim);
+      }
+
+      .large-btn:active {
+        transform: scale(0.98);
+        background-color: var(--border-color);
+      }
+
+      .large-btn::after {
+        content: "→";
+        color: var(--text-secondary);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .large-btn:hover::after {
+        color: var(--accent-green);
+      }
+
+      .card {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        border: 1px solid var(--border-color);
+        border-left: 6px solid var(--accent-green);
+      }
+
+      .fly-tag {
+        display: inline-block;
+        background-color: var(--bg-button);
+        border: 1px solid var(--border-color);
+        padding: 6px 12px;
+        border-radius: 8px;
+        margin-top: 8px;
+        margin-right: 6px;
+        font-size: 0.9rem;
+        color: var(--accent-dim);
+        font-weight: 500;
+      }
+
+      .reset-btn {
+        width: 100%;
+        padding: 16px;
+        background-color: #3b1e22;
+        color: #fca5a5;
+        border: 1px solid #7f1d1d;
+        border-radius: 14px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.15s;
+      }
+
+      .reset-btn:hover { background-color: #4c1d24; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      
+      <!-- Top Global Search Hub (Sticky Navigation Header) -->
+      <div class="search-hub" style="margin-bottom: 20px; background: #27272a; padding: 15px; border-radius: 12px;">
+        <input type="text" id="global-search" placeholder="🔍 Search bugs, fly patterns, or materials..." 
+               style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #18181b; color: #fff; font-size: 1rem;"
+               oninput="executePatternSearch(this.value)">
+        <div id="search-dropdown-results" style="display:none; max-height: 250px; overflow-y: auto; background:#18181b; margin-top:8px; border-radius:8px; padding: 5px;"></div>
+      </div>
+
+      <!-- STEP 00: Region Selection Screen -->
+      <div id="step-region" class="screen active">
+        <h2>Select Destination</h2>
+        <p class="subtitle">Where are you wetting a line?</p>
+        <button class="large-btn" onclick="selectRegion('northeast')">Northeast / PA</button>
+        <button class="large-btn" onclick="selectRegion('west')">West / Colorado</button>
+      </div>
+
+      <!-- STEP 0: Temperature Screen -->
+      <div id="step-temp" class="screen">
+        <h2>Select Water Temp</h2>
+        <p class="subtitle">What is the stream thermometer reading?</p>
+        <div style="margin: 40px 0; text-align: center;">
+          <span id="temp-display" style="font-size: 3.5rem; font-weight: 800; color: var(--accent-green);">55°F</span>
+        </div>
+        <input type="range" id="temp-slider" min="35" max="75" value="55" 
+               style="width: 100%; accent-color: var(--accent-green); margin-bottom: 40px;"
+               oninput="updateTempDisplay(this.value)">
+        <button class="large-btn" onclick="submitTemp()">Confirm Temperature</button>
+      </div>
+
+      <!-- STEP 1: Water Type Selection -->
+      <div id="step-water" class="screen">
+        <h2>1. Select Water Type</h2>
+        <p class="subtitle">Where are you observing the fish feeding?</p>
+        <button class="large-btn" onclick="selectWater('pool')">Pool (Glassy, Slow)</button>
+        <button class="large-btn" onclick="selectWater('riffle')">Riffle (Choppy, Shallow)</button>
+        <button class="large-btn" onclick="selectWater('run')">Run (Deep, Fast)</button>
+      </div>
+
+      <!-- STEP 2: Rise Form Selection -->
+      <div id="step-rise" class="screen">
+        <h2>2. Select Rise Form</h2>
+        <p class="subtitle">What does the surface disturbance look like?</p>
+        <button class="large-btn" onclick="selectRise('sipping')">Gentle Sipping (Surface Film)</button>
+        <button class="large-btn" onclick="selectRise('splashy')">Splashy / Aggressive Chasing</button>
+        <button class="large-btn" onclick="selectRise('bulging')">Bulging / Subsurface Flash</button>
+      </div>
+
+      <!-- STEP 3: Results -->
+      <div id="step-results" class="screen">
+        <h2>Hatch Match Matrix</h2>
+        <p class="subtitle">Top streamside recommendations:</p>
+        <div id="results-list"></div>
+        <button class="reset-btn" onclick="resetApp()">Reset App</button>
+      </div>
+
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

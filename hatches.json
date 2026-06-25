@@ -1,0 +1,86 @@
+[
+  {
+    "insect": "Blue-Winged Olive (BWO)",
+    "stage": "Dun (Adult)",
+    "conditions": {
+      "waterType": ["pool", "riffle"],
+      "riseForm": ["sipping"],
+      "months": [3, 4, 5, 9, 10, 11],
+      "tempRange": [45, 55],
+      "regions": ["northeast", "west"]
+    },
+    "recommendedFlies": [
+      { 
+        "name": "Parachute Adams", 
+        "sizes": [18, 20, 22],
+        "recipe": {
+          "hook": "Standard Dry Fly (e.g., Tiemco 100)",
+          "thread": "8/0 Uni-Thread (Gray or Olive)",
+          "tail": "Mix of Brown and Grizzly Hackle fibers",
+          "body": "Superfine Dry Fly Dubbing (Adams Gray)",
+          "wing": "White Calf Body Hair or Poly Yarn",
+          "hackle": "One Brown and one Grizzly rooster hackle wrapped horizontally"
+        }
+      },
+      { 
+        "name": "Mathews' Sparkle Dun", 
+        "sizes": [18, 20],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "8/0 Olive",
+          "tail": "Olive/Brown crinkled Antron yarn (shuck)",
+          "body": "Olive-brown superfine dubbing",
+          "wing": "Deer hair, tied down wing-style over the eye"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Zebra Midge",
+    "stage": "Larva / Pupa (Subsurface)",
+    "conditions": {
+      "waterType": ["pool", "run"],
+      "riseForm": ["sipping", "bulging"],
+      "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "tempRange": [35, 56],
+      "regions": ["northeast", "west"]
+    },
+    "recommendedFlies": [
+      { 
+        "name": "Zebra Midge (Black/Silver)", 
+        "sizes": [18, 20, 22],
+        "recipe": {
+          "hook": "Standard Nymph/Scud Hook (e.g., Tiemco 2487)",
+          "bead": "Silver Tungsten or Brass Bead",
+          "thread": "70 Denier UTC (Black)",
+          "rib": "Small Silver Wire",
+          "body": "Built up cleanly with the black tying thread"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Golden Stonefly",
+    "stage": "Nymph / Crawler",
+    "conditions": {
+      "waterType": ["riffle", "run"],
+      "riseForm": ["bulging"],
+      "months": [5, 6, 7],
+      "tempRange": [50, 62],
+      "regions": ["northeast", "west"]
+    },
+    "recommendedFlies": [
+      { 
+        "name": "Pat's Rubber Legs (Tan/Brown)", 
+        "sizes": [8, 10, 12],
+        "recipe": {
+          "hook": "3X Long Nymph Hook (e.g., Tiemco 5263)",
+          "weight": "0.020 Lead Wire (10-15 wraps)",
+          "thread": "6/0 Uni-Thread (Brown)",
+          "body": "Two-tone variegated chenille (Tan/Brown)",
+          "legs": "Life Flex or round rubber legs (Brown/Amber)"
+        }
+      }
+    ]
+  }
+]
