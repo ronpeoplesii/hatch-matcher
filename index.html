@@ -36,13 +36,12 @@
       max-width: 500px;
     }
 
-    /* THE FIX: CRITICAL INTERFACE VISIBILITY RULES */
     .screen-container {
-      display: none !important; /* Forces all screens to hide completely */
+      display: none !important;
     }
 
     .screen-container.active {
-      display: block !important; /* Exclusively displays the single active panel */
+      display: block !important;
     }
 
     .card {
@@ -129,7 +128,12 @@
   <div id="step-region" class="screen-container active">
     <div style="margin-bottom: 24px;">
       <h2>Select Destination</h2>
-      <p style="margin-bottom: 0;">Where are you wetting a line?</p>
+      <p style="margin-bottom: 16px;">Where are you wetting a line?</p>
+      
+      <button onclick="detectLocation()" class="btn btn-vault" style="background: #1e1b4b; border-color: #312e81; margin-bottom: 8px;">
+        📍 Use Current Location (GPS)
+      </button>
+      <div id="gps-status" style="font-size: 0.85rem; color: var(--accent-green); margin-bottom: 12px; font-weight: 600; text-align: left; display: none;"></div>
     </div>
     
     <button onclick="selectRegion('northeast')" class="btn">

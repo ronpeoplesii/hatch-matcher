@@ -10,7 +10,6 @@ let userSelections = {
 };
 let hatchDatabase = [];
 
-// Base JSON Database Boot loader
 async function loadHatchData() {
   try {
     const response = await fetch('/hatches.json');
@@ -56,7 +55,6 @@ window.executePatternSearch = function(query) {
             </div>
           `;
         } else {
-          // Map each material component entry into separate responsive boxes
           materialBoxesHTML = Object.entries(recipeData).map(([part, material]) => `
             <div style="background: #18181b; padding: 10px 14px; border-radius: 8px; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 4px; text-align: left;">
               <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-green); font-weight: 700;">
@@ -69,7 +67,6 @@ window.executePatternSearch = function(query) {
           `).join('');
         }
 
-        // Full Outer Recipe Entry wrapper
         resultsHTML += `
           <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--accent-green); padding: 18px; background: #202023; text-align: left;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
@@ -139,25 +136,8 @@ window.selectRise = function(form) {
 }
 
 window.switchScreen = function(hideId, showId) {
-  const hideEl = document.getElementById(hideId);
-  const showEl = document.getElementById(showId);
-  
-  if (hideEl) {
-    hideEl.classList.remove('active');
-    hideEl.style.display = 'none'; // Hard force the element to hide
-  }
-  
-  if (showEl) {
-    showEl.classList.add('active');
-    
-    // If we are jumping to the search engine vault, display it as a block container
-    if (showId === 'step-search') {
-      showEl.style.display = 'block';
-    } else {
-      // Otherwise, the fallback matching screen triggers default block view
-      showEl.style.display = 'block';
-    }
-  }
+  document.getElementById(hideId).classList.remove('active');
+  document.getElementById(showId).classList.add('active');
 }
 
 window.resetApp = function() {
@@ -178,7 +158,61 @@ window.resetApp = function() {
 }
 
 // ==========================================
-// 4. BIOLOGICAL STRATIFICATION ALGORITHMS
+// 4. NATIVE HIGH-ACCURACY HARDWARE GPS LOCATOR
+// ==========================================
+window.detectLocation = function() {
+  const statusDiv = document.getElementById('gps-status');
+  if (!navigator.geolocation) {
+    statusDiv.style.display = 'block';
+    statusDiv.style.color = '#f43f5e';
+    statusDiv.innerText = "❌ Geolocation is not supported by this device browser.";
+    return;
+  }
+
+  statusDiv.style.display = 'block';
+  statusDiv.style.color = '#a1a1aa';
+  statusDiv.innerText = "⚡ Pinging satellite matrix...";
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lon = position.coords.longitude;
+      
+      // Split geographical coordinate boundary at the Mississippi river line (~ -90 deg)
+      let calculatedRegion = 'northeast';
+      let locationLabel = 'Northeast / PA';
+      
+      if (lon < -90) {
+        calculatedRegion = 'west';
+        locationLabel = 'West / Colorado';
+      }
+
+      statusDiv.style.color = 'var(--accent-green)';
+      statusDiv.innerText = `✓ Target locked: Auto-selecting ${locationLabel}`;
+      
+      setTimeout(() => {
+        statusDiv.style.display = 'none';
+        window.selectRegion(calculatedRegion);
+      }, 1200);
+    },
+    (error) => {
+      statusDiv.style.color = '#f43f5e';
+      console.warn(`GPS Execution Error Code ${error.code}: ${error.message}`);
+      if (error.code === 1) {
+        statusDiv.innerText = "❌ Permission denied. Enable location services.";
+      } else {
+        statusDiv.innerText = "❌ Unable to acquire precise GPS lock streamside.";
+      }
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 8000,
+      maximumAge: 0
+    }
+  );
+}
+
+// ==========================================
+// 5. BIOLOGICAL STRATIFICATION ALGORITHMS
 // ==========================================
 function calculateHatchMatches() {
   const { region, waterTemp, currentMonth, waterType, riseForm } = userSelections;
@@ -203,7 +237,7 @@ function calculateHatchMatches() {
 }
 
 // ==========================================
-// 5. INTERFACE DATA RENDERERS
+// 6. INTERFACE DATA RENDERERS
 // ==========================================
 function displayResults(matches) {
   const container = document.getElementById('results-list');
@@ -245,7 +279,7 @@ function displayResults(matches) {
 }
 
 // ==========================================
-// 6. SYSTEM BOOT INITIALIZATION
+// 7. SYSTEM BOOT INITIALIZATION
 // ==========================================
 loadHatchData();
 
