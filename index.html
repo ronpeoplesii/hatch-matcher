@@ -151,11 +151,25 @@
     <div id="app">
       
       <!-- Top Global Search Hub (Sticky Navigation Header) -->
-      <div class="search-hub" style="margin-bottom: 20px; background: #27272a; padding: 15px; border-radius: 12px;">
-        <input type="text" id="global-search" placeholder="🔍 Search bugs, fly patterns, or materials..." 
-               style="width: 100%; padding: 12px; border: none; border-radius: 8px; background: #18181b; color: #fff; font-size: 1rem;"
-               oninput="executePatternSearch(this.value)">
-        <div id="search-dropdown-results" style="display:none; max-height: 250px; overflow-y: auto; background:#18181b; margin-top:8px; border-radius:8px; padding: 5px;"></div>
+      <div id="step-search" class="screen-container">
+         <div class="card" style="text-align: center; margin-bottom: 20px;">
+           <h2 style="margin: 0 0 10px 0; color: var(--accent-green);">Fly Tying Recipe Vault</h2>
+           <ip style="color: #a1a1aa; margin: 0; font-size: 0.9rem;">Search by pattern name, target insect, or specific tying materials.</p>
+         </div>
+
+         <div style="position: relative; margin-bottom: 24px;">
+           <input type="text" id="global-search" placeholder="🔍 Search e.g., Elk Hair, Zebra, Tungsten, Ant..." 
+              style="width: 100%; padding: 16px; border: 2px solid #27272a; border-radius: 12px; background: #141417; color: #fff; font-size: 1.1rem; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent-green)'" onblur="this.style.borderColor='#27272a'">
+         </div>
+
+         <div id="search-dropdown-results" style="display: none; min-height: 100px;"></div>
+   
+         <div style="margin-top: 30px; display: flex; gap: 12px;">
+           <button onclick="switchScreen('step-search', 'step-region')" class="btn" style="background: #27272a; flex: 1;">
+             🔄 Hatch Matcher Matrix
+           </button>
+         </div>
       </div>
 
       <!-- STEP 00: Region Selection Screen -->
