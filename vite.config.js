@@ -2,23 +2,20 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  server: {
-    host: true,
-    port: 5173
-  },
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      injectRegister: 'inline',
-      includeAssets: ['favicon.ico', 'hatches.json'], 
+      includeAssets: ['favicon.ico', 'hatches.json'], // Tell it exactly what static assets to cache
       manifest: {
-        name: 'Hatch Matcher Tactical Dashboard',
+        name: 'Hatch Matcher Matrix',
         short_name: 'HatchMatcher',
-        description: 'Biological stream-side insect matching matrix.',
-        theme_color: '#18181b',
-        background_color: '#18181b',
+        description: 'Streamside entomology and fly tying recipe database.',
+        theme_color: '#141417',
+        background_color: '#141417',
         display: 'standalone',
         orientation: 'portrait',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -33,7 +30,10 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,json,png,svg}']
+        // This prevents the PWA builder from crashing if an asset pattern is temporarily empty
+        globPatterns: ['**/*.{js,css,html}', 'hatches.json'],
+        skipWaiting: true,
+        clientsClaim: true
       }
     })
   ]
