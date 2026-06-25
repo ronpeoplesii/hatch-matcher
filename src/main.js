@@ -135,4 +135,5 @@ window.selectRise = function(form) {
   switchScreen('step-rise', 'step-results');
   
   const topMatches = calculateHatchMatches();
-  displayResults(topMatches
+  displayResults(topMatches);
+};
