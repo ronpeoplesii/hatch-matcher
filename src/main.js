@@ -139,8 +139,25 @@ window.selectRise = function(form) {
 }
 
 window.switchScreen = function(hideId, showId) {
-  document.getElementById(hideId).classList.remove('active');
-  document.getElementById(showId).classList.add('active');
+  const hideEl = document.getElementById(hideId);
+  const showEl = document.getElementById(showId);
+  
+  if (hideEl) {
+    hideEl.classList.remove('active');
+    hideEl.style.display = 'none'; // Hard force the element to hide
+  }
+  
+  if (showEl) {
+    showEl.classList.add('active');
+    
+    // If we are jumping to the search engine vault, display it as a block container
+    if (showId === 'step-search') {
+      showEl.style.display = 'block';
+    } else {
+      // Otherwise, the fallback matching screen triggers default block view
+      showEl.style.display = 'block';
+    }
+  }
 }
 
 window.resetApp = function() {
