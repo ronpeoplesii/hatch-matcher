@@ -91,7 +91,7 @@ function matchTheHatch() {
 // 5. VIEWPORT DOM LAYOUT RENDERING
 // ============================================================================
 function renderResults(flies) {
-  const resultsContainer = document.getElementById("hatch-results-grid");
+  const resultsContainer = document.getElementById("results-list");
   if (!resultsContainer) return;
 
   if (flies.length === 0) {
