@@ -158,7 +158,7 @@ window.resetApp = function() {
 }
 
 // ==========================================
-// 4. NATIVE HIGH-ACCURACY HARDWARE GPS LOCATOR
+// 4. NORTH AMERICAN SATELLITE LOCATOR MATRIX
 // ==========================================
 window.detectLocation = function() {
   const statusDiv = document.getElementById('gps-status');
@@ -176,14 +176,25 @@ window.detectLocation = function() {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const lon = position.coords.longitude;
+      const lat = position.coords.latitude;
       
-      // Split geographical coordinate boundary at the Mississippi river line (~ -90 deg)
-      let calculatedRegion = 'northeast';
-      let locationLabel = 'Northeast / PA';
+      let calculatedRegion = 'south';
+      let locationLabel = 'South / General US';
       
-      if (lon < -90) {
+      // 1. Check for Northern Watersheds (Canada & Alaska Boundary lines)
+      if (lat > 49.0 || (lat > 54.0 && lon < -130.0)) {
+        calculatedRegion = 'northwest';
+        locationLabel = 'Northwest / Alaska / Canada';
+      } 
+      // 2. Check for Lower 48 Western Zone (West of Mississippi line & south of Canada)
+      else if (lon < -90.0) {
         calculatedRegion = 'west';
         locationLabel = 'West / Colorado';
+      } 
+      // 3. Check for Lower 48 Eastern/Northeast Zone
+      else if (lon >= -90.0 && lat >= 36.5) {
+        calculatedRegion = 'northeast';
+        locationLabel = 'Northeast / PA';
       }
 
       statusDiv.style.color = 'var(--accent-green)';

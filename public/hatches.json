@@ -1,84 +1,434 @@
 [
   {
     "insect": "Blue-Winged Olive (BWO)",
-    "stage": "Dun (Adult)",
+    "stage": "Nymph & Dun Surface",
     "conditions": {
-      "waterType": ["pool", "riffle"],
-      "riseForm": ["sipping"],
+      "regions": ["northeast", "west"],
       "months": [3, 4, 5, 9, 10, 11],
-      "tempRange": [45, 55],
-      "regions": ["northeast", "west"]
+      "tempRange": [42, 55],
+      "waterType": ["run", "pool"],
+      "riseForm": ["sipping", "bulging"]
     },
     "recommendedFlies": [
-      { 
-        "name": "Parachute Adams", 
-        "sizes": [18, 20, 22],
-        "recipe": {
-          "hook": "Standard Dry Fly (e.g., Tiemco 100)",
-          "thread": "8/0 Uni-Thread (Gray or Olive)",
-          "tail": "Mix of Brown and Grizzly Hackle fibers",
-          "body": "Superfine Dry Fly Dubbing (Adams Gray)",
-          "wing": "White Calf Body Hair or Poly Yarn",
-          "hackle": "One Brown and one Grizzly rooster hackle wrapped horizontally"
-        }
-      },
-      { 
-        "name": "Mathews' Sparkle Dun", 
-        "sizes": [18, 20],
+      {
+        "name": "Blue-Winged Olive (BWO) Dry",
+        "sizes": [16, 18, 20, 22],
         "recipe": {
           "hook": "Standard Dry Fly Hook",
           "thread": "8/0 Olive",
-          "tail": "Olive/Brown crinkled Antron yarn (shuck)",
-          "body": "Olive-brown superfine dubbing",
-          "wing": "Deer hair, tied down wing-style over the eye"
+          "tail": "Olive Dun Microfles",
+          "body": "BWO Olive Superfine Dubbing",
+          "wings": "Dun CDC or Hackle"
         }
-      }
-    ]
-  },
-  {
-    "insect": "Zebra Midge",
-    "stage": "Larva / Pupa (Subsurface)",
-    "conditions": {
-      "waterType": ["pool", "run"],
-      "riseForm": ["sipping", "bulging"],
-      "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      "tempRange": [35, 56],
-      "regions": ["northeast", "west"]
-    },
-    "recommendedFlies": [
-      { 
-        "name": "Zebra Midge (Black/Silver)", 
-        "sizes": [18, 20, 22],
+      },
+      {
+        "name": "Pheasant Tail Nymph",
+        "sizes": [14, 16, 18, 20],
         "recipe": {
-          "hook": "Standard Nymph/Scud Hook (e.g., Tiemco 2487)",
-          "bead": "Silver Tungsten or Brass Bead",
-          "thread": "70 Denier UTC (Black)",
-          "rib": "Small Silver Wire",
-          "body": "Built up cleanly with the black tying thread"
+          "hook": "1X Long Nymph Hook",
+          "thread": "6/0 Brown",
+          "tail": "Pheasant Tail Fibers",
+          "body": "Pheasant Tail Fibers",
+          "ribbing": "Fine Copper Wire",
+          "thorax": "Peacock Herl"
+        }
+      },
+      {
+        "name": "Beadhead Flashback Pheasant Tail",
+        "sizes": [14, 16, 18],
+        "recipe": {
+          "hook": "1X Long Nymph Hook",
+          "thread": "6/0 Brown",
+          "bead": "Gold Brass or Tungsten",
+          "tail": "Pheasant Tail Fibers",
+          "body": "Pheasant Tail Fibers",
+          "ribbing": "Fine Copper Wire",
+          "wingcase": "Mylar Flashabou"
         }
       }
     ]
   },
   {
-    "insect": "Golden Stonefly",
-    "stage": "Nymph / Crawler",
+    "insect": "Pale Morning Dun (PMD)",
+    "stage": "Nymph, Emerger, Dun",
     "conditions": {
-      "waterType": ["riffle", "run"],
-      "riseForm": ["bulging"],
-      "months": [5, 6, 7],
+      "regions": ["west"],
+      "months": [6, 7, 8],
       "tempRange": [50, 62],
-      "regions": ["northeast", "west"]
+      "waterType": ["riffle", "run", "pool"],
+      "riseForm": ["sipping", "bulging", "splashy"]
     },
     "recommendedFlies": [
-      { 
-        "name": "Pat's Rubber Legs (Tan/Brown)", 
+      {
+        "name": "Pale Morning Dun (PMD)",
+        "sizes": [14, 16, 18],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "8/0 PMD Yellow",
+          "tail": "Light Dun Hackle Fibers",
+          "body": "PMD Yellow Dubbing",
+          "wings": "Light Dun Turkey Biot"
+        }
+      },
+      {
+        "name": "RS2",
+        "sizes": [16, 18, 20],
+        "recipe": {
+          "hook": "Standard Nymph Hook",
+          "thread": "8/0 Gray or Beaver",
+          "tail": "Microfles or Coq de Leon",
+          "body": "Fine Gray Beaver Dubbing",
+          "wings": "White CDC or Para Post Wing"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "General Mayfly / Attractor",
+    "stage": "Adult Surface presentation",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [4, 5, 6, 7, 8, 9],
+      "tempRange": [45, 75],
+      "waterType": ["riffle", "run"],
+      "riseForm": ["splashy", "sipping"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Parachute Adams",
+        "sizes": [12, 14, 16, 18, 20],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Black",
+          "tail": "Mixed Grizzly and Brown Hackle",
+          "body": "Adams Gray Muskrat Dubbing",
+          "wingpost": "White Calf Tail or Poly Yarn",
+          "hackle": "Grizzly and Brown wrapped horizontal"
+        }
+      },
+      {
+        "name": "Adams",
+        "sizes": [12, 14, 16, 18],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Black",
+          "tail": "Grizzly & Brown Hackle Fibers",
+          "body": "Gray Dubbing",
+          "wings": "Grizzly Hackle Tips"
+        }
+      },
+      {
+        "name": "Royal Wulff",
+        "sizes": [10, 12, 14, 16],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Black",
+          "tail": "Elk Hair or Moose Body",
+          "body": "Peacock Herl with center Red Floss band",
+          "wings": "White Calf Tail"
+        }
+      },
+      {
+        "name": "Gold Ribbed Hare's Ear",
+        "sizes": [10, 12, 14, 16, 18],
+        "recipe": {
+          "hook": "1X Long Nymph Hook",
+          "thread": "6/0 Brown",
+          "tail": "Hare's Mask Guard Hairs",
+          "body": "Hare's Ear Dubbing",
+          "ribbing": "Oval Gold Tinsel",
+          "wingcase": "Turkey Tail Feather"
+        }
+      },
+      {
+        "name": "Copper John",
+        "sizes": [12, 14, 16, 18],
+        "recipe": {
+          "hook": "2X Heavy Nymph Hook",
+          "thread": "6/0 Black",
+          "bead": "Gold Brass or Tungsten",
+          "tail": "Brown Goose Biots",
+          "body": "Medium Copper Wire",
+          "wingcase": "Flashabou coated with Epoxy/UV Clear",
+          "legs": "Partridge Fibers"
+        }
+      },
+      {
+        "name": "Beadhead Soft Hackle Pheasant Tail",
+        "sizes": [14, 16, 18],
+        "recipe": {
+          "hook": "Standard Nymph Hook",
+          "thread": "6/0 Woodduck Brown",
+          "bead": "Gold Brass",
+          "tail": "Pheasant Tail Fibers",
+          "body": "Pheasant Tail Fibers",
+          "ribbing": "Gold Wire",
+          "hackle": "Hungarian Partridge Feather"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Elk Hair Caddis / Hydropsyche",
+    "stage": "Larva, Pupa & Adult surface explosion",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [4, 5, 6, 7, 8, 9],
+      "tempRange": [50, 68],
+      "waterType": ["riffle", "run"],
+      "riseForm": ["splashy"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Elk Hair Caddis",
+        "sizes": [12, 14, 16, 18],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Tan or Green",
+          "body": "Olive, Tan, or Gray Dubbing",
+          "ribbing": "Fine Gold Wire",
+          "wings": "Bleached or Natural Elk Hair",
+          "hackle": "Brown Rooster Palmered"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Yellow Sally (Stonefly)",
+    "stage": "Nymph & Adult Ovipositing",
+    "conditions": {
+      "regions": ["west", "northeast"],
+      "months": [5, 6, 7],
+      "tempRange": [52, 65],
+      "waterType": ["riffle", "run"],
+      "riseForm": ["splashy"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Yellow Sally",
+        "sizes": [14, 16],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Chartreuse or Yellow",
+          "tail": "Yellow Hackle Fibers",
+          "body": "Yellow Superfine Dubbing",
+          "wings": "Bleached Elk Hair",
+          "hackle": "Yellow Rooster Hackle",
+          "egg_sack": "Red Dubbing hot spot on tail tag"
+        }
+      },
+      {
+        "name": "Beadhead Prince Nymph",
+        "sizes": [10, 12, 14, 16],
+        "recipe": {
+          "hook": "2X Long Nymph Hook",
+          "thread": "6/0 Black",
+          "bead": "Gold Brass",
+          "tail": "Brown Goose Biots",
+          "body": "Peacock Herl",
+          "ribbing": "Fine Silver Wire",
+          "wings": "White Goose Biots split on top"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Large Stonefly (Plecoptera)",
+    "stage": "Heavy Crawling Nymph Bottom Drifter",
+    "conditions": {
+      "regions": ["west", "northeast"],
+      "months": [5, 6, 7],
+      "tempRange": [45, 60],
+      "waterType": ["riffle", "run"],
+      "riseForm": ["bulging"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Kaufmann’s Stonefly Nymph – Black",
+        "sizes": [4, 6, 8, 10],
+        "recipe": {
+          "hook": "3X Long Heavy Stonefly Hook",
+          "thread": "3/0 Black Monocord",
+          "weight": "Lead Wire wraps underbody",
+          "tail": "Black Goose Biots",
+          "body": "Black Antron mixed with Hare's Ear",
+          "ribbing": "Monofilament line",
+          "wingcase": "Turkey Tail segment coated with lacquer",
+          "legs": "Black Round Rubber Legs"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Chironomid / Zebra Midge",
+    "stage": "Larva & Pupae suspension mapping",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "tempRange": [33, 70],
+      "waterType": ["pool", "run"],
+      "riseForm": ["sipping", "bulging"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Zebra Midge",
+        "sizes": [18, 20, 22, 24],
+        "recipe": {
+          "hook": "Scud Hook",
+          "thread": "8/0 Black, Red, or Olive",
+          "bead": "Silver Brass or Tungsten",
+          "body": "Tying Thread wrap",
+          "ribbing": "Fine Silver Wire"
+        }
+      },
+      {
+        "name": "Griffith Gnat",
+        "sizes": [16, 18, 20, 22],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "8/0 Black",
+          "body": "Peacock Herl",
+          "hackle": "Grizzly Rooster Hackle palmered full length"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Terrestrials (Ants / Hoppers)",
+    "stage": "Opportunistic Land-Insects Wind Falls",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [7, 8, 9],
+      "tempRange": [60, 80],
+      "waterType": ["riffle", "run", "pool"],
+      "riseForm": ["splashy"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Chubby Chernobyl – Black/Purple (Knockout)",
+        "sizes": [6, 8, 10, 12],
+        "recipe": {
+          "hook": "2X Long Dubbing Hook",
+          "thread": "3/0 Purple",
+          "body": "Purple Ice Dubbing with 2mm Black/Purple Layered Foam strip",
+          "wing": "White Poly Yarn split front and back",
+          "legs": "Purple/White Barred Rubber Legs"
+        }
+      },
+      {
+        "name": "Dave’s Hopper",
         "sizes": [8, 10, 12],
         "recipe": {
-          "hook": "3X Long Nymph Hook (e.g., Tiemco 5263)",
-          "weight": "0.020 Lead Wire (10-15 wraps)",
-          "thread": "6/0 Uni-Thread (Brown)",
-          "body": "Two-tone variegated chenille (Tan/Brown)",
-          "legs": "Life Flex or round rubber legs (Brown/Amber)"
+          "hook": "3X Long Streamer Hook",
+          "thread": "6/0 Yellow",
+          "tail": "Red Deer Hair or Hackle Fibers",
+          "body": "Yellow Poly Yarn ribbed with brown hackle",
+          "wings": "Mottled Turkey Tail feather split",
+          "head": "Spun and trimmed Natural Deer Hair"
+        }
+      },
+      {
+        "name": "Black Ant",
+        "sizes": [14, 16, 18],
+        "recipe": {
+          "hook": "Standard Dry Fly Hook",
+          "thread": "6/0 Black",
+          "body": "Black Fine Dubbing built into two distinct lumps",
+          "hackle": "Black Rooster Hackle tied in center waist segment"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Annelids & Worms (Post-Rain Flush)",
+    "stage": "High-Water Subsurface Drift",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [4, 5, 6, 7, 8, 9],
+      "tempRange": [38, 68],
+      "waterType": ["run", "pool"],
+      "riseForm": ["bulging"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "San Juan Worm",
+        "sizes": [10, 12, 14],
+        "recipe": {
+          "hook": "Standard Nymph Hook",
+          "thread": "6/0 Red",
+          "body": "Medium Red Ultra Chenille singed at tips"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Baitfish & Sculpin Streamers",
+    "stage": "Predatory Predation Foraging",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "tempRange": [32, 75],
+      "waterType": ["riffle", "run", "pool"],
+      "riseForm": ["splashy", "bulging"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Wooly Bugger",
+        "sizes": [4, 6, 8, 10, 12],
+        "recipe": {
+          "hook": "3X Long Streamer Hook",
+          "thread": "6/0 Black or Olive",
+          "tail": "Marabou plumes with Flashabou",
+          "body": "Chenille (Black, Olive, or Brown)",
+          "hackle": "Grizzly or Rooster Hackle palmered full"
+        }
+      },
+      {
+        "name": "Muddler Minnow",
+        "sizes": [4, 6, 8, 10],
+        "recipe": {
+          "hook": "3X Long Streamer Hook",
+          "thread": "6/0 GSP Brown",
+          "tail": "Mottled Turkey Wing strips",
+          "body": "Flat Gold Tinsel",
+          "wings": "Mottled Turkey Quill over Grey Squirrel Hair",
+          "head": "Spun and closely shaved Natural Deer Hair"
+        }
+      },
+      {
+        "name": "Clouser Minnow",
+        "sizes": [2, 4, 6, 8],
+        "recipe": {
+          "hook": "O'Shaughnessy Streamer Hook",
+          "thread": "6/0 White",
+          "eyes": "Dumbbell Lead Eyes tied on top of shank",
+          "body": "White Bucktail underlying chartreuse or green bucktail",
+          "flash": "Flashabou strands sandwhiched in wing profile"
+        }
+      }
+    ]
+  },
+  {
+    "insect": "Crayfish (Decapoda / Crustacean)",
+    "stage": "Bottom Structural Stripping",
+    "conditions": {
+      "regions": ["northeast", "west"],
+      "months": [5, 6, 7, 8, 9, 10],
+      "tempRange": [50, 72],
+      "waterType": ["riffle", "pool"],
+      "riseForm": ["bulging"]
+    },
+    "recommendedFlies": [
+      {
+        "name": "Crayfish",
+        "sizes": [4, 6, 8],
+        "recipe": {
+          "hook": "2X Long Heavy Streamer Hook",
+          "thread": "3/0 Brown",
+          "eyes": "Lead Dumbbell eyes on tail end",
+          "claws": "Orange or Brown Rabbit strip segments",
+          "body": "Rusty Orange Chenille or Dubbing",
+          "shellback": "Thin Skin strip ribbed with copper wire"
         }
       }
     ]
