@@ -59,38 +59,52 @@ function setupEventListeners() {
 // ============================================================================
 // 4. CORE MATCH-THE-HATCH FILTERING ENGINE
 // ============================================================================
+// ============================================================================
+// 4. CORE MATCH-THE-HATCH FILTERING ENGINE (WITH DATA MAPPING)
+// ============================================================================
 function matchTheHatch() {
-  const { biome, month, waterTemp, waterType } = currentConditions;
-  console.log("🔍 Running filter with current states:", currentConditions);
+  let { biome, month, waterTemp, waterType } = currentConditions;
+  console.log("🔍 Evaluating raw wizard inputs:", currentConditions);
+
+  // 1. MAP HTML REGION KEYS OVER TO THE 101-FLY PROFILE MATCHES
+  let databaseBiome = biome;
+  if (biome === "appalachian") databaseBiome = "Northeast";
+  if (biome === "rocky_mountain") databaseBiome = "Rocky Mountain";
+  if (biome === "pacific_coastal") databaseBiome = "Pacific Northwest";
+  if (biome === "boreal_shield") databaseBiome = "Midwest";
+  if (biome === "transitional_plains") databaseBiome = "Midwest";
+  if (biome === "warmwater_south") databaseBiome = "Southeast";
+
+  // 2. MAP MICRO WATER SEGMENTS BACK TO BASELINE PROFILE WATER TYPES
+  let databaseWaterType = "freestone"; // reliable default fallback
+  if (waterType === "stillwater" || waterType === "lake_pond") {
+    databaseWaterType = "stillwater";
+  } else if (["riffle", "run", "pool", "freestone", "splashy", "sipping", "bulging"].includes(waterType)) {
+    databaseWaterType = "freestone"; // Snaps river micro-flow states back to moving water entries
+  }
 
   const matchedFlies = hatchDatabase.filter(hatch => {
-    // 1. Biome Validation
+    // A. Biome Validation
     const biomes = hatch.biomes || [];
-    const biomeMatch = biomes.map(b => b.toLowerCase().trim()).includes(biome.toLowerCase().trim());
+    const biomeMatch = biomes.map(b => b.toLowerCase().trim()).includes(databaseBiome.toLowerCase().trim());
 
-    // 2. Chronological Hatch Window Check
+    // B. Chronological Hatch Window Check
     const months = hatch.months || [];
     const monthMatch = months.includes(month);
 
-    // 3. Ambient Water Temperature Window Check
+    // C. Ambient Water Temperature Window Check
     const minTemp = hatch.water_temp_range?.min_f ?? 32;
     const maxTemp = hatch.water_temp_range?.max_f ?? 80;
     const tempMatch = waterTemp >= minTemp && waterTemp <= maxTemp;
 
-    // 4. Hydrographic Stream Profile Match
+    // D. Hydrographic Stream Profile Match
     const waterTypes = hatch.water_types || [];
-    const waterTypeMatch = waterTypes.map(w => w.toLowerCase().trim()).includes(waterType.toLowerCase().trim());
-
-    // DIAGNOSTIC LOG: Let's see what's failing the check
-    if (!biomeMatch || !monthMatch || !tempMatch || !waterTypeMatch) {
-      // Uncomment this line if you want to inspect a specific fly profile's failures:
-      // console.log(`Mismatch [${hatch.name}]: Biome=${biomeMatch}, Month=${monthMatch}, Temp=${tempMatch}, Water=${waterTypeMatch}`);
-    }
+    const waterTypeMatch = waterTypes.map(w => w.toLowerCase().trim()).includes(databaseWaterType.toLowerCase().trim());
 
     return biomeMatch && monthMatch && tempMatch && waterTypeMatch;
   });
 
-  console.log(`🎯 Match cycle complete. Total patterns qualifying: ${matchedFlies.length}`);
+  console.log(`🎯 Normalized Match Target: Biome="${databaseBiome}", Water="${databaseWaterType}" -> Found: ${matchedFlies.length}`);
   renderResults(matchedFlies);
 }
 
