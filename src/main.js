@@ -280,6 +280,21 @@ window.updateTempDisplay = (value) => {
   if (display) display.innerText = `${value}°F`;
 };
 
+// Manual water flow type selection handler (Riffle, Run, Pool)
+window.selectWater = (waterFlow) => {
+  if (!waterFlow) return;
+  console.log(`Water flow selection registered: ${waterFlow}`);
+  
+  // Normalize the input or map it directly to our stream profile state
+  currentConditions.waterType = waterFlow;
+
+  // Run the calculations across the 101 flat-schema profiles
+  matchTheHatch();
+  
+  // Slide the user into the final active hatch display panel!
+  advanceToNextScreen("step-water", "step-rise");
+};
+
 // Fallback matching logic for direct rise inputs
 window.selectRise = (waterType, assumedTemp) => {
   console.log(`Rise strategy assigned: ${waterType}`);
