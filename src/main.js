@@ -295,11 +295,36 @@ window.selectWater = (waterFlow) => {
   advanceToNextScreen("step-water", "step-rise");
 };
 
-// Fallback matching logic for direct rise inputs
+// HTML onClick -> selectRise('bulging')
 window.selectRise = (waterType, assumedTemp) => {
   console.log(`Rise strategy assigned: ${waterType}`);
   currentConditions.waterType = waterType;
   if (assumedTemp) currentConditions.waterTemp = assumedTemp;
   
+  // Calculate final matches
   matchTheHatch();
+
+  // Advance to the final results screen!
+  advanceToNextScreen("step-rise", "step-results");
+};
+
+// HTML onClick -> resetApp() (Handles the Restart Matcher button)
+window.resetApp = () => {
+  console.log("🔄 Resetting app layout back to step-region...");
+  
+  // Reset runtime conditions back to baselines if desired
+  currentConditions.biome = "appalachian";
+  currentConditions.waterTemp = 55;
+  currentConditions.waterType = "freestone";
+
+  // Scan for the active screen container and manually force it back to step-region
+  const activeScreen = document.querySelector(".screen-container.active");
+  if (activeScreen) {
+    activeScreen.classList.remove("active");
+  }
+
+  const initialScreen = document.getElementById("step-region");
+  if (initialScreen) {
+    initialScreen.classList.add("active");
+  }
 };
