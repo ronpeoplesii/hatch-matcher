@@ -363,7 +363,6 @@ window.switchScreen = (currentId, nextId) => {
     console.log(`✈️ Swapped Viewport: ${currentId} -> ${nextId}`);
   }
 };
-
 // Bind live telemetry search to the global input field after database load
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("global-search");
@@ -374,55 +373,53 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", (e) => {
     const query = e.target.value.toLowerCase().trim();
 
-    // If search is cleared out, conceal the dropdown container
     if (!query) {
       searchResults.style.display = "none";
       searchResults.innerHTML = "";
       return;
     }
 
-    // Filter across the broad array tracking text matching strings
     const matchedRecipes = hatchDatabase.filter(fly => {
       const nameMatch = (fly.name || "").toLowerCase().includes(query);
       const speciesMatch = (fly.imitation_species || "").toLowerCase().includes(query);
       const stageMatch = (fly.stage || "").toLowerCase().includes(query);
       
-      // Match against materials list array strings if defined in schema profiles
-      const materials = fly.recipe_materials || fly.materials || [];
+      // Map across potential array field names from your schema generator
+      const materials = fly.tying_materials || fly.recipe_materials || fly.materials || [];
       const materialMatch = materials.some(mat => mat.toLowerCase().includes(query));
 
       return nameMatch || speciesMatch || stageMatch || materialMatch;
     });
 
-    // Make the result container block visible
     searchResults.style.display = "block";
 
     if (matchedRecipes.length === 0) {
       searchResults.innerHTML = `
-        <div class="p-4 bg-gray-900 border border-gray-800 text-gray-400 rounded-xl text-sm">
+        <div style="padding: 16px; background: #202023; border: 1px solid #27272a; color: #a1a1aa; border-radius: 12px; font-size: 0.9rem;">
           No recipes found matching '${e.target.value}' in the current vault matrix.
         </div>
       `;
       return;
     }
 
-    // Map out recipe components inside the drawer view layout
+    // Bulletproof inline styled recipe layout blocks
     searchResults.innerHTML = matchedRecipes.map(fly => {
-      const materialsList = fly.recipe_materials || fly.materials || ["Universal thread and hook dressings"];
+      // Direct catch for your schema's exact recipe array field
+      const materialsList = fly.tying_materials || fly.recipe_materials || fly.materials || ["Universal thread and hook dressings"];
       
       return `
-        <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl mb-3 shadow-sm hover:border-emerald-500 transition-all">
-          <div class="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
+        <div style="padding: 16px; background: #202023; border: 1px solid #27272a; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #27272a; padding-bottom: 8px; margin-bottom: 8px;">
             <div>
-              <h4 class="text-emerald-400 font-bold text-base font-sans">${fly.name}</h4>
-              <p class="text-xs text-gray-500 italic">${fly.imitation_species} (${fly.stage})</p>
+              <h4 style="color: var(--accent-green); margin: 0; font-size: 1.05rem; font-weight: 700;">${fly.name}</h4>
+              <p style="margin: 2px 0 0 0; font-size: 0.75rem; color: #a1a1aa; font-style: italic;">${fly.imitation_species} (${fly.stage})</p>
             </div>
-            <span class="text-[11px] font-mono bg-gray-800 px-2 py-0.5 rounded text-gray-400">#${fly.id}</span>
+            <span style="font-family: monospace; font-size: 0.7rem; background: #18181b; padding: 2px 6px; border-radius: 4px; color: #71717a;">#${fly.id}</span>
           </div>
-          <div class="text-xs text-gray-300">
-            <p class="font-semibold text-gray-400 mb-1">📐 Tying Recipe Components:</p>
-            <ul class="list-disc pl-4 space-y-0.5 text-gray-400 font-sans">
-              ${materialsList.map(mat => `<li>${mat}</li>`).join('')}
+          <div style="font-size: 0.85rem; color: #e4e4e7;">
+            <p style="margin: 0 0 6px 0; font-weight: 600; color: #a1a1aa;">📐 Tying Recipe Components:</p>
+            <ul style="margin: 0; padding-left: 20px; color: #d4d4d8; line-height: 1.4;">
+              ${materialsList.map(mat => `<li style="margin-bottom: 2px;">${mat}</li>`).join('')}
             </ul>
           </div>
         </div>
