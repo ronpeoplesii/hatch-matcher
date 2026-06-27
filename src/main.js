@@ -236,6 +236,21 @@ window.selectEnvironment = (envType) => {
   advanceToNextScreen("step-environment", "step-species");
 };
 
+// Manual species targeting selection handler
+window.selectSpecies = (speciesName) => {
+  if (!speciesName) return;
+  console.log(`Target species selection registered: ${speciesName}`);
+  
+  // Stash species in state if you choose to filter by fish classification later
+  currentConditions.targetSpecies = speciesName;
+
+  // Recalculate match filtering rules
+  matchTheHatch();
+  
+  // Step the wizard forward to the temperature configuration panel
+  advanceToNextScreen("step-species", "step-temp");
+};
+
 // Fallback matching logic for direct rise inputs
 window.selectRise = (waterType, assumedTemp) => {
   console.log(`Rise strategy assigned: ${waterType}`);
