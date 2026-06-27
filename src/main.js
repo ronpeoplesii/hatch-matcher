@@ -133,3 +133,23 @@ window.selectRegion = (regionName) => {
   currentConditions.biome = regionName;
   matchTheHatch();
 };
+
+// --- LEGACY HTML INTERFACE WRAPPERS ---
+
+// Resolves line 151 reference error
+window.selectRegion = (regionName) => {
+  currentConditions.biome = regionName;
+  matchTheHatch();
+};
+
+// Ensures selectRise can be invoked globally from anywhere in the DOM
+const originalSelectRise = window.selectRise;
+window.selectRise = (waterType, assumedTemp) => {
+  if (typeof originalSelectRise === 'function') {
+    originalSelectRise(waterType, assumedTemp);
+  } else {
+    currentConditions.waterType = waterType;
+    if (assumedTemp) currentConditions.waterTemp = assumedTemp;
+    matchTheHatch();
+  }
+};
