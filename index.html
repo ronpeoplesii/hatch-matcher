@@ -68,10 +68,10 @@
       border: 1px solid #27272a;
       border-radius: 14px;
       color: #fff;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       cursor: pointer;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -119,43 +119,67 @@
       font-size: 0.85rem;
       border: 1px solid #3f3f46;
     }
+
+    /* FINE PRINT DISPLAY STYLING */
+    .fine-print {
+      font-size: 0.78rem;
+      color: #71717a;
+      line-height: 1.4;
+      text-align: left;
+      margin-top: 16px;
+      border-top: 1px solid #27272a;
+      padding-top: 12px;
+    }
   </style>
 </head>
 <body>
 
 <div id="app-container">
 
+  <!-- STEP 1: SELECT DESTINATION (6 AQUATIC ECO-BIOMES) -->
   <div id="step-region" class="screen-container active">
-    <div style="margin-bottom: 24px;">
-      <h2>Select Destination</h2>
-      <p style="margin-bottom: 16px;">Where are you wetting a line?</p>
+    <div style="margin-bottom: 20px;">
+      <h2>Select Destination Biome</h2>
+      <p style="margin-bottom: 14px;">Where are you wetting a line?</p>
       
       <button onclick="detectLocation()" class="btn btn-vault" style="background: #1e1b4b; border-color: #312e81; margin-bottom: 8px;">
-        📍 Use Current Location (GPS)
+        📍 Auto-Detect Biome via GPS
       </button>
       <div id="gps-status" style="font-size: 0.85rem; color: var(--accent-green); margin-bottom: 12px; font-weight: 600; text-align: left; display: none;"></div>
     </div>
     
-    <button onclick="selectRegion('northeast')" class="btn">
-      <span>Northeast / PA</span> <span>→</span>
+    <button onclick="selectRegion('appalachian')" class="btn">
+      <span>Appalachian & Limestone (East/PA)</span> <span>→</span>
     </button>
-    <button onclick="selectRegion('west')" class="btn">
-      <span>West / Colorado</span> <span>→</span>
+    <button onclick="selectRegion('rocky_mountain')" class="btn">
+      <span>Rocky Mountain Tailwaters (West/CO)</span> <span>→</span>
     </button>
-    <button onclick="selectRegion('northwest')" class="btn">
-      <span>Northwest / Alaska / Canada</span> <span>→</span>
+    <button onclick="selectRegion('pacific_coastal')" class="btn">
+      <span>Pacific Rainforest & Coastal (NW/AK)</span> <span>→</span>
     </button>
-    <button onclick="selectRegion('south')" class="btn">
-      <span>South / General US</span> <span>→</span>
+    <button onclick="selectRegion('boreal_shield')" class="btn">
+      <span>Great Lakes & Boreal Shield (Midwest/Can)</span> <span>→</span>
+    </button>
+    <button onclick="selectRegion('transitional_plains')" class="btn">
+      <span>Midwest & Plains Rivers</span> <span>→</span>
+    </button>
+    <button onclick="selectRegion('warmwater_south')" class="btn">
+      <span>Southern & Coastal Plain</span> <span>→</span>
     </button>
     
-    <div style="margin-top: 24px;">
+    <div style="margin-top: 20px;">
       <button onclick="switchScreen('step-region', 'step-search')" class="btn btn-vault">
         🔍 Open Fly Tying Recipe Vault
       </button>
     </div>
+
+    <!-- METRIC DEFINITIONS FINE PRINT -->
+    <div class="fine-print">
+      <strong>ℹ️ Biome Sorting Clarification:</strong> Aquatic insect hatches are mapped by continental drainage basin biomes rather than arbitrary political state or country borders. The satellite matrix coordinates automatically resolve your elevation, watershed, and ambient thermal baseline profile to yield highly targeted local biological matching streamside.
+    </div>
   </div>
 
+  <!-- STEP 2: WATER TEMPERATURE -->
   <div id="step-temp" class="screen-container">
     <div class="card">
       <h2>Stream Temperature</h2>
@@ -172,6 +196,7 @@
     </div>
   </div>
 
+  <!-- STEP 3: WATER TYPE -->
   <div id="step-water" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Water Structure</h2>
@@ -182,6 +207,7 @@
     <button onclick="selectWater('pool')" class="btn">Pool (Slow, Deep Water Flat)</button>
   </div>
 
+  <!-- STEP 4: RISE FORM -->
   <div id="step-rise" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Observation: Rise Form</h2>
@@ -192,6 +218,7 @@
     <button onclick="selectRise('bulging')" class="btn">Bulging / Flashing (Subsurface Sub-adults)</button>
   </div>
 
+  <!-- STEP 5: MATCH RESULTS -->
   <div id="step-results" class="screen-container">
     <h2>Top Matched Hatches</h2>
     <p>The matrix filtered biological conditions down to these optimal patterns:</p>
@@ -201,6 +228,7 @@
     </button>
   </div>
 
+  <!-- SEPARATED SCREEN: STANDALONE RECIPE VAULT -->
   <div id="step-search" class="screen-container">
     <div class="card card-left" style="border-left: 4px solid var(--accent-green); background: #1c1c1f; padding: 20px;">
       <h2 style="color: var(--accent-green); margin-bottom: 4px;">Fly Tying Recipe Vault</h2>

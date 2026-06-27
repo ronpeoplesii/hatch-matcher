@@ -2,7 +2,7 @@
 // 1. APP STATE & CONFIGURATION
 // ==========================================
 let userSelections = { 
-  region: 'northeast', 
+  region: 'appalachian', 
   waterTemp: 55, 
   currentMonth: new Date().getMonth() + 1, 
   waterType: '', 
@@ -142,7 +142,7 @@ window.switchScreen = function(hideId, showId) {
 
 window.resetApp = function() {
   userSelections = { 
-    region: 'northeast',
+    region: 'appalachian',
     waterTemp: 55, 
     currentMonth: new Date().getMonth() + 1, 
     waterType: '', 
@@ -158,7 +158,7 @@ window.resetApp = function() {
 }
 
 // ==========================================
-// 4. NORTH AMERICAN SATELLITE LOCATOR MATRIX
+// 4. NORTH AMERICAN BIOME GPS CALCULATOR 
 // ==========================================
 window.detectLocation = function() {
   const statusDiv = document.getElementById('gps-status');
@@ -178,32 +178,42 @@ window.detectLocation = function() {
       const lon = position.coords.longitude;
       const lat = position.coords.latitude;
       
-      let calculatedRegion = 'south';
-      let locationLabel = 'South / General US';
+      let calculatedRegion = 'transitional_plains';
+      let locationLabel = 'Midwest & Plains Rivers';
       
-      // 1. Check for Northern Watersheds (Canada & Alaska Boundary lines)
-      if (lat > 49.0 || (lat > 54.0 && lon < -130.0)) {
-        calculatedRegion = 'northwest';
-        locationLabel = 'Northwest / Alaska / Canada';
-      } 
-      // 2. Check for Lower 48 Western Zone (West of Mississippi line & south of Canada)
-      else if (lon < -90.0) {
-        calculatedRegion = 'west';
-        locationLabel = 'West / Colorado';
-      } 
-      // 3. Check for Lower 48 Eastern/Northeast Zone
-      else if (lon >= -90.0 && lat >= 36.5) {
-        calculatedRegion = 'northeast';
-        locationLabel = 'Northeast / PA';
+      // 1. Pacific Northwest, BC, & Alaska coastal line mapping
+      if (lon < -119.0 && lat >= 42.0) {
+        calculatedRegion = 'pacific_coastal';
+        locationLabel = 'Pacific Rainforest & Coastal';
+      }
+      // 2. Rocky Mountain structural block (spanning US & Canada ranges)
+      else if (lon >= -119.0 && lon < -103.0 && lat >= 34.0) {
+        calculatedRegion = 'rocky_mountain';
+        locationLabel = 'Rocky Mountain Tailwaters';
+      }
+      // 3. Boreal Shield & Great Lakes (North of 45th parallel out east/midwest)
+      else if (lat >= 45.0 && lon >= -103.0) {
+        calculatedRegion = 'boreal_shield';
+        locationLabel = 'Great Lakes & Boreal Shield';
+      }
+      // 4. Classic Appalachian Range & Eastern Seaboard down to mid-latitudes
+      else if (lon >= -87.0 && lat >= 36.0) {
+        calculatedRegion = 'appalachian';
+        locationLabel = 'Appalachian & Limestone';
+      }
+      // 5. Deep Southern Thermal Belt
+      else if (lat < 34.0 || (lon >= -98.0 && lat < 36.0)) {
+        calculatedRegion = 'warmwater_south';
+        locationLabel = 'Southern & Coastal Plain';
       }
 
       statusDiv.style.color = 'var(--accent-green)';
-      statusDiv.innerText = `✓ Target locked: Auto-selecting ${locationLabel}`;
+      statusDiv.innerText = `✓ Locked: Auto-selecting ${locationLabel}`;
       
       setTimeout(() => {
         statusDiv.style.display = 'none';
         window.selectRegion(calculatedRegion);
-      }, 1200);
+      }, 1500);
     },
     (error) => {
       statusDiv.style.color = '#f43f5e';
