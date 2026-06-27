@@ -133,7 +133,52 @@ window.selectRegion = (regionName) => {
   currentConditions.biome = regionName;
   matchTheHatch();
 };
+// --- GEOLOCATION & BIOME MAPPING ---
+window.detectLocation = () => {
+  if (!navigator.geolocation) {
+    console.error("Geolocation is not supported by this browser.");
+    alert("Location services are not supported by your browser.");
+    return;
+  }
 
+  console.log("Requesting streamside coordinates...");
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+      console.log(`Coords resolved: Lat ${latitude}, Lon ${longitude}`);
+      
+      // Simple coordinate bounding box to assign a fallback biome
+      // (You can replace this logic with a real reverse-geocoding API later)
+      let detectedBiome = "Northeast"; 
+      
+      if (longitude < -105) {
+        detectedBiome = "Rocky Mountain";
+      } else if (longitude < -120) {
+        detectedBiome = "Pacific Northwest";
+      } else if (longitude > -90 && latitude < 38) {
+        detectedBiome = "Southeast";
+      } else if (longitude < -80 && longitude > -97) {
+        detectedBiome = "Midwest";
+      }
+
+      console.log(`Banded location to biome: ${detectedBiome}`);
+      currentConditions.biome = detectedBiome;
+      
+      // Update UI dropdown selector value if it exists on screen
+      const biomeSelector = document.getElementById("biome-select");
+      if (biomeSelector) biomeSelector.value = detectedBiome;
+
+      // Force filter update
+      matchTheHatch();
+    },
+    (error) => {
+      console.error("Error detecting location, defaulting to Northeast:", error);
+      // Fallback gracefully so the app stays functional
+      currentConditions.biome = "Northeast";
+      matchTheHatch();
+    }
+  );
+};
 // --- LEGACY HTML INTERFACE WRAPPERS ---
 
 // Resolves line 151 reference error
