@@ -120,7 +120,6 @@
       border: 1px solid #3f3f46;
     }
 
-    /* FINE PRINT DISPLAY STYLING */
     .fine-print {
       font-size: 0.78rem;
       color: #71717a;
@@ -148,24 +147,12 @@
       <div id="gps-status" style="font-size: 0.85rem; color: var(--accent-green); margin-bottom: 12px; font-weight: 600; text-align: left; display: none;"></div>
     </div>
     
-    <button onclick="selectRegion('appalachian')" class="btn">
-      <span>Appalachian & Limestone (East/PA)</span> <span>→</span>
-    </button>
-    <button onclick="selectRegion('rocky_mountain')" class="btn">
-      <span>Rocky Mountain Tailwaters (West/CO)</span> <span>→</span>
-    </button>
-    <button onclick="selectRegion('pacific_coastal')" class="btn">
-      <span>Pacific Rainforest & Coastal (NW/AK)</span> <span>→</span>
-    </button>
-    <button onclick="selectRegion('boreal_shield')" class="btn">
-      <span>Great Lakes & Boreal Shield (Midwest/Can)</span> <span>→</span>
-    </button>
-    <button onclick="selectRegion('transitional_plains')" class="btn">
-      <span>Midwest & Plains Rivers</span> <span>→</span>
-    </button>
-    <button onclick="selectRegion('warmwater_south')" class="btn">
-      <span>Southern & Coastal Plain</span> <span>→</span>
-    </button>
+    <button onclick="selectRegion('appalachian')" class="btn"><span>Appalachian & Limestone (East/PA)</span> <span>→</span></button>
+    <button onclick="selectRegion('rocky_mountain')" class="btn"><span>Rocky Mountain Tailwaters (West/CO)</span> <span>→</span></button>
+    <button onclick="selectRegion('pacific_coastal')" class="btn"><span>Pacific Rainforest & Coastal (NW/AK)</span> <span>→</span></button>
+    <button onclick="selectRegion('boreal_shield')" class="btn"><span>Great Lakes & Boreal Shield (Midwest/Can)</span> <span>→</span></button>
+    <button onclick="selectRegion('transitional_plains')" class="btn"><span>Midwest & Plains Rivers</span> <span>→</span></button>
+    <button onclick="selectRegion('warmwater_south')" class="btn"><span>Southern & Coastal Plain</span> <span>→</span></button>
     
     <div style="margin-top: 20px;">
       <button onclick="switchScreen('step-region', 'step-search')" class="btn btn-vault">
@@ -173,17 +160,37 @@
       </button>
     </div>
 
-    <!-- METRIC DEFINITIONS FINE PRINT -->
     <div class="fine-print">
-      <strong>ℹ️ Biome Sorting Clarification:</strong> Aquatic insect hatches are mapped by continental drainage basin biomes rather than arbitrary political state or country borders. The satellite matrix coordinates automatically resolve your elevation, watershed, and ambient thermal baseline profile to yield highly targeted local biological matching streamside.
+      <strong>ℹ️ Biome Sorting Clarification:</strong> Aquatic insect hatches are mapped by continental drainage basin biomes rather than arbitrary political state borders. The satellite matrix coordinates automatically resolve your watershed baseline profile.
     </div>
+  </div>
+
+  <!-- NEW STEP 1.5: WATER ENVIRONMENT -->
+  <div id="step-environment" class="screen-container">
+    <div style="margin-bottom: 24px;">
+      <h2>Water Environment</h2>
+      <p>Select your water structure type to map insect habitat profiles accurately.</p>
+    </div>
+    <button onclick="selectEnvironment('river_stream')" class="btn"><span>River / Stream (Moving Water)</span> <span>→</span></button>
+    <button onclick="selectEnvironment('lake_pond')" class="btn"><span>Lake / Pond (Stillwater)</span> <span>→</span></button>
+  </div>
+
+  <!-- NEW STEP 1.7: TARGET SPECIES -->
+  <div id="step-species" class="screen-container">
+    <div style="margin-bottom: 24px;">
+      <h2>Target Species</h2>
+      <p>What species are you targeting? The algorithm cross-references diet profiles to narrow down presentation sizes.</p>
+    </div>
+    <button onclick="selectSpecies('trout')" class="btn"><span>Trout (Coldwater Biotics)</span> <span>→</span></button>
+    <button onclick="selectSpecies('bass')" class="btn"><span>Bass (Predatory / Warmwater)</span> <span>→</span></button>
+    <button onclick="selectSpecies('panfish')" class="btn"><span>Panfish / Bluegill (Opportunistic)</span> <span>→</span></button>
   </div>
 
   <!-- STEP 2: WATER TEMPERATURE -->
   <div id="step-temp" class="screen-container">
     <div class="card">
       <h2>Stream Temperature</h2>
-      <p>What is the active water temperature? Matcher filtering limits patterns based on metabolic bug triggers.</p>
+      <p>What is the active water temperature? Matcher filtering limits patterns based on metabolic triggers.</p>
       
       <div class="slider-container">
         <span id="temp-display">55°F</span>
@@ -196,7 +203,7 @@
     </div>
   </div>
 
-  <!-- STEP 3: WATER TYPE -->
+  <!-- STEP 3: WATER TYPE (STILL SHOWS IF RIVER/STREAM IS SELECTED) -->
   <div id="step-water" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Water Structure</h2>
@@ -211,11 +218,11 @@
   <div id="step-rise" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Observation: Rise Form</h2>
-      <p>How are trout interacting with the feed to score presentation type?</p>
+      <p>How are fish interacting with the feed to score presentation type?</p>
     </div>
     <button onclick="selectRise('splashy')" class="btn">Splashy (Active Surface Takes)</button>
     <button onclick="selectRise('sipping')" class="btn">Sipping (Subtle Dimple or Bubbles)</button>
-    <button onclick="selectRise('bulging')" class="btn">Bulging / Flashing (Subsurface Sub-adults)</button>
+    <button onclick="selectRise('bulging')" class="btn">Bulging / Flashing (Subsurface Activity)</button>
   </div>
 
   <!-- STEP 5: MATCH RESULTS -->

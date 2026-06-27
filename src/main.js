@@ -3,9 +3,11 @@
 // ==========================================
 let userSelections = { 
   region: 'appalachian', 
+  environment: 'river_stream', // New: 'river_stream' or 'lake_pond'
+  species: 'trout',            // New: 'trout', 'bass', 'panfish'
   waterTemp: 55, 
   currentMonth: new Date().getMonth() + 1, 
-  waterType: '', 
+  waterType: 'pool',           // Default value for lakes to pass filter math safely
   riseForm: '' 
 };
 let hatchDatabase = [];
@@ -108,7 +110,17 @@ window.executePatternSearch = function(query) {
 // ==========================================
 window.selectRegion = function(selectedRegion) {
   userSelections.region = selectedRegion.toLowerCase().trim();
-  switchScreen('step-region', 'step-temp');
+  switchScreen('step-region', 'step-environment');
+}
+
+window.selectEnvironment = function(env) {
+  userSelections.environment = env.toLowerCase().trim();
+  switchScreen('step-environment', 'step-species');
+}
+
+window.selectSpecies = function(spec) {
+  userSelections.species = spec.toLowerCase().trim();
+  switchScreen('step-species', 'step-temp');
 }
 
 window.updateTempDisplay = function(val) {
@@ -119,7 +131,14 @@ window.updateTempDisplay = function(val) {
 window.submitTemp = function() {
   const sliderVal = document.getElementById('temp-slider').value;
   userSelections.waterTemp = parseInt(sliderVal, 10);
-  switchScreen('step-temp', 'step-water');
+  
+  // Dynamic Route Bypass: Stillwaters do not have riffles or runs
+  if (userSelections.environment === 'lake_pond') {
+    userSelections.waterType = 'pool'; // Normalize to safe flat-water filtering parameter
+    switchScreen('step-temp', 'step-rise');
+  } else {
+    switchScreen('step-temp', 'step-water');
+  }
 }
 
 window.selectWater = function(type) {
@@ -143,9 +162,11 @@ window.switchScreen = function(hideId, showId) {
 window.resetApp = function() {
   userSelections = { 
     region: 'appalachian',
+    environment: 'river_stream',
+    species: 'trout',
     waterTemp: 55, 
     currentMonth: new Date().getMonth() + 1, 
-    waterType: '', 
+    waterType: 'pool', 
     riseForm: '' 
   };
   document.getElementById('temp-slider').value = 55;
@@ -181,27 +202,22 @@ window.detectLocation = function() {
       let calculatedRegion = 'transitional_plains';
       let locationLabel = 'Midwest & Plains Rivers';
       
-      // 1. Pacific Northwest, BC, & Alaska coastal line mapping
       if (lon < -119.0 && lat >= 42.0) {
         calculatedRegion = 'pacific_coastal';
         locationLabel = 'Pacific Rainforest & Coastal';
       }
-      // 2. Rocky Mountain structural block (spanning US & Canada ranges)
       else if (lon >= -119.0 && lon < -103.0 && lat >= 34.0) {
         calculatedRegion = 'rocky_mountain';
         locationLabel = 'Rocky Mountain Tailwaters';
       }
-      // 3. Boreal Shield & Great Lakes (North of 45th parallel out east/midwest)
       else if (lat >= 45.0 && lon >= -103.0) {
         calculatedRegion = 'boreal_shield';
         locationLabel = 'Great Lakes & Boreal Shield';
       }
-      // 4. Classic Appalachian Range & Eastern Seaboard down to mid-latitudes
       else if (lon >= -87.0 && lat >= 36.0) {
         calculatedRegion = 'appalachian';
         locationLabel = 'Appalachian & Limestone';
       }
-      // 5. Deep Southern Thermal Belt
       else if (lat < 34.0 || (lon >= -98.0 && lat < 36.0)) {
         calculatedRegion = 'warmwater_south';
         locationLabel = 'Southern & Coastal Plain';
@@ -218,42 +234,40 @@ window.detectLocation = function() {
     (error) => {
       statusDiv.style.color = '#f43f5e';
       console.warn(`GPS Execution Error Code ${error.code}: ${error.message}`);
-      if (error.code === 1) {
-        statusDiv.innerText = "❌ Permission denied. Enable location services.";
-      } else {
-        statusDiv.innerText = "❌ Unable to acquire precise GPS lock streamside.";
-      }
+      statusDiv.innerText = "❌ Unable to acquire precise GPS lock streamside.";
     },
-    {
-      enableHighAccuracy: true,
-      timeout: 8000,
-      maximumAge: 0
-    }
+    { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
   );
 }
 
 // ==========================================
-// 5. BIOLOGICAL STRATIFICATION ALGORITHMS
+// 5. EXTENDED MULTI-SPECIES MATCH ALGORITHMS
 // ==========================================
 function calculateHatchMatches() {
-  const { region, waterTemp, currentMonth, waterType, riseForm } = userSelections;
+  const { region, environment, species, waterTemp, currentMonth, waterType, riseForm } = userSelections;
 
   return hatchDatabase
     .filter(hatch => {
+      // 1. Filter structural basics (Region, Month, Temperature range)
       const regionMatch = hatch.conditions.regions.map(r => r.toLowerCase().trim()).includes(region);
       const monthMatch = hatch.conditions.months.includes(currentMonth);
       const [minTemp, maxTemp] = hatch.conditions.tempRange;
       const tempMatch = waterTemp >= minTemp && waterTemp <= maxTemp;
 
-      return regionMatch && monthMatch && tempMatch;
+      // 2. Filter structural cross-references (Environment and Species target availability)
+      // If your JSON doesn't specify environments/species yet, fallback to true so older entries don't crash
+      const envMatch = hatch.conditions.environments ? hatch.conditions.environments.map(e => e.toLowerCase().trim()).includes(environment) : true;
+      const specMatch = hatch.conditions.allowedSpecies ? hatch.conditions.allowedSpecies.map(s => s.toLowerCase().trim()).includes(species) : true;
+
+      return regionMatch && monthMatch && tempMatch && envMatch && specMatch;
     })
     .map(hatch => {
       let score = 0;
+      // Add points for matching specific localized habitat structures
       if (hatch.conditions.waterType.map(w => w.toLowerCase().trim()).includes(waterType)) score += 1;
       if (hatch.conditions.riseForm.map(rf => rf.toLowerCase().trim()).includes(riseForm)) score += 2;
       return { ...hatch, currentScore: score };
     })
-    .filter(item => item.currentScore > 0)
     .sort((a, b) => b.currentScore - a.currentScore);
 }
 
@@ -267,8 +281,8 @@ function displayResults(matches) {
   if (matches.length === 0) {
     container.innerHTML = `
       <div class="card" style="border-left-color: #f43f5e; text-align: left;">
-        <h3 style="margin-top:0; color:#fff;">No Regional Match Found</h3>
-        <p style="margin: 4px 0; font-size:0.9rem; color:#a1a1aa;">Biological parameters filtered out main hatches.</p>
+        <h3 style="margin-top:0; color:#fff;">No Match Found</h3>
+        <p style="margin: 4px 0; font-size:0.9rem; color:#a1a1aa;">No patterns match these dynamic targets or thermal limits right now.</p>
       </div>
     `;
     return;
@@ -310,6 +324,5 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', (e) => {
       window.executePatternSearch(e.target.value);
     });
-    console.log("✓ Search input event listener successfully attached.");
   }
 });
