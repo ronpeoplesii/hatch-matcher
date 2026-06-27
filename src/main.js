@@ -61,6 +61,7 @@ function setupEventListeners() {
 // ============================================================================
 function matchTheHatch() {
   const { biome, month, waterTemp, waterType } = currentConditions;
+  console.log("🔍 Running filter with current states:", currentConditions);
 
   const matchedFlies = hatchDatabase.filter(hatch => {
     // 1. Biome Validation
@@ -80,10 +81,16 @@ function matchTheHatch() {
     const waterTypes = hatch.water_types || [];
     const waterTypeMatch = waterTypes.map(w => w.toLowerCase().trim()).includes(waterType.toLowerCase().trim());
 
+    // DIAGNOSTIC LOG: Let's see what's failing the check
+    if (!biomeMatch || !monthMatch || !tempMatch || !waterTypeMatch) {
+      // Uncomment this line if you want to inspect a specific fly profile's failures:
+      // console.log(`Mismatch [${hatch.name}]: Biome=${biomeMatch}, Month=${monthMatch}, Temp=${tempMatch}, Water=${waterTypeMatch}`);
+    }
+
     return biomeMatch && monthMatch && tempMatch && waterTypeMatch;
   });
 
-  // Render processed profiles out to the viewport
+  console.log(`🎯 Match cycle complete. Total patterns qualifying: ${matchedFlies.length}`);
   renderResults(matchedFlies);
 }
 
