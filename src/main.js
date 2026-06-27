@@ -349,3 +349,84 @@ window.resetApp = () => {
     initialScreen.classList.add("active");
   }
 };
+// ============================================================================
+// 8. STANDALONE TYING VAULT SEARCH ENGINE
+// ============================================================================
+
+// Global switchScreen function to handle general panel shifting
+window.switchScreen = (currentId, nextId) => {
+  const current = document.getElementById(currentId);
+  const next = document.getElementById(nextId);
+  if (current && next) {
+    current.classList.remove("active");
+    next.classList.add("active");
+    console.log(`✈️ Swapped Viewport: ${currentId} -> ${nextId}`);
+  }
+};
+
+// Bind live telemetry search to the global input field after database load
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("global-search");
+  const searchResults = document.getElementById("search-dropdown-results");
+
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
+
+    // If search is cleared out, conceal the dropdown container
+    if (!query) {
+      searchResults.style.display = "none";
+      searchResults.innerHTML = "";
+      return;
+    }
+
+    // Filter across the broad array tracking text matching strings
+    const matchedRecipes = hatchDatabase.filter(fly => {
+      const nameMatch = (fly.name || "").toLowerCase().includes(query);
+      const speciesMatch = (fly.imitation_species || "").toLowerCase().includes(query);
+      const stageMatch = (fly.stage || "").toLowerCase().includes(query);
+      
+      // Match against materials list array strings if defined in schema profiles
+      const materials = fly.recipe_materials || fly.materials || [];
+      const materialMatch = materials.some(mat => mat.toLowerCase().includes(query));
+
+      return nameMatch || speciesMatch || stageMatch || materialMatch;
+    });
+
+    // Make the result container block visible
+    searchResults.style.display = "block";
+
+    if (matchedRecipes.length === 0) {
+      searchResults.innerHTML = `
+        <div class="p-4 bg-gray-900 border border-gray-800 text-gray-400 rounded-xl text-sm">
+          No recipes found matching '${e.target.value}' in the current vault matrix.
+        </div>
+      `;
+      return;
+    }
+
+    // Map out recipe components inside the drawer view layout
+    searchResults.innerHTML = matchedRecipes.map(fly => {
+      const materialsList = fly.recipe_materials || fly.materials || ["Universal thread and hook dressings"];
+      
+      return `
+        <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl mb-3 shadow-sm hover:border-emerald-500 transition-all">
+          <div class="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
+            <div>
+              <h4 class="text-emerald-400 font-bold text-base font-sans">${fly.name}</h4>
+              <p class="text-xs text-gray-500 italic">${fly.imitation_species} (${fly.stage})</p>
+            </div>
+            <span class="text-[11px] font-mono bg-gray-800 px-2 py-0.5 rounded text-gray-400">#${fly.id}</span>
+          </div>
+          <div class="text-xs text-gray-300">
+            <p class="font-semibold text-gray-400 mb-1">📐 Tying Recipe Components:</p>
+            <ul class="list-disc pl-4 space-y-0.5 text-gray-400 font-sans">
+              ${materialsList.map(mat => `<li>${mat}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }).join('');
+  });
+});
