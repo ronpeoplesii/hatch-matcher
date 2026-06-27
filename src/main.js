@@ -128,3 +128,8 @@ function renderResults(flies) {
     `;
   }).join('');
 }
+// Add this quick fallback wrapper to the bottom of src/main.js:
+window.selectRegion = (regionName) => {
+  currentConditions.biome = regionName;
+  matchTheHatch();
+};
