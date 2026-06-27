@@ -249,7 +249,8 @@ function calculateHatchMatches() {
   return hatchDatabase
     .filter(hatch => {
       // 1. Filter structural basics (Region, Month, Temperature range)
-      const regionMatch = hatch.conditions.regions.map(r => r.toLowerCase().trim()).includes(region);
+      const hatchBiomes = hatch.biomes || [];
+      const regionMatch = hatchBiomes.map(b => b.toLowerCase().trim()).includes(region.toLowerCase().trim());
       const monthMatch = hatch.conditions.months.includes(currentMonth);
       const [minTemp, maxTemp] = hatch.conditions.tempRange;
       const tempMatch = waterTemp >= minTemp && waterTemp <= maxTemp;
