@@ -216,6 +216,26 @@ window.selectRegion = (regionName) => {
   advanceToNextScreen("step-region", "step-environment");
 };
 
+// Manual environment button selection handler (River vs Lake)
+window.selectEnvironment = (envType) => {
+  if (!envType) return;
+  console.log(`Manual environment selection registered: ${envType}`);
+  
+  // Map the HTML choice over to our tracking states
+  // if it's lake/pond, we swap the water type default over to stillwater
+  if (envType === 'lake_pond') {
+    currentConditions.waterType = "stillwater";
+  } else {
+    currentConditions.waterType = "freestone"; // baseline default for moving water
+  }
+
+  // Recalculate match filtering
+  matchTheHatch();
+  
+  // Advance the wizard to the target species panel
+  advanceToNextScreen("step-environment", "step-species");
+};
+
 // Fallback matching logic for direct rise inputs
 window.selectRise = (waterType, assumedTemp) => {
   console.log(`Rise strategy assigned: ${waterType}`);
