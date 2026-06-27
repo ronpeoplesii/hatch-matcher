@@ -251,6 +251,35 @@ window.selectSpecies = (speciesName) => {
   advanceToNextScreen("step-species", "step-temp");
 };
 
+// Handles submission from the temperature slider panel
+window.submitTemp = () => {
+  const tempSlider = document.getElementById("temp-slider");
+  if (!tempSlider) {
+    console.warn("⚠️ Temperature slider element not found in DOM.");
+    // Fallback and advance anyway if the element is missing
+    advanceToNextScreen("step-temp", "step-water");
+    return;
+  }
+
+  const selectedValue = Number(tempSlider.value);
+  console.log(`Water temperature submitted: ${selectedValue}°F`);
+
+  // Assign the dynamic temperature to our core filter state
+  currentConditions.waterTemp = selectedValue;
+
+  // Run the calculations across the 101 profiles
+  matchTheHatch();
+
+  // Advance the wizard to the water speed/type screen
+  advanceToNextScreen("step-temp", "step-water");
+};
+
+// Global inline slider tracking fallback wrapper
+window.updateTempDisplay = (value) => {
+  const display = document.getElementById("temp-display");
+  if (display) display.innerText = `${value}°F`;
+};
+
 // Fallback matching logic for direct rise inputs
 window.selectRise = (waterType, assumedTemp) => {
   console.log(`Rise strategy assigned: ${waterType}`);
