@@ -1,14 +1,14 @@
-const Anthropic = require("@anthropic-ai/sdk");
+import Anthropic from "@anthropic-ai/sdk";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { prompt, conditions } = req.body;
   if (!prompt) return res.status(400).json({ error: "prompt required" });
+
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
   const systemPrompt = `You are an expert fly fishing guide with deep knowledge of aquatic entomology and fly tying.
 The user is using an app called Hatch Matcher. Help them choose the right fly patterns based on their described conditions.
@@ -32,4 +32,4 @@ If they mention a location, species, or season, factor that in. Be practical and
     console.error("Recommend API error:", err);
     res.status(500).json({ error: err.message || "Failed to get recommendation" });
   }
-};
+}

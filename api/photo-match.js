@@ -1,14 +1,14 @@
-const Anthropic = require("@anthropic-ai/sdk");
+import Anthropic from "@anthropic-ai/sdk";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { imageBase64, mediaType } = req.body;
   if (!imageBase64) return res.status(400).json({ error: "imageBase64 required" });
+
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
   const systemPrompt = `You are an expert aquatic entomologist and fly fishing guide.
 The user has photographed an insect near or on the water. Identify it and recommend fly patterns.
@@ -58,4 +58,4 @@ If the image does not show an insect or aquatic invertebrate, respond with:
     console.error("Photo match API error:", err);
     res.status(500).json({ error: err.message || "Failed to identify insect" });
   }
-};
+}
