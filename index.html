@@ -65,12 +65,12 @@
         🔍 Match Conditions →
       </button>
     </div>
-    <button onclick="switchScreen('step-home', 'step-search')" class="btn btn-vault" style="margin-top: 4px;">
-      📖 Fly Tying Recipe Vault
-    </button>
-    <button onclick="openFavorites()" class="btn btn-vault" style="margin-top: 0;">
-      ★ My Saved Patterns
-    </button>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px;">
+      <button onclick="switchScreen('step-home', 'step-search')" class="btn btn-vault" style="margin:0; font-size:0.88rem;">📖 Recipe Vault</button>
+      <button onclick="openFavorites()" class="btn btn-vault" style="margin:0; font-size:0.88rem;">★ Saved Flies</button>
+      <button onclick="switchScreen('step-home', 'step-ai-recommend')" class="btn btn-vault" style="margin:0; font-size:0.88rem;">🤖 Ask the Guide</button>
+      <button onclick="switchScreen('step-home', 'step-photo-match')" class="btn btn-vault" style="margin:0; font-size:0.88rem;">📷 Photo Match</button>
+    </div>
   </div>
 
   <!-- BOX BUILDER: REGION -->
@@ -224,6 +224,41 @@
     <button onclick="switchScreen('step-favorites', 'step-home')" class="btn btn-vault" style="margin-top: 8px;">← Back to Home</button>
   </div>
 
+  <!-- AI RECOMMEND SCREEN -->
+  <div id="step-ai-recommend" class="screen-container">
+    <div style="margin-bottom:20px;">
+      <h2>Ask the Guide</h2>
+      <p>Describe your conditions in plain English — location, time of year, what you're seeing. Get a pattern recommendation instantly.</p>
+    </div>
+    <textarea id="ai-prompt" placeholder="e.g. Fishing the Yellow Breeches in late May, water is low and clear, fish are sipping something tiny in the flat below the bridge..." style="width:100%; min-height:110px; padding:14px; background:#202023; border:2px solid #27272a; border-radius:12px; color:#fff; font-size:0.95rem; resize:vertical; outline:none; line-height:1.5; font-family:inherit;" onfocus="this.style.borderColor='var(--accent-green)'" onblur="this.style.borderColor='#27272a'"></textarea>
+    <button onclick="submitAiRecommend()" class="btn btn-vault" style="background:var(--accent-green); border-color:var(--accent-green); color:#000; font-weight:700; margin-top:8px;">
+      🤖 Get Recommendation
+    </button>
+    <div id="ai-recommend-result" style="display:none; margin-top:16px; padding:16px; background:#1c1c1f; border:1px solid #27272a; border-radius:12px; font-size:0.9rem; color:#d4d4d8; line-height:1.6;"></div>
+    <button onclick="switchScreen('step-ai-recommend', 'step-home')" class="btn btn-vault" style="margin-top:12px;">← Back to Home</button>
+  </div>
+
+  <!-- PHOTO MATCH SCREEN -->
+  <div id="step-photo-match" class="screen-container">
+    <div style="margin-bottom:20px;">
+      <h2>Photo Bug Match</h2>
+      <p>Snap or upload a photo of an insect on the water. The AI will identify it and tell you what fly to tie on.</p>
+    </div>
+    <label style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:28px; background:#202023; border:2px dashed #3f3f46; border-radius:14px; cursor:pointer; transition:border-color 0.2s; margin-bottom:12px;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#3f3f46'">
+      <span style="font-size:2.5rem;">📷</span>
+      <span style="color:#a1a1aa; font-size:0.9rem; font-weight:600;">Tap to take photo or upload</span>
+      <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none;" onchange="handlePhotoUpload(this)">
+    </label>
+    <div id="photo-preview-wrap" style="display:none; margin-bottom:12px; text-align:center;">
+      <img id="photo-preview" style="max-width:100%; border-radius:12px; border:1px solid #27272a;" />
+    </div>
+    <button id="photo-submit-btn" onclick="submitPhotoMatch()" class="btn btn-vault" style="display:none; background:var(--accent-green); border-color:var(--accent-green); color:#000; font-weight:700;">
+      🔍 Identify &amp; Match
+    </button>
+    <div id="photo-match-result" style="display:none; margin-top:16px; padding:16px; background:#1c1c1f; border:1px solid #27272a; border-radius:12px;"></div>
+    <button onclick="switchScreen('step-photo-match', 'step-home')" class="btn btn-vault" style="margin-top:12px;">← Back to Home</button>
+  </div>
+
   <!-- PATTERN DETAIL -->
   <div id="step-pattern-detail" class="screen-container">
     <div id="pattern-detail-content"></div>
@@ -234,5 +269,6 @@
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+
 
 

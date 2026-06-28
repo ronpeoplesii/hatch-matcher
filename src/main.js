@@ -491,6 +491,130 @@ window.selectRise = (waterType, assumedTemp) => {
 };
 
 // ============================================================================
+// AI RECOMMEND
+// ============================================================================
+
+window.submitAiRecommend = async () => {
+  const prompt = document.getElementById("ai-prompt").value.trim();
+  if (!prompt) return;
+
+  const result = document.getElementById("ai-recommend-result");
+  const btn = document.querySelector("#step-ai-recommend .btn-vault[onclick='submitAiRecommend()']");
+  result.style.display = "block";
+  result.innerHTML = `<span style="color:#71717a;">🤖 Thinking...</span>`;
+  if (btn) { btn.disabled = true; btn.textContent = "Thinking..."; }
+
+  try {
+    const res = await fetch("/api/recommend", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt,
+        conditions: {
+          biome: currentConditions.biome,
+          month: new Date().toLocaleString("default", { month: "long" }),
+          waterTemp: currentConditions.waterTemp + "°F",
+          waterType: currentConditions.waterType
+        }
+      })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    // Bold any **text** markdown
+    const html = data.answer.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#e4e4e7;">$1</strong>');
+    result.innerHTML = html;
+  } catch (err) {
+    result.innerHTML = `<span style="color:#ef4444;">Error: ${err.message}. Check your API key is set in Vercel.</span>`;
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = "🤖 Get Recommendation"; }
+  }
+};
+
+// ============================================================================
+// PHOTO BUG MATCH
+// ============================================================================
+
+let photoBase64 = null;
+let photoMediaType = "image/jpeg";
+
+window.handlePhotoUpload = (input) => {
+  const file = input.files[0];
+  if (!file) return;
+  photoMediaType = file.type || "image/jpeg";
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const dataUrl = e.target.result;
+    photoBase64 = dataUrl.split(",")[1];
+
+    const preview = document.getElementById("photo-preview");
+    const wrap = document.getElementById("photo-preview-wrap");
+    const submitBtn = document.getElementById("photo-submit-btn");
+    const resultDiv = document.getElementById("photo-match-result");
+
+    preview.src = dataUrl;
+    wrap.style.display = "block";
+    submitBtn.style.display = "flex";
+    resultDiv.style.display = "none";
+    resultDiv.innerHTML = "";
+  };
+  reader.readAsDataURL(file);
+};
+
+window.submitPhotoMatch = async () => {
+  if (!photoBase64) return;
+
+  const result = document.getElementById("photo-match-result");
+  const btn = document.getElementById("photo-submit-btn");
+  result.style.display = "block";
+  result.innerHTML = `<span style="color:#71717a;">🔍 Identifying insect...</span>`;
+  btn.disabled = true;
+  btn.textContent = "Identifying...";
+
+  try {
+    const res = await fetch("/api/photo-match", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ imageBase64: photoBase64, mediaType: photoMediaType })
+    });
+    const data = await res.json();
+
+    if (data.error) {
+      result.innerHTML = `<p style="color:#a1a1aa;">${data.error}</p>`;
+      return;
+    }
+
+    const confidenceColor = data.confidence === "high" ? "#10b981" : data.confidence === "medium" ? "#f59e0b" : "#ef4444";
+    const patternsHtml = (data.patterns || []).map(p => {
+      const fly = hatchDatabase.find(f => f.name.toLowerCase() === p.toLowerCase());
+      const clickable = fly
+        ? `onclick="openPatternDetail('${fly.id}', 'step-photo-match')" style="cursor:pointer; color:#10b981; text-decoration:underline; text-underline-offset:2px;"`
+        : `style="color:#e4e4e7;"`;
+      return `<li ${clickable}>${p}</li>`;
+    }).join("");
+
+    result.innerHTML = `
+      <div style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #27272a;">
+        <p style="font-size:1rem; font-weight:700; color:#fff; margin:0 0 4px;">${data.insect}</p>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <span style="font-size:0.72rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 8px; border-radius:20px; text-transform:uppercase;">${data.stage}</span>
+          <span style="font-size:0.72rem; color:${confidenceColor}; font-weight:600;">${data.confidence} confidence</span>
+        </div>
+      </div>
+      <p style="font-size:0.78rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Recommended Patterns</p>
+      <ul style="margin:0 0 12px; padding-left:20px; font-size:0.9rem; line-height:1.8;">${patternsHtml}</ul>
+      <p style="font-size:0.82rem; color:#a1a1aa; margin:0;"><strong style="color:#d4d4d8;">Size:</strong> ${data.sizes || "Match the hatch"}</p>
+      ${data.notes ? `<p style="font-size:0.82rem; color:#a1a1aa; margin-top:6px;">${data.notes}</p>` : ""}
+    `;
+  } catch (err) {
+    result.innerHTML = `<span style="color:#ef4444;">Error: ${err.message}</span>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "🔍 Identify & Match";
+  }
+};
+
+// ============================================================================
 // HATCHING NOW BANNER
 // ============================================================================
 
