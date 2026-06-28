@@ -70,6 +70,8 @@
       <button onclick="openFavorites()" class="btn btn-vault" style="margin:0; font-size:0.88rem;">★ Saved Flies</button>
       <button onclick="switchScreen('step-home', 'step-ai-recommend')" class="btn btn-vault" style="margin:0; font-size:0.88rem;">🤖 Ask the Guide</button>
       <button onclick="switchScreen('step-home', 'step-photo-match')" class="btn btn-vault" style="margin:0; font-size:0.88rem;">📷 Photo Match</button>
+      <button onclick="openHatchCalendar()" class="btn btn-vault" style="margin:0; font-size:0.88rem;">📅 Hatch Calendar</button>
+      <button onclick="openTripLog()" class="btn btn-vault" style="margin:0; font-size:0.88rem;">📓 Trip Log</button>
     </div>
     <button onclick="switchScreen('step-home', 'step-about')" class="btn btn-vault" style="margin-top:4px; font-size:0.88rem; color:#71717a;">About Hatch Matcher</button>
     <p style="text-align:center; margin-top:16px; margin-bottom:0; font-size:0.82rem; color:#52525b;">☕ If this helped you land one — <a href="https://buymeacoffee.com/hatchmatcher" target="_blank" style="color:#71717a; text-decoration:underline; text-underline-offset:2px;">buy me a coffee</a></p>
@@ -259,6 +261,48 @@
     </button>
     <div id="photo-match-result" style="display:none; margin-top:16px; padding:16px; background:#1c1c1f; border:1px solid #27272a; border-radius:12px;"></div>
     <button onclick="switchScreen('step-photo-match', 'step-home')" class="btn btn-vault" style="margin-top:12px;">← Back to Home</button>
+  </div>
+
+  <!-- HATCH CALENDAR SCREEN -->
+  <div id="step-hatch-calendar" class="screen-container">
+    <div style="margin-bottom:16px;">
+      <h2>Hatch Calendar</h2>
+      <p style="margin-bottom:12px;">Select a biome to see what's hatching month by month.</p>
+      <select id="calendar-biome" onchange="renderHatchCalendar()" style="width:100%; padding:12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.92rem; outline:none;">
+        <option value="appalachian">Appalachian &amp; Limestone (East/PA)</option>
+        <option value="rocky_mountain">Rocky Mountain Tailwaters (West/CO)</option>
+        <option value="pacific_coastal">Pacific Rainforest &amp; Coastal (NW/AK)</option>
+        <option value="boreal_shield">Great Lakes &amp; Boreal Shield (Midwest)</option>
+        <option value="transitional_plains">Midwest &amp; Plains Rivers</option>
+        <option value="warmwater_south">Southern &amp; Coastal Plain</option>
+      </select>
+    </div>
+    <div id="calendar-grid"></div>
+    <button onclick="switchScreen('step-hatch-calendar', 'step-home')" class="btn btn-vault" style="margin-top:8px;">← Back to Home</button>
+  </div>
+
+  <!-- TRIP LOG SCREEN -->
+  <div id="step-trip-log" class="screen-container">
+    <div style="margin-bottom:16px;">
+      <h2>Trip Log</h2>
+      <p style="margin-bottom:0;">Your personal fishing journal.</p>
+    </div>
+
+    <!-- Log entry form -->
+    <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:16px; margin-bottom:16px;">
+      <p style="font-size:0.78rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">Log a Session</p>
+      <input id="log-date" type="date" style="width:100%; padding:10px 12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.9rem; outline:none; margin-bottom:8px;">
+      <input id="log-location" type="text" placeholder="Location (e.g. Yellow Breeches, PA)" style="width:100%; padding:10px 12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.9rem; outline:none; margin-bottom:8px;">
+      <input id="log-pattern" type="text" placeholder="Pattern that worked" style="width:100%; padding:10px 12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.9rem; outline:none; margin-bottom:8px;">
+      <input id="log-conditions" type="text" placeholder="Conditions (temp, water level, weather...)" style="width:100%; padding:10px 12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.9rem; outline:none; margin-bottom:8px;">
+      <textarea id="log-notes" placeholder="Notes — what happened, what you'd do different..." style="width:100%; padding:10px 12px; background:#202023; border:1px solid #27272a; border-radius:10px; color:#fff; font-size:0.9rem; outline:none; resize:vertical; min-height:80px; font-family:inherit; margin-bottom:8px;"></textarea>
+      <button onclick="saveTripEntry()" class="btn btn-vault" style="background:var(--accent-green); border-color:var(--accent-green); color:#000; font-weight:700; margin:0;">
+        + Save Entry
+      </button>
+    </div>
+
+    <div id="trip-log-list"></div>
+    <button onclick="switchScreen('step-trip-log', 'step-home')" class="btn btn-vault" style="margin-top:8px;">← Back to Home</button>
   </div>
 
   <!-- ABOUT SCREEN -->

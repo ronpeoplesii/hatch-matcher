@@ -5,6 +5,152 @@ let hatchDatabase = [];
 let recipeDatabase = {};
 
 // ============================================================================
+// HATCH CALENDAR
+// ============================================================================
+
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const BIOME_MAP = {
+  appalachian: "Northeast", rocky_mountain: "Rocky Mountain",
+  pacific_coastal: "Pacific Northwest", boreal_shield: "Midwest",
+  transitional_plains: "Midwest", warmwater_south: "Southeast"
+};
+
+window.openHatchCalendar = () => {
+  switchScreen("step-home", "step-hatch-calendar");
+  renderHatchCalendar();
+};
+
+window.renderHatchCalendar = () => {
+  const select = document.getElementById("calendar-biome");
+  const grid = document.getElementById("calendar-grid");
+  if (!select || !grid) return;
+
+  const databaseBiome = BIOME_MAP[select.value] || "Northeast";
+  const flies = hatchDatabase.filter(f =>
+    (f.biomes || []).map(b => b.toLowerCase()).includes(databaseBiome.toLowerCase())
+  );
+
+  // Group by insect name, collect active months
+  const byName = {};
+  flies.forEach(f => {
+    if (!byName[f.name]) byName[f.name] = { fly: f, months: new Set() };
+    (f.months || []).forEach(m => byName[f.name].months.add(m));
+  });
+
+  const currentMonth = new Date().getMonth() + 1;
+
+  const rows = Object.values(byName).sort((a, b) => {
+    const aMin = Math.min(...a.months);
+    const bMin = Math.min(...b.months);
+    return aMin - bMin;
+  });
+
+  grid.innerHTML = `
+    <div style="overflow-x:auto; margin-bottom:8px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.72rem;">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding:6px 8px; color:#71717a; font-weight:700; white-space:nowrap; border-bottom:1px solid #27272a;">Pattern</th>
+            ${MONTHS.map((m, i) => `<th style="padding:4px 2px; color:${i + 1 === currentMonth ? "#10b981" : "#71717a"}; font-weight:${i + 1 === currentMonth ? "700" : "400"}; border-bottom:1px solid #27272a;">${m}</th>`).join("")}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(({ fly, months }) => `
+            <tr onclick="openPatternDetail('${fly.id}', 'step-hatch-calendar')" style="cursor:pointer;" onmouseover="this.style.background='#1c1c1f'" onmouseout="this.style.background='transparent'">
+              <td style="padding:6px 8px; color:#e4e4e7; font-weight:600; white-space:nowrap; border-bottom:1px solid #18181b;">${fly.name}</td>
+              ${MONTHS.map((_, i) => {
+                const active = months.has(i + 1);
+                const current = i + 1 === currentMonth && active;
+                return `<td style="padding:4px 2px; text-align:center; border-bottom:1px solid #18181b;">
+                  ${active ? `<span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${current ? "#10b981" : "#3f3f46"};"></span>` : ""}
+                </td>`;
+              }).join("")}
+            </tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.72rem; color:#52525b; margin-top:4px;">🟢 = active this month &nbsp;⚫ = active other months &nbsp;Tap any row for the recipe</p>
+  `;
+};
+
+// ============================================================================
+// TRIP LOG
+// ============================================================================
+
+let tripLog = JSON.parse(localStorage.getItem("hatch_trip_log") || "[]");
+
+function saveTripLog() {
+  localStorage.setItem("hatch_trip_log", JSON.stringify(tripLog));
+}
+
+window.openTripLog = () => {
+  // Pre-fill today's date
+  const dateInput = document.getElementById("log-date");
+  if (dateInput && !dateInput.value) {
+    dateInput.value = new Date().toISOString().split("T")[0];
+  }
+  renderTripLogList();
+  switchScreen("step-home", "step-trip-log");
+};
+
+window.saveTripEntry = () => {
+  const date = document.getElementById("log-date").value;
+  const location = document.getElementById("log-location").value.trim();
+  const pattern = document.getElementById("log-pattern").value.trim();
+  const conditions = document.getElementById("log-conditions").value.trim();
+  const notes = document.getElementById("log-notes").value.trim();
+
+  if (!date && !location && !pattern) {
+    alert("Add at least a date, location, or pattern before saving.");
+    return;
+  }
+
+  const entry = { id: Date.now(), date, location, pattern, conditions, notes };
+  tripLog.unshift(entry);
+  saveTripLog();
+
+  // Clear form
+  ["log-location", "log-pattern", "log-conditions", "log-notes"].forEach(id => {
+    document.getElementById(id).value = "";
+  });
+
+  renderTripLogList();
+};
+
+window.deleteTripEntry = (id) => {
+  tripLog = tripLog.filter(e => e.id !== id);
+  saveTripLog();
+  renderTripLogList();
+};
+
+function renderTripLogList() {
+  const list = document.getElementById("trip-log-list");
+  if (!list) return;
+
+  if (tripLog.length === 0) {
+    list.innerHTML = `<div style="padding:20px; background:#202023; border:1px dashed #3f3f46; border-radius:12px; text-align:center;"><p style="color:#a1a1aa;">No trips logged yet. Fill in the form above after your next session.</p></div>`;
+    return;
+  }
+
+  list.innerHTML = tripLog.map(entry => {
+    const dateStr = entry.date ? new Date(entry.date + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "";
+    return `
+      <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:12px; padding:14px 16px; margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <div>
+            ${dateStr ? `<p style="font-size:0.75rem; color:#71717a; margin:0 0 2px; font-weight:600;">${dateStr}</p>` : ""}
+            ${entry.location ? `<p style="font-size:0.92rem; color:#e4e4e7; font-weight:700; margin:0;">${entry.location}</p>` : ""}
+          </div>
+          <button onclick="deleteTripEntry(${entry.id})" style="background:none; border:none; color:#52525b; cursor:pointer; font-size:1rem; padding:0; line-height:1;" title="Delete">✕</button>
+        </div>
+        ${entry.pattern ? `<p style="font-size:0.82rem; margin:0 0 4px;"><span style="color:#71717a; font-weight:600;">Pattern:</span> <span style="color:#10b981;">${entry.pattern}</span></p>` : ""}
+        ${entry.conditions ? `<p style="font-size:0.82rem; color:#a1a1aa; margin:0 0 4px;">${entry.conditions}</p>` : ""}
+        ${entry.notes ? `<p style="font-size:0.82rem; color:#71717a; margin:0; font-style:italic; line-height:1.5;">${entry.notes}</p>` : ""}
+      </div>`;
+  }).join("");
+}
+
+// ============================================================================
 // BUY ME A COFFEE — update this URL once you have your buymeacoffee.com link
 // ============================================================================
 const BMC_URL = "https://buymeacoffee.com/hatchmatcher";
