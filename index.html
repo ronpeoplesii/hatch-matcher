@@ -41,6 +41,9 @@
       <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 8px;">🎣 Hatch Matcher</h2>
       <p style="text-align: center; margin-bottom: 0;">Your streamside fly selection guide</p>
     </div>
+    <!-- Hatching Now Banner -->
+    <div id="hatching-now" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:16px 20px; margin-bottom:12px;"></div>
+
     <div style="background: #1c1c1f; border: 1px solid #27272a; border-radius: 14px; padding: 20px; margin-bottom: 12px;">
       <p style="font-size: 0.78rem; font-weight: 700; color: #71717a; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Planning a Trip?</p>
       <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px;">Build Your Box</h3>
@@ -59,6 +62,9 @@
     </div>
     <button onclick="switchScreen('step-home', 'step-search')" class="btn btn-vault" style="margin-top: 4px;">
       📖 Fly Tying Recipe Vault
+    </button>
+    <button onclick="openFavorites()" class="btn btn-vault" style="margin-top: 0;">
+      ★ My Saved Patterns
     </button>
   </div>
 
@@ -205,6 +211,14 @@
     <button onclick="switchScreen('step-search', 'step-home')" class="btn btn-vault">⬅️ Back to Home</button>
   </div>
 
+  <!-- FAVORITES SCREEN -->
+  <div id="step-favorites" class="screen-container">
+    <h2>My Saved Patterns</h2>
+    <p style="margin-bottom:16px;">Patterns you've starred across the app.</p>
+    <div id="favorites-list"></div>
+    <button onclick="switchScreen('step-favorites', 'step-home')" class="btn btn-vault" style="margin-top: 8px;">← Back to Home</button>
+  </div>
+
   <!-- PATTERN DETAIL -->
   <div id="step-pattern-detail" class="screen-container">
     <div id="pattern-detail-content"></div>
@@ -215,3 +229,4 @@
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+

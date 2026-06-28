@@ -4,6 +4,71 @@
 let hatchDatabase = [];
 let recipeDatabase = {};
 
+// Favorites — persisted in localStorage
+let favorites = new Set(JSON.parse(localStorage.getItem("hatch_favorites") || "[]"));
+
+function saveFavorites() {
+  localStorage.setItem("hatch_favorites", JSON.stringify([...favorites]));
+}
+
+window.toggleFavorite = (flyId, btn) => {
+  if (favorites.has(flyId)) {
+    favorites.delete(flyId);
+    btn.textContent = "☆";
+    btn.style.color = "#52525b";
+  } else {
+    favorites.add(flyId);
+    btn.textContent = "★";
+    btn.style.color = "#f59e0b";
+  }
+  saveFavorites();
+};
+
+window.openFavorites = () => {
+  const favFlies = hatchDatabase.filter(f => favorites.has(f.id));
+  const list = document.getElementById("favorites-list");
+  if (!list) return;
+  if (favFlies.length === 0) {
+    list.innerHTML = `<div style="padding:20px; background:#202023; border:1px dashed #3f3f46; border-radius:12px; text-align:center;"><p style="color:#a1a1aa;">No favorites yet — tap ☆ on any pattern to save it here.</p></div>`;
+  } else {
+    list.innerHTML = favFlies.map(fly => {
+      const sizes = fly.size_range && fly.size_range.length > 0 ? `#${fly.size_range.join(", #")}` : "";
+      return `
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 14px; background:#202023; border:1px solid #27272a; border-radius:10px; margin-bottom:8px; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#27272a'">
+          <button onclick="toggleFavorite('${fly.id}', this); renderFavoritesList()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; color:#f59e0b; flex-shrink:0;">★</button>
+          <div onclick="openPatternDetail('${fly.id}', 'step-favorites')" style="cursor:pointer; flex:1;">
+            <span style="color:#e4e4e7; font-size:0.9rem; font-weight:600;">${fly.name}</span>
+            ${sizes ? `<span style="display:block; font-size:0.72rem; color:#71717a; margin-top:1px;">${sizes}</span>` : ""}
+          </div>
+          <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;">${fly.stage}</span>
+        </div>`;
+    }).join("");
+  }
+  switchScreen("step-home", "step-favorites");
+};
+
+window.renderFavoritesList = () => {
+  const favFlies = hatchDatabase.filter(f => favorites.has(f.id));
+  const list = document.getElementById("favorites-list");
+  if (!list) return;
+  if (favFlies.length === 0) {
+    list.innerHTML = `<div style="padding:20px; background:#202023; border:1px dashed #3f3f46; border-radius:12px; text-align:center;"><p style="color:#a1a1aa;">No favorites yet — tap ☆ on any pattern to save it here.</p></div>`;
+  } else {
+    list.innerHTML = favFlies.map(fly => {
+      const sizes = fly.size_range && fly.size_range.length > 0 ? `#${fly.size_range.join(", #")}` : "";
+      return `
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 14px; background:#202023; border:1px solid #27272a; border-radius:10px; margin-bottom:8px;">
+          <button onclick="toggleFavorite('${fly.id}', this); renderFavoritesList()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; color:#f59e0b; flex-shrink:0;">★</button>
+          <div onclick="openPatternDetail('${fly.id}', 'step-favorites')" style="cursor:pointer; flex:1;">
+            <span style="color:#e4e4e7; font-size:0.9rem; font-weight:600;">${fly.name}</span>
+            ${sizes ? `<span style="display:block; font-size:0.72rem; color:#71717a; margin-top:1px;">${sizes}</span>` : ""}
+          </div>
+          <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;">${fly.stage}</span>
+        </div>`;
+    }).join("");
+  }
+};
+
 // Fallback runtime conditions (Maps to our 101-fly flat schema rules)
 const currentConditions = {
   biome: "Northeast",
@@ -41,9 +106,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // Bind manual inputs and standard controls
     setupEventListeners();
-    
+
     // Evaluate initial baseline filter matching
     matchTheHatch();
+
+    // Render "hatching this week" on home screen
+    renderHatchingNow();
+
+    // Handle shared box URL if present
+    loadSharedBox();
   } catch (error) {
     console.error("❌ Critical error bootstrapping hatch engine:", error);
   }
@@ -402,6 +473,102 @@ window.selectRise = (waterType, assumedTemp) => {
 };
 
 // ============================================================================
+// HATCHING NOW BANNER
+// ============================================================================
+
+function renderHatchingNow() {
+  const banner = document.getElementById("hatching-now");
+  if (!banner || hatchDatabase.length === 0) return;
+
+  const month = new Date().getMonth() + 1;
+  // Try GPS-detected biome from currentConditions, default to Northeast
+  let databaseBiome = "Northeast";
+  const b = currentConditions.biome;
+  if (b === "appalachian" || b === "Northeast") databaseBiome = "Northeast";
+  else if (b === "rocky_mountain") databaseBiome = "Rocky Mountain";
+  else if (b === "pacific_coastal") databaseBiome = "Pacific Northwest";
+  else if (b === "boreal_shield" || b === "transitional_plains") databaseBiome = "Midwest";
+  else if (b === "warmwater_south") databaseBiome = "Southeast";
+
+  const monthName = new Date().toLocaleString("default", { month: "long" });
+
+  const active = hatchDatabase.filter(fly => {
+    const biomeMatch = (fly.biomes || []).map(x => x.toLowerCase()).includes(databaseBiome.toLowerCase());
+    const monthMatch = (fly.months || []).includes(month);
+    return biomeMatch && monthMatch;
+  });
+
+  if (active.length === 0) {
+    banner.style.display = "none";
+    return;
+  }
+
+  // Pick 3 diverse patterns (one dun/dry, one nymph, one other)
+  const picks = [];
+  const want = ["dun", "emerger", "nymph", "streamer", "terrestrial", "spinner"];
+  const used = new Set();
+  for (const stage of want) {
+    if (picks.length >= 3) break;
+    const match = active.find(f => f.stage === stage && !used.has(f.id));
+    if (match) { picks.push(match); used.add(match.id); }
+  }
+
+  banner.style.display = "block";
+  banner.innerHTML = `
+    <p style="font-size:0.72rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">🌿 Hatching Now — ${monthName}</p>
+    ${picks.map(fly => `
+      <div onclick="openPatternDetail('${fly.id}', 'step-home')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #27272a;">
+        <span style="color:#e4e4e7; font-size:0.88rem; font-weight:600;">${fly.name}</span>
+        <span style="font-size:0.65rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase;">${fly.stage}</span>
+      </div>`).join("")}
+    <p style="font-size:0.75rem; color:#52525b; margin-top:8px; margin-bottom:0;">${active.length} patterns active this month →</p>
+  `;
+}
+
+// ============================================================================
+// SHARE BOX
+// ============================================================================
+
+window.shareBox = (biome, month) => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("share_biome", biome);
+  url.searchParams.set("share_month", month);
+  const shareUrl = url.toString();
+
+  if (navigator.share) {
+    navigator.share({ title: "My Hatch Matcher Box", url: shareUrl })
+      .catch(() => copyToClipboard(shareUrl));
+  } else {
+    copyToClipboard(shareUrl);
+  }
+};
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("share-box-btn");
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = "✓ Link Copied!";
+      btn.style.color = "#10b981";
+      setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 2000);
+    }
+  }).catch(() => alert("Copy this link: " + text));
+}
+
+function loadSharedBox() {
+  const params = new URLSearchParams(window.location.search);
+  const biome = params.get("share_biome");
+  const month = parseInt(params.get("share_month"));
+  if (biome && month) {
+    boxBuilderBiome = biome;
+    // Clean URL without reloading
+    window.history.replaceState({}, "", window.location.pathname);
+    // Delay to let DB finish loading
+    setTimeout(() => selectBoxMonth(month), 100);
+  }
+}
+
+// ============================================================================
 // BOX BUILDER ENGINE
 // ============================================================================
 
@@ -475,6 +642,12 @@ window.selectBoxMonth = (month) => {
     }
   }
 
+  // Wire up share button
+  const shareBtn = document.getElementById("share-box-btn");
+  if (shareBtn) {
+    shareBtn.onclick = () => shareBox(biome, month);
+  }
+
   advanceToNextScreen("step-box-month", "step-box-results");
 };
 
@@ -502,11 +675,15 @@ window.openPatternDetail = (flyId, returnScreen) => {
       ${steps.map(s => `<li style="margin-bottom:6px;">${s}</li>`).join("")}
     </ol>` : "";
 
+  const isFav = favorites.has(fly.id);
   const html = `
     <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:20px; margin-bottom:16px;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #27272a;">
-        <div>
-          <h2 style="color:#10b981; margin-bottom:4px; font-size:1.4rem;">${fly.name}</h2>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+            <h2 style="color:#10b981; margin:0; font-size:1.4rem;">${fly.name}</h2>
+            <button id="detail-fav-btn" onclick="toggleFavorite('${fly.id}', this)" style="background:none; border:none; cursor:pointer; font-size:1.4rem; color:${isFav ? "#f59e0b" : "#52525b"}; padding:0; line-height:1;">${isFav ? "★" : "☆"}</button>
+          </div>
           <p style="margin:0; font-size:0.82rem; color:#71717a; font-style:italic;">${fly.imitation_species}</p>
         </div>
         <span style="font-size:0.7rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:12px;">${fly.stage}</span>
