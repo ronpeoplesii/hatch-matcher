@@ -5,6 +5,16 @@ let hatchDatabase = [];
 let recipeDatabase = {};
 
 // ============================================================================
+// BUY ME A COFFEE — update this URL once you have your buymeacoffee.com link
+// ============================================================================
+const BMC_URL = "https://buymeacoffee.com/hatchmatcher";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const link = document.getElementById("bmc-link");
+  if (link) link.href = BMC_URL;
+});
+
+// ============================================================================
 // OFFLINE DETECTION
 // ============================================================================
 
