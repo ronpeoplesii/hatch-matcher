@@ -4,7 +4,25 @@
 let hatchDatabase = [];
 let recipeDatabase = {};
 
-// Favorites — persisted in localStorage
+// ============================================================================
+// OFFLINE DETECTION
+// ============================================================================
+
+function updateOfflineBanner() {
+  const banner = document.getElementById("offline-banner");
+  if (!banner) return;
+  banner.style.display = navigator.onLine ? "none" : "block";
+  // Shift app container down when banner is visible
+  const app = document.getElementById("app-container");
+  if (app) app.style.paddingTop = navigator.onLine ? "0" : "40px";
+}
+
+window.addEventListener("online", updateOfflineBanner);
+window.addEventListener("offline", updateOfflineBanner);
+document.addEventListener("DOMContentLoaded", updateOfflineBanner);
+
+// ============================================================================
+// FAVORITES — persisted in localStorage
 let favorites = new Set(JSON.parse(localStorage.getItem("hatch_favorites") || "[]"));
 
 function saveFavorites() {

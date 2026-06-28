@@ -33,7 +33,12 @@
   </style>
 </head>
 <body>
-<div id="app-container">
+<!-- Offline banner -->
+<div id="offline-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:999; background:#92400e; color:#fef3c7; text-align:center; padding:8px 16px; font-size:0.82rem; font-weight:600;">
+  📵 No signal — app is running offline from cached data
+</div>
+
+<div id="app-container" style="padding-top: 0;">
 
   <!-- HOME SCREEN -->
   <div id="step-home" class="screen-container active">
@@ -229,4 +234,5 @@
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+
 

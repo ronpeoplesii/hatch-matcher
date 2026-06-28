@@ -5,11 +5,11 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'hatches.json'], // Tell it exactly what static assets to cache
+      includeAssets: ['favicon.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'hatches.json', 'recipes.json'],
       manifest: {
-        name: 'Hatch Matcher Matrix',
+        name: 'Hatch Matcher',
         short_name: 'HatchMatcher',
-        description: 'Streamside entomology and fly tying recipe database.',
+        description: 'Streamside fly selection guide — works offline.',
         theme_color: '#141417',
         background_color: '#141417',
         display: 'standalone',
@@ -25,15 +25,29 @@ export default defineConfig({
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       },
       workbox: {
-        // This prevents the PWA builder from crashing if an asset pattern is temporarily empty
-        globPatterns: ['**/*.{js,css,html}', 'hatches.json'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
         skipWaiting: true,
-        clientsClaim: true
+        clientsClaim: true,
+        // Cache the JSON data files with a cache-first strategy so they work offline
+        runtimeCaching: [
+          {
+            urlPattern: /\/(hatches|recipes)\.json$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'hatch-data-v1',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+              }
+            }
+          }
+        ]
       }
     })
   ]
