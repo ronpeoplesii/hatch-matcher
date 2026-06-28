@@ -206,24 +206,22 @@ function renderResults(flies) {
   }
 
   resultsContainer.innerHTML = flies.map(fly => {
-    const sizeString = fly.size_range && fly.size_range.length > 0 
-      ? `Sizes: #${fly.size_range.join(', #')}` 
+    const sizeString = fly.size_range && fly.size_range.length > 0
+      ? `Sizes: #${fly.size_range.join(', #')}`
       : 'Universal Size';
 
     return `
-      <div class="p-4 bg-gray-800 border border-gray-700 rounded-xl shadow-md hover:border-emerald-500 transition-all duration-200">
-        <div class="flex justify-between items-start">
+      <div onclick="openPatternDetail('${fly.id}', 'step-results')" style="cursor:pointer; padding:14px; background:#202023; border:1px solid #27272a; border-radius:12px; margin-bottom:10px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); transition: border-color 0.15s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#27272a'">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
-            <h3 class="text-white font-semibold text-base">${fly.name}</h3>
-            <p class="text-xs text-gray-400 italic mt-0.5">${fly.imitation_species}</p>
+            <p style="color:#fff; font-weight:600; font-size:0.95rem; margin:0 0 2px;">${fly.name}</p>
+            <p style="color:#71717a; font-size:0.75rem; font-style:italic; margin:0;">${fly.imitation_species}</p>
           </div>
-          <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 uppercase tracking-wider">
-            ${fly.stage}
-          </span>
+          <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 8px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:8px;">${fly.stage}</span>
         </div>
-        <div class="mt-3 pt-3 border-t border-gray-700 flex justify-between items-center text-xs text-gray-300">
-          <span>${sizeString}</span>
-          <span class="text-gray-400 text-[10px] bg-gray-900 px-2 py-1 rounded font-mono">${fly.id.toUpperCase()}</span>
+        <div style="margin-top:10px; padding-top:10px; border-top:1px solid #27272a; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.78rem; color:#d4d4d8;">${sizeString}</span>
+          <span style="font-size:0.7rem; color:#52525b; background:#18181b; padding:2px 6px; border-radius:4px; font-family:monospace;">Tap for recipe →</span>
         </div>
       </div>
     `;
@@ -403,6 +401,134 @@ window.selectRise = (waterType, assumedTemp) => {
   advanceToNextScreen("step-rise", "step-results");
 };
 
+// ============================================================================
+// BOX BUILDER ENGINE
+// ============================================================================
+
+let boxBuilderBiome = null;
+
+window.selectBoxRegion = (region) => {
+  boxBuilderBiome = region;
+  advanceToNextScreen("step-box-region", "step-box-month");
+};
+
+window.selectBoxMonth = (month) => {
+  const biome = boxBuilderBiome;
+  let databaseBiome = biome;
+  if (biome === "appalachian") databaseBiome = "Northeast";
+  if (biome === "rocky_mountain") databaseBiome = "Rocky Mountain";
+  if (biome === "pacific_coastal") databaseBiome = "Pacific Northwest";
+  if (biome === "boreal_shield") databaseBiome = "Midwest";
+  if (biome === "transitional_plains") databaseBiome = "Midwest";
+  if (biome === "warmwater_south") databaseBiome = "Southeast";
+
+  const biomeLabels = {
+    appalachian: "Appalachian & Limestone",
+    rocky_mountain: "Rocky Mountain",
+    pacific_coastal: "Pacific Rainforest & Coastal",
+    boreal_shield: "Great Lakes & Boreal Shield",
+    transitional_plains: "Midwest & Plains",
+    warmwater_south: "Southern & Coastal Plain"
+  };
+  const monthName = new Date(2000, month - 1).toLocaleString("default", { month: "long" });
+
+  // Match by biome + month only (no temp/water type — user hasn't been there yet)
+  const matches = hatchDatabase.filter(fly => {
+    const biomeMatch = (fly.biomes || []).map(b => b.toLowerCase()).includes(databaseBiome.toLowerCase());
+    const monthMatch = (fly.months || []).includes(month);
+    return biomeMatch && monthMatch;
+  });
+
+  // Build a diverse box: prioritize variety across stages
+  const stageOrder = ["dun", "emerger", "nymph", "spinner", "streamer", "terrestrial"];
+  const box = [];
+  const used = new Set();
+  for (const stage of stageOrder) {
+    const stagePicks = matches.filter(f => f.stage === stage && !used.has(f.id));
+    stagePicks.slice(0, 3).forEach(f => { box.push(f); used.add(f.id); });
+  }
+  // Fill remaining slots from any leftover matches (up to 12 total)
+  matches.filter(f => !used.has(f.id)).slice(0, Math.max(0, 12 - box.length)).forEach(f => box.push(f));
+
+  const context = document.getElementById("box-context");
+  const list = document.getElementById("box-list");
+
+  if (context) {
+    context.innerHTML = `<span style="color:#e4e4e7; font-weight:600;">📍 ${biomeLabels[biome] || biome}</span> &nbsp;·&nbsp; 📅 ${monthName} &nbsp;·&nbsp; <span style="color:#10b981;">${box.length} patterns recommended</span>`;
+  }
+
+  if (list) {
+    if (box.length === 0) {
+      list.innerHTML = `<div style="padding:20px; background:#202023; border:1px dashed #3f3f46; border-radius:12px; text-align:center;"><p style="color:#a1a1aa;">No hatches mapped for this region and month. Year-round attractors like Prince Nymph, Woolly Bugger, and Elk Hair Caddis are safe bets.</p></div>`;
+    } else {
+      list.innerHTML = box.map(fly => {
+        const sizes = fly.size_range && fly.size_range.length > 0 ? `#${fly.size_range.join(", #")}` : "";
+        return `
+          <div onclick="openPatternDetail('${fly.id}', 'step-box-results')" style="cursor:pointer; padding:12px 14px; background:#202023; border:1px solid #27272a; border-radius:10px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#27272a'">
+            <div>
+              <span style="color:#e4e4e7; font-size:0.9rem; font-weight:600;">${fly.name}</span>
+              ${sizes ? `<span style="display:block; font-size:0.72rem; color:#71717a; margin-top:2px;">${sizes}</span>` : ""}
+            </div>
+            <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:8px;">${fly.stage}</span>
+          </div>`;
+      }).join("");
+    }
+  }
+
+  advanceToNextScreen("step-box-month", "step-box-results");
+};
+
+// ============================================================================
+// PATTERN DETAIL VIEW
+// ============================================================================
+
+let patternDetailReturnScreen = "step-results";
+
+window.openPatternDetail = (flyId, returnScreen) => {
+  const fly = hatchDatabase.find(f => f.id === flyId);
+  if (!fly) return;
+
+  patternDetailReturnScreen = returnScreen || "step-results";
+
+  const sizes = fly.size_range && fly.size_range.length > 0 ? `#${fly.size_range.join(", #")}` : "Universal";
+  const materials = fly.tying_materials || [];
+  const steps = fly.recipe_steps || [];
+  const hookLine = fly.recipe_hook ? `<p style="margin:0 0 4px; color:#d4d4d8; font-size:0.85rem;"><span style="color:#a1a1aa; font-weight:600;">Hook:</span> ${fly.recipe_hook}</p>` : "";
+  const threadLine = fly.recipe_thread ? `<p style="margin:0 0 12px; color:#d4d4d8; font-size:0.85rem;"><span style="color:#a1a1aa; font-weight:600;">Thread:</span> ${fly.recipe_thread}</p>` : "";
+
+  const stepsHtml = steps.length > 0 ? `
+    <p style="margin:14px 0 6px; font-weight:700; color:#a1a1aa; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em;">🪝 Tying Steps</p>
+    <ol style="margin:0; padding-left:20px; color:#d4d4d8; line-height:1.6; font-size:0.85rem;">
+      ${steps.map(s => `<li style="margin-bottom:6px;">${s}</li>`).join("")}
+    </ol>` : "";
+
+  const html = `
+    <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:20px; margin-bottom:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #27272a;">
+        <div>
+          <h2 style="color:#10b981; margin-bottom:4px; font-size:1.4rem;">${fly.name}</h2>
+          <p style="margin:0; font-size:0.82rem; color:#71717a; font-style:italic;">${fly.imitation_species}</p>
+        </div>
+        <span style="font-size:0.7rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:12px;">${fly.stage}</span>
+      </div>
+      <p style="margin:0 0 12px; color:#d4d4d8; font-size:0.85rem;"><span style="color:#a1a1aa; font-weight:600;">Hook Size:</span> ${sizes}</p>
+      ${hookLine}${threadLine}
+      <p style="margin:0 0 6px; font-weight:700; color:#a1a1aa; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em;">📐 Materials</p>
+      <ul style="margin:0 0 4px; padding-left:20px; color:#d4d4d8; line-height:1.6; font-size:0.85rem;">
+        ${materials.map(m => `<li style="margin-bottom:3px;">${m}</li>`).join("")}
+      </ul>
+      ${stepsHtml}
+    </div>
+  `;
+
+  document.getElementById("pattern-detail-content").innerHTML = html;
+
+  const backBtn = document.getElementById("pattern-back-btn");
+  backBtn.onclick = () => advanceToNextScreen("step-pattern-detail", patternDetailReturnScreen);
+
+  advanceToNextScreen(patternDetailReturnScreen, "step-pattern-detail");
+};
+
 // HTML onClick -> resetApp() (Handles the Restart Matcher button)
 window.resetApp = () => {
   console.log("🔄 Resetting app layout back to step-region...");
@@ -418,7 +544,7 @@ window.resetApp = () => {
     activeScreen.classList.remove("active");
   }
 
-  const initialScreen = document.getElementById("step-region");
+  const initialScreen = document.getElementById("step-home");
   if (initialScreen) {
     initialScreen.classList.add("active");
   }
@@ -464,7 +590,7 @@ function renderVaultBrowse(container) {
         ${flies.map(fly => {
           const sizes = fly.size_range && fly.size_range.length > 0 ? `#${fly.size_range.join(", #")}` : "";
           return `
-            <div style="padding:10px 14px; background:#202023; border:1px solid #27272a; border-radius:10px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+            <div onclick="openPatternDetail('${fly.id}', 'step-search')" style="cursor:pointer; padding:10px 14px; background:#202023; border:1px solid #27272a; border-radius:10px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='#27272a'">
               <div>
                 <span style="color:#e4e4e7; font-size:0.88rem; font-weight:600;">${fly.name}</span>
                 <span style="color:#52525b; font-size:0.75rem; margin-left:6px; font-style:italic;">${fly.imitation_species}</span>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,159 +13,125 @@
       --text-main: #ffffff;
       --text-muted: #a1a1aa;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    #app-container {
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .screen-container {
-      display: none !important;
-    }
-
-    .screen-container.active {
-      display: block !important;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 16px;
-      border: 1px solid #27272a;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .card-left {
-      text-align: left;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    #app-container { width: 100%; max-width: 500px; }
+    .screen-container { display: none !important; }
+    .screen-container.active { display: block !important; }
+    .card { background: var(--card-bg); border-radius: 16px; padding: 24px; margin-bottom: 16px; border: 1px solid #27272a; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); text-align: center; }
+    .card-left { text-align: left; }
     h2 { margin-bottom: 8px; font-size: 1.6rem; font-weight: 700; color: #fff; text-align: left; }
     p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4; text-align: left; }
-
-    .btn {
-      width: 100%;
-      padding: 16px;
-      background: #202023;
-      border: 1px solid #27272a;
-      border-radius: 14px;
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover, .btn:active {
-      background: #27272a;
-      border-color: #3f3f46;
-    }
-
-    .btn-vault {
-      background: #27272a;
-      border: 1px solid #3f3f46;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn-vault:hover {
-      background: var(--accent-green);
-      border-color: var(--accent-green);
-    }
-
+    .btn { width: 100%; padding: 16px; background: #202023; border: 1px solid #27272a; border-radius: 14px; color: #fff; font-size: 1.05rem; font-weight: 600; cursor: pointer; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+    .btn:hover, .btn:active { background: #27272a; border-color: #3f3f46; }
+    .btn-vault { background: #27272a; border: 1px solid #3f3f46; justify-content: center; gap: 8px; }
+    .btn-vault:hover { background: var(--accent-green); border-color: var(--accent-green); }
     .slider-container { margin: 24px 0; text-align: center; }
-    input[type="range"] {
-      width: 100%;
-      accent-color: var(--accent-green);
-      margin-bottom: 10px;
-    }
-
-    #temp-display {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: var(--accent-green);
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .fly-tag {
-      background: #27272a;
-      color: var(--accent-green);
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border: 1px solid #3f3f46;
-    }
-
-    .fine-print {
-      font-size: 0.78rem;
-      color: #71717a;
-      line-height: 1.4;
-      text-align: left;
-      margin-top: 16px;
-      border-top: 1px solid #27272a;
-      padding-top: 12px;
-    }
+    input[type="range"] { width: 100%; accent-color: var(--accent-green); margin-bottom: 10px; }
+    #temp-display { font-size: 2.2rem; font-weight: bold; color: var(--accent-green); display: block; margin-bottom: 10px; }
+    .fine-print { font-size: 0.78rem; color: #71717a; line-height: 1.4; text-align: left; margin-top: 16px; border-top: 1px solid #27272a; padding-top: 12px; }
   </style>
 </head>
 <body>
-
 <div id="app-container">
 
-  <!-- STEP 1: SELECT DESTINATION (6 AQUATIC ECO-BIOMES) -->
-  <div id="step-region" class="screen-container active">
+  <!-- HOME SCREEN -->
+  <div id="step-home" class="screen-container active">
+    <div style="margin-bottom: 28px; text-align: center;">
+      <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 8px;">🎣 Hatch Matcher</h2>
+      <p style="text-align: center; margin-bottom: 0;">Your streamside fly selection guide</p>
+    </div>
+    <div style="background: #1c1c1f; border: 1px solid #27272a; border-radius: 14px; padding: 20px; margin-bottom: 12px;">
+      <p style="font-size: 0.78rem; font-weight: 700; color: #71717a; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Planning a Trip?</p>
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px;">Build Your Box</h3>
+      <p style="font-size: 0.88rem; color: #a1a1aa; margin-bottom: 14px;">Select your destination and month to get a recommended fly box loadout before you leave home.</p>
+      <button onclick="switchScreen('step-home', 'step-box-region')" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); color: #000; font-weight: 700; margin-bottom: 0;">
+        🧰 Plan My Box →
+      </button>
+    </div>
+    <div style="background: #1c1c1f; border: 1px solid #27272a; border-radius: 14px; padding: 20px; margin-bottom: 12px;">
+      <p style="font-size: 0.78rem; font-weight: 700; color: #71717a; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">On the Water Now?</p>
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px;">Match the Hatch</h3>
+      <p style="font-size: 0.88rem; color: #a1a1aa; margin-bottom: 14px;">Enter live conditions — water temp, rise form, water type — to find the right fly right now.</p>
+      <button onclick="switchScreen('step-home', 'step-region')" class="btn btn-vault" style="margin-bottom: 0;">
+        🔍 Match Conditions →
+      </button>
+    </div>
+    <button onclick="switchScreen('step-home', 'step-search')" class="btn btn-vault" style="margin-top: 4px;">
+      📖 Fly Tying Recipe Vault
+    </button>
+  </div>
+
+  <!-- BOX BUILDER: REGION -->
+  <div id="step-box-region" class="screen-container">
+    <div style="margin-bottom: 20px;">
+      <h2>Where Are You Fishing?</h2>
+      <p>Select your destination to load regional hatch calendars.</p>
+    </div>
+    <button onclick="selectBoxRegion('appalachian')" class="btn"><span>Appalachian &amp; Limestone (East/PA)</span> <span>→</span></button>
+    <button onclick="selectBoxRegion('rocky_mountain')" class="btn"><span>Rocky Mountain Tailwaters (West/CO)</span> <span>→</span></button>
+    <button onclick="selectBoxRegion('pacific_coastal')" class="btn"><span>Pacific Rainforest &amp; Coastal (NW/AK)</span> <span>→</span></button>
+    <button onclick="selectBoxRegion('boreal_shield')" class="btn"><span>Great Lakes &amp; Boreal Shield (Midwest/Can)</span> <span>→</span></button>
+    <button onclick="selectBoxRegion('transitional_plains')" class="btn"><span>Midwest &amp; Plains Rivers</span> <span>→</span></button>
+    <button onclick="selectBoxRegion('warmwater_south')" class="btn"><span>Southern &amp; Coastal Plain</span> <span>→</span></button>
+    <button onclick="switchScreen('step-box-region', 'step-home')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
+  </div>
+
+  <!-- BOX BUILDER: MONTH -->
+  <div id="step-box-month" class="screen-container">
+    <div style="margin-bottom: 20px;">
+      <h2>When Are You Going?</h2>
+      <p>Pick your trip month to match the active hatch calendar.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px;">
+      <button onclick="selectBoxMonth(1)" class="btn" style="justify-content:center;">January</button>
+      <button onclick="selectBoxMonth(2)" class="btn" style="justify-content:center;">February</button>
+      <button onclick="selectBoxMonth(3)" class="btn" style="justify-content:center;">March</button>
+      <button onclick="selectBoxMonth(4)" class="btn" style="justify-content:center;">April</button>
+      <button onclick="selectBoxMonth(5)" class="btn" style="justify-content:center;">May</button>
+      <button onclick="selectBoxMonth(6)" class="btn" style="justify-content:center;">June</button>
+      <button onclick="selectBoxMonth(7)" class="btn" style="justify-content:center;">July</button>
+      <button onclick="selectBoxMonth(8)" class="btn" style="justify-content:center;">August</button>
+      <button onclick="selectBoxMonth(9)" class="btn" style="justify-content:center;">September</button>
+      <button onclick="selectBoxMonth(10)" class="btn" style="justify-content:center;">October</button>
+      <button onclick="selectBoxMonth(11)" class="btn" style="justify-content:center;">November</button>
+      <button onclick="selectBoxMonth(12)" class="btn" style="justify-content:center;">December</button>
+    </div>
+    <button onclick="switchScreen('step-box-month', 'step-box-region')" class="btn btn-vault">← Back</button>
+  </div>
+
+  <!-- BOX BUILDER: RESULTS -->
+  <div id="step-box-results" class="screen-container">
+    <h2>Your Recommended Box</h2>
+    <div id="box-context" style="background:#1c1c1f; border:1px solid #27272a; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:0.82rem; color:#a1a1aa; line-height:1.6;"></div>
+    <div id="box-list"></div>
+    <button onclick="switchScreen('step-box-results', 'step-box-month')" class="btn btn-vault" style="margin-top: 16px;">← Back</button>
+    <button onclick="switchScreen('step-box-results', 'step-home')" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 8px;">🏠 Home</button>
+  </div>
+
+  <!-- MATCH WIZARD: BIOME -->
+  <div id="step-region" class="screen-container">
     <div style="margin-bottom: 20px;">
       <h2>Select Destination Biome</h2>
       <p style="margin-bottom: 14px;">Where are you wetting a line?</p>
-      
       <button onclick="detectLocation()" class="btn btn-vault" style="background: #1e1b4b; border-color: #312e81; margin-bottom: 8px;">
         📍 Auto-Detect Biome via GPS
       </button>
       <div id="gps-status" style="font-size: 0.85rem; color: var(--accent-green); margin-bottom: 12px; font-weight: 600; text-align: left; display: none;"></div>
     </div>
-    
-    <button onclick="selectRegion('appalachian')" class="btn"><span>Appalachian & Limestone (East/PA)</span> <span>→</span></button>
+    <button onclick="selectRegion('appalachian')" class="btn"><span>Appalachian &amp; Limestone (East/PA)</span> <span>→</span></button>
     <button onclick="selectRegion('rocky_mountain')" class="btn"><span>Rocky Mountain Tailwaters (West/CO)</span> <span>→</span></button>
-    <button onclick="selectRegion('pacific_coastal')" class="btn"><span>Pacific Rainforest & Coastal (NW/AK)</span> <span>→</span></button>
-    <button onclick="selectRegion('boreal_shield')" class="btn"><span>Great Lakes & Boreal Shield (Midwest/Can)</span> <span>→</span></button>
-    <button onclick="selectRegion('transitional_plains')" class="btn"><span>Midwest & Plains Rivers</span> <span>→</span></button>
-    <button onclick="selectRegion('warmwater_south')" class="btn"><span>Southern & Coastal Plain</span> <span>→</span></button>
-    
-    <div style="margin-top: 20px;">
-      <button onclick="switchScreen('step-region', 'step-search')" class="btn btn-vault">
-        🔍 Open Fly Tying Recipe Vault
-      </button>
-    </div>
-
+    <button onclick="selectRegion('pacific_coastal')" class="btn"><span>Pacific Rainforest &amp; Coastal (NW/AK)</span> <span>→</span></button>
+    <button onclick="selectRegion('boreal_shield')" class="btn"><span>Great Lakes &amp; Boreal Shield (Midwest/Can)</span> <span>→</span></button>
+    <button onclick="selectRegion('transitional_plains')" class="btn"><span>Midwest &amp; Plains Rivers</span> <span>→</span></button>
+    <button onclick="selectRegion('warmwater_south')" class="btn"><span>Southern &amp; Coastal Plain</span> <span>→</span></button>
+    <button onclick="switchScreen('step-region', 'step-home')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
     <div class="fine-print">
       <strong>ℹ️ Biome Sorting Clarification:</strong> Aquatic insect hatches are mapped by continental drainage basin biomes rather than arbitrary political state borders. The satellite matrix coordinates automatically resolve your watershed baseline profile.
     </div>
   </div>
 
-  <!-- NEW STEP 1.5: WATER ENVIRONMENT -->
+  <!-- MATCH WIZARD: ENVIRONMENT -->
   <div id="step-environment" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Water Environment</h2>
@@ -176,25 +142,21 @@
     <button onclick="advanceToNextScreen('step-environment', 'step-region')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
-  <!-- STEP 2: WATER TEMPERATURE -->
+  <!-- MATCH WIZARD: TEMP -->
   <div id="step-temp" class="screen-container">
     <div class="card">
       <h2>Stream Temperature</h2>
       <p>What is the active water temperature? Matcher filtering limits patterns based on metabolic triggers.</p>
-
       <div class="slider-container">
         <span id="temp-display">55°F</span>
         <input type="range" id="temp-slider" min="32" max="85" value="55" oninput="updateTempDisplay(this.value)">
       </div>
-
-      <button onclick="submitTemp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green);">
-        Continue Matrix
-      </button>
+      <button onclick="submitTemp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green);">Continue Matrix</button>
       <button onclick="advanceToNextScreen('step-temp', 'step-environment')" class="btn btn-vault" style="margin-top: 8px;">← Back</button>
     </div>
   </div>
 
-  <!-- STEP 3: WATER TYPE (STILL SHOWS IF RIVER/STREAM IS SELECTED) -->
+  <!-- MATCH WIZARD: WATER TYPE -->
   <div id="step-water" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Water Structure</h2>
@@ -206,7 +168,7 @@
     <button onclick="advanceToNextScreen('step-water', 'step-temp')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
-  <!-- STEP 4: RISE FORM -->
+  <!-- MATCH WIZARD: RISE FORM -->
   <div id="step-rise" class="screen-container">
     <div style="margin-bottom: 24px;">
       <h2>Observation: Rise Form</h2>
@@ -218,40 +180,38 @@
     <button onclick="advanceToNextScreen('step-rise', 'step-water')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
-  <!-- STEP 5: MATCH RESULTS -->
+  <!-- MATCH WIZARD: RESULTS -->
   <div id="step-results" class="screen-container">
     <h2>Top Matched Hatches</h2>
     <div id="results-context" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:0.82rem; color:#a1a1aa; line-height:1.6;"></div>
     <p id="results-summary" style="margin-bottom:12px;"></p>
     <div id="results-list"></div>
     <button onclick="advanceToNextScreen('step-results', 'step-rise')" class="btn btn-vault" style="margin-top: 16px;">← Back</button>
-    <button onclick="resetApp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 8px;">
-      🔄 Restart Matcher
-    </button>
+    <button onclick="resetApp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 8px;">🔄 Restart Matcher</button>
   </div>
 
-  <!-- SEPARATED SCREEN: STANDALONE RECIPE VAULT -->
+  <!-- RECIPE VAULT -->
   <div id="step-search" class="screen-container">
     <div class="card card-left" style="border-left: 4px solid var(--accent-green); background: #1c1c1f; padding: 20px;">
       <h2 style="color: var(--accent-green); margin-bottom: 4px;">Fly Tying Recipe Vault</h2>
       <p style="margin: 0; font-size: 0.9rem;">Search patterns by material name, pattern title, or insect group profile.</p>
     </div>
-
     <div style="margin-bottom: 20px;">
-      <input type="text" id="global-search" placeholder="🔍 Try 'Elk Hair', 'Zebra', 'Dubbing', 'Tungsten'..." 
+      <input type="text" id="global-search" placeholder="🔍 Try 'Elk Hair', 'Zebra', 'Dubbing', 'Tungsten'..."
              style="width: 100%; padding: 16px; border: 2px solid #27272a; border-radius: 12px; background: #202023; color: #fff; font-size: 1.1rem; outline: none; transition: border-color 0.2s;"
              onfocus="this.style.borderColor='var(--accent-green)'" onblur="this.style.borderColor='#27272a'">
     </div>
-
     <div id="search-dropdown-results" style="display: none; margin-bottom: 20px;"></div>
+    <button onclick="switchScreen('step-search', 'step-home')" class="btn btn-vault">⬅️ Back to Home</button>
+  </div>
 
-    <button onclick="switchScreen('step-search', 'step-region')" class="btn btn-vault">
-      ⬅️ Back to Destination Select
-    </button>
+  <!-- PATTERN DETAIL -->
+  <div id="step-pattern-detail" class="screen-container">
+    <div id="pattern-detail-content"></div>
+    <button id="pattern-back-btn" class="btn btn-vault" style="margin-top: 16px;">← Back</button>
   </div>
 
 </div>
-
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
