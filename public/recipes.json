@@ -2235,5 +2235,498 @@
       "Spin natural deer hair for head; pack and trim to flat-bottom sculpin profile.",
       "Whip finish, head cement."
     ]
+  },
+  "rec_mahogany_dun_nymph": {
+    "recipe_id": "rec_mahogany_dun_nymph",
+    "fly_name": "Mahogany Dun (Nymph)",
+    "hook": "Tiemco TMC 3761, sizes 14-16",
+    "thread": "Uni 8/0 Dark Brown",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 3761, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Dark Brown"},
+      {"name": "Tail", "description": "3 dark mahogany pheasant tail fibers"},
+      {"name": "Rib", "description": "Fine copper wire"},
+      {"name": "Abdomen", "description": "Dark mahogany-brown dubbing or pheasant tail fibers"},
+      {"name": "Wingcase", "description": "Dark turkey tail segment"},
+      {"name": "Legs", "description": "Dark brown partridge fibers"},
+      {"name": "Thorax", "description": "Dark mahogany dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Lay dark brown thread base to bend.",
+      "Tie in 3 dark pheasant tail fibers as tail, hook-gap length.",
+      "Tie in fine copper wire for ribbing.",
+      "Wrap pheasant tail fibers or dub dark mahogany abdomen to 60% mark.",
+      "Counter-wrap copper wire in 5 turns, tie off.",
+      "Tie in dark turkey tail wingcase strip.",
+      "Tie in dark partridge leg fibers on each side.",
+      "Dub a compact dark mahogany thorax.",
+      "Pull wingcase forward, tie down, whip finish, head cement."
+    ]
+  },
+  "rec_mahogany_dun_dun": {
+    "recipe_id": "rec_mahogany_dun_dun",
+    "fly_name": "Mahogany Dun (Dun)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Dark Brown",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Dark Brown"},
+      {"name": "Tail", "description": "Dark blue dun hackle fibers, split"},
+      {"name": "Body", "description": "Dark mahogany-brown dubbing"},
+      {"name": "Wing", "description": "Dark gray CDC or comparadun deer hair"},
+      {"name": "Hackle", "description": "Dark blue dun or brown dry fly hackle"}
+    ],
+    "steps": [
+      "Mount hook. Tie in dark gray CDC or comparadun deer hair wing upright.",
+      "Figure-eight thread to secure wing.",
+      "Wrap thread to bend; tie in split dark dun hackle fiber tail.",
+      "Dub a slim dark mahogany body from bend to behind wing.",
+      "Tie in dark dun hackle; wrap 4 turns behind wing and 1-2 in front.",
+      "Tie off hackle, build neat head, whip finish, head cement."
+    ]
+  },
+  "rec_mahogany_dun_spinner": {
+    "recipe_id": "rec_mahogany_dun_spinner",
+    "fly_name": "Mahogany Dun (Spinner)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Dark Brown",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Dark Brown"},
+      {"name": "Tail", "description": "Dark dun hackle fibers, long split"},
+      {"name": "Body", "description": "Dark mahogany-rust dubbing"},
+      {"name": "Wing", "description": "White poly yarn, spent figure-eight"},
+      {"name": "Thorax", "description": "Dark brown dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Figure-eight white poly yarn spent wings at mid-shank.",
+      "Wrap to bend; tie in long split dark dun tail.",
+      "Dub dark mahogany-rust body from bend to behind wings.",
+      "Dub dark brown thorax figure-eighting around wing bases.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_callibaetis_nymph": {
+    "recipe_id": "rec_callibaetis_nymph",
+    "fly_name": "Callibaetis (Nymph)",
+    "hook": "Tiemco TMC 3761, sizes 14-16",
+    "thread": "Uni 8/0 Olive-Brown",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 3761, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive-Brown"},
+      {"name": "Tail", "description": "3 speckled wood duck or mallard flank fibers"},
+      {"name": "Rib", "description": "Fine gold wire"},
+      {"name": "Abdomen", "description": "Gray-olive dubbing with speckled appearance"},
+      {"name": "Wingcase", "description": "Mottled turkey tail (speckled)"},
+      {"name": "Legs", "description": "Speckled partridge or wood duck flank"},
+      {"name": "Thorax", "description": "Olive-gray dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Lay olive-brown thread base to bend.",
+      "Tie in 3 speckled wood duck fibers as tail.",
+      "Tie in fine gold wire.",
+      "Dub a slim gray-olive abdomen to 60% mark.",
+      "Rib with gold wire in 5 turns.",
+      "Tie in mottled turkey tail wingcase and speckled partridge legs.",
+      "Dub olive-gray thorax, pull wingcase, whip finish, head cement."
+    ]
+  },
+  "rec_callibaetis_emerger": {
+    "recipe_id": "rec_callibaetis_emerger",
+    "fly_name": "Callibaetis (Emerger)",
+    "hook": "Tiemco TMC 2488, sizes 14-16",
+    "thread": "Uni 8/0 Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 2488 curved, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive"},
+      {"name": "Shuck", "description": "Tan or amber Zelon trailing shuck"},
+      {"name": "Abdomen", "description": "Gray-olive dubbing"},
+      {"name": "Rib", "description": "Fine gold wire"},
+      {"name": "Wing", "description": "Gray CDC feather upright"},
+      {"name": "Thorax", "description": "Olive-gray dubbing"}
+    ],
+    "steps": [
+      "Mount curved hook. Tie in tan Zelon shuck at bend.",
+      "Tie in fine gold wire.",
+      "Dub gray-olive abdomen to 60%.",
+      "Rib in 4 open turns.",
+      "Tie in gray CDC upright as emerging wing.",
+      "Dub olive-gray thorax around wing base, whip finish."
+    ]
+  },
+  "rec_callibaetis_dun": {
+    "recipe_id": "rec_callibaetis_dun",
+    "fly_name": "Callibaetis (Dun)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive"},
+      {"name": "Tail", "description": "Speckled dun hackle fibers, split"},
+      {"name": "Body", "description": "Gray-olive dubbing, slim"},
+      {"name": "Wing", "description": "Speckled gray CDC or gray poly wing"},
+      {"name": "Hackle", "description": "Grizzly or speckled dun hackle"}
+    ],
+    "steps": [
+      "Mount hook. Tie in speckled gray wing upright, figure-eight.",
+      "Wrap to bend; tie in split speckled dun hackle tail.",
+      "Dub slim gray-olive body from bend to behind wing.",
+      "Tie in grizzly hackle, wrap 3-4 turns, tie off.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_callibaetis_spinner": {
+    "recipe_id": "rec_callibaetis_spinner",
+    "fly_name": "Callibaetis (Spinner)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Tan",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Tan"},
+      {"name": "Tail", "description": "Speckled dun fibers, long split"},
+      {"name": "Body", "description": "Tan-gray dubbing"},
+      {"name": "Wing", "description": "White or clear poly yarn, spent"},
+      {"name": "Thorax", "description": "Olive-tan dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Figure-eight white poly spent wings at mid-shank.",
+      "Wrap to bend; tie in long split speckled tail.",
+      "Dub tan-gray body from bend to behind wings.",
+      "Dub olive-tan thorax around wing bases.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_pale_evening_dun_nymph": {
+    "recipe_id": "rec_pale_evening_dun_nymph",
+    "fly_name": "Pale Evening Dun (Nymph)",
+    "hook": "Tiemco TMC 3761, sizes 14-16",
+    "thread": "Uni 8/0 Olive or Tan",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 3761, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive"},
+      {"name": "Tail", "description": "3 wood duck flank fibers"},
+      {"name": "Rib", "description": "Fine gold wire"},
+      {"name": "Abdomen", "description": "Pale olive-yellow dubbing"},
+      {"name": "Wingcase", "description": "Light turkey tail segment"},
+      {"name": "Legs", "description": "Light partridge or wood duck fibers"},
+      {"name": "Thorax", "description": "Pale yellow-olive dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Lay olive thread base to bend.",
+      "Tie in 3 wood duck flank fibers as tail.",
+      "Tie in fine gold wire.",
+      "Dub pale olive-yellow abdomen to 60%.",
+      "Rib in 5 turns.",
+      "Tie in light turkey wingcase and light partridge legs.",
+      "Dub pale yellow-olive thorax, pull wingcase, whip finish."
+    ]
+  },
+  "rec_pale_evening_dun_dun": {
+    "recipe_id": "rec_pale_evening_dun_dun",
+    "fly_name": "Pale Evening Dun (Dun)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Yellow",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Pale Yellow"},
+      {"name": "Tail", "description": "Pale cream hackle fibers, split"},
+      {"name": "Body", "description": "Pale yellow-olive dubbing"},
+      {"name": "Wing", "description": "Pale gray CDC or light poly wing"},
+      {"name": "Hackle", "description": "Pale ginger or cream dry fly hackle"}
+    ],
+    "steps": [
+      "Mount hook. Tie in pale gray wing upright, figure-eight.",
+      "Wrap to bend; tie in split cream hackle tail.",
+      "Dub pale yellow-olive body from bend to behind wing.",
+      "Tie in pale ginger hackle, wrap 4 turns, tie off.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_pale_evening_dun_spinner": {
+    "recipe_id": "rec_pale_evening_dun_spinner",
+    "fly_name": "Pale Evening Dun (Spinner)",
+    "hook": "Tiemco TMC 100, sizes 14-16",
+    "thread": "Uni 8/0 Yellow",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #14-16"},
+      {"name": "Thread", "description": "Uni 8/0 Pale Yellow"},
+      {"name": "Tail", "description": "Pale cream fibers, long split"},
+      {"name": "Body", "description": "Pale yellow dubbing"},
+      {"name": "Wing", "description": "White poly yarn, spent"},
+      {"name": "Thorax", "description": "Pale yellow dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Figure-eight white poly spent wings at mid-shank.",
+      "Wrap to bend; tie in long split cream tail.",
+      "Dub pale yellow body from bend to behind wings.",
+      "Dub pale yellow thorax around wing bases.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_hexagenia_nymph": {
+    "recipe_id": "rec_hexagenia_nymph",
+    "fly_name": "Hexagenia (Nymph)",
+    "hook": "Tiemco TMC 5263 3XL or Mustad 9671, sizes 4-8",
+    "thread": "Uni 6/0 Yellow or Tan",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5263 3XL, #4-8"},
+      {"name": "Thread", "description": "Uni 6/0 Yellow-Tan"},
+      {"name": "Tail", "description": "3 pheasant tail fibers, spread wide"},
+      {"name": "Rib", "description": "Fine gold wire"},
+      {"name": "Abdomen", "description": "Pale yellow-cream dubbing, fat burrowing profile"},
+      {"name": "Gills", "description": "Gray ostrich herl tied along sides"},
+      {"name": "Wingcase", "description": "Wide mottled turkey tail, double section"},
+      {"name": "Legs", "description": "Brown partridge or rubber legs"},
+      {"name": "Thorax", "description": "Pale yellow dubbing, full"}
+    ],
+    "steps": [
+      "Mount 3XL hook. Lay yellow thread base to bend.",
+      "Tie in 3 pheasant tail fibers spread wide as tails.",
+      "Tie in fine gold wire.",
+      "Dub a very fat pale yellow-cream abdomen to 60% — Hexagenia nymphs are burrowers with a distinctive fat body.",
+      "Rib with gold wire in 6 turns.",
+      "Tie in ostrich herl gills along each side.",
+      "Tie in wide double turkey tail wingcase.",
+      "Tie in partridge legs, dub fat pale yellow thorax.",
+      "Pull wingcase forward, tie down, whip finish, head cement."
+    ]
+  },
+  "rec_hexagenia_dun": {
+    "recipe_id": "rec_hexagenia_dun",
+    "fly_name": "Hexagenia (Dun)",
+    "hook": "Tiemco TMC 5212 2XL, sizes 4-8",
+    "thread": "Uni 6/0 Yellow",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5212 2XL, #4-8"},
+      {"name": "Thread", "description": "Uni 6/0 Yellow"},
+      {"name": "Tail", "description": "Moose body hair or dark elk hair, 3 fibers spread"},
+      {"name": "Body", "description": "Pale yellow dubbing with olive-brown segmentation"},
+      {"name": "Rib", "description": "Brown thread or fine wire for segmentation"},
+      {"name": "Wing", "description": "Large gray poly wing or dyed yellow elk hair comparadun"},
+      {"name": "Hackle", "description": "Grizzly or light brown oversized hackle"}
+    ],
+    "steps": [
+      "Mount 2XL hook. Tie in large comparadun-style gray poly or elk wing.",
+      "Wrap to bend; tie in 3 moose body hairs spread as tails.",
+      "Dub a fat pale yellow body segmented with brown thread rib, from bend to wing.",
+      "Tie in grizzly hackle, wrap 3-4 turns.",
+      "Tie off, whip finish, head cement."
+    ]
+  },
+  "rec_hexagenia_spinner": {
+    "recipe_id": "rec_hexagenia_spinner",
+    "fly_name": "Hexagenia (Spinner)",
+    "hook": "Tiemco TMC 5212 2XL, sizes 4-8",
+    "thread": "Uni 6/0 Yellow-Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5212 2XL, #4-8"},
+      {"name": "Thread", "description": "Uni 6/0 Yellow"},
+      {"name": "Tail", "description": "Moose body hair, 3 long fibers spread"},
+      {"name": "Body", "description": "Pale yellow-olive dubbing"},
+      {"name": "Wing", "description": "White poly yarn, large spent wings"},
+      {"name": "Thorax", "description": "Olive-brown dubbing"}
+    ],
+    "steps": [
+      "Mount 2XL hook. Figure-eight large white poly spent wings at mid-shank.",
+      "Wrap to bend; tie in 3 long moose hair tails, spread.",
+      "Dub pale yellow-olive body from bend to behind wings.",
+      "Dub olive-brown thorax, figure-eighting around wing bases.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_skwala_stonefly_nymph": {
+    "recipe_id": "rec_skwala_stonefly_nymph",
+    "fly_name": "Skwala Stonefly (Nymph)",
+    "hook": "Tiemco TMC 5263 3XL, sizes 8-10",
+    "thread": "Uni 6/0 Olive-Brown",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5263 3XL, #8-10"},
+      {"name": "Thread", "description": "Uni 6/0 Olive-Brown"},
+      {"name": "Tail", "description": "2 olive-brown goose biots"},
+      {"name": "Rib", "description": "Fine copper wire"},
+      {"name": "Abdomen", "description": "Olive-brown dubbing, flattened profile"},
+      {"name": "Wingcase", "description": "Dark mottled turkey tail (wide)"},
+      {"name": "Legs", "description": "Brown partridge or olive rubber legs"},
+      {"name": "Thorax", "description": "Dark olive-brown dubbing"},
+      {"name": "Antennae", "description": "Brown goose biots"}
+    ],
+    "steps": [
+      "Mount 3XL hook. Lay olive-brown thread base.",
+      "Tie in 2 olive-brown goose biots as split tails.",
+      "Tie in fine copper wire.",
+      "Dub a flat olive-brown abdomen to 60% — flatten with fingers to mimic stonefly profile.",
+      "Rib with copper wire in 5 turns.",
+      "Tie in wide mottled turkey tail wingcase.",
+      "Tie in partridge legs or olive rubber legs.",
+      "Dub dark olive-brown thorax, pull wingcase, tie in biot antennae.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_skwala_stonefly_dun": {
+    "recipe_id": "rec_skwala_stonefly_dun",
+    "fly_name": "Skwala Stonefly (Dun)",
+    "hook": "Tiemco TMC 5212 2XL, sizes 8-10",
+    "thread": "Uni 6/0 Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5212 2XL, #8-10"},
+      {"name": "Thread", "description": "Uni 6/0 Olive"},
+      {"name": "Tail", "description": "Elk hair short stub or olive elk butts"},
+      {"name": "Body", "description": "Olive-brown dubbing"},
+      {"name": "Hackle", "description": "Brown saddle hackle, palmered"},
+      {"name": "Wing", "description": "Natural olive-dyed elk hair, low-riding style"},
+      {"name": "Legs", "description": "Brown rubber legs (optional)"}
+    ],
+    "steps": [
+      "Mount 2XL hook. Tie in short elk hair tail stub at bend.",
+      "Tie in brown saddle hackle.",
+      "Dub olive-brown body to 3/4 of shank.",
+      "Palmer hackle in 5 open spirals forward.",
+      "Tie in olive or natural elk hair wing flat over body — Skwala adults ride low.",
+      "Optional: tie in brown rubber legs on each side.",
+      "Trim elk butts, build head, whip finish, head cement."
+    ]
+  },
+  "rec_green_caddis_larva_nymph": {
+    "recipe_id": "rec_green_caddis_larva_nymph",
+    "fly_name": "Green Caddis Larva (Nymph)",
+    "hook": "Tiemco TMC 2457 scud hook or TMC 3761, sizes 12-16",
+    "thread": "Uni 8/0 Olive or Green",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 2457 scud hook, #12-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive"},
+      {"name": "Rib", "description": "Fine gold or copper wire"},
+      {"name": "Abdomen", "description": "Bright green dubbing or green Antron — Rhyacophila are free-living, bright green"},
+      {"name": "Thorax", "description": "Brown or dark olive dubbing"},
+      {"name": "Head", "description": "Black or dark brown dubbing ball"}
+    ],
+    "steps": [
+      "Mount scud hook. Lay olive thread base to bend.",
+      "Tie in fine wire at bend.",
+      "Dub a bright green abdomen filling the curved shank to 75%.",
+      "Rib with wire in 5-6 turns to segment body.",
+      "Dub a darker brown thorax at the front 25%.",
+      "Build a small dark dubbing head, whip finish, head cement.",
+      "Optional: add copper or gold bead for weight."
+    ]
+  },
+  "rec_green_caddis_pupa_emerger": {
+    "recipe_id": "rec_green_caddis_pupa_emerger",
+    "fly_name": "Green Caddis Pupa (Emerger)",
+    "hook": "Tiemco TMC 2488 curved, sizes 12-16",
+    "thread": "Uni 8/0 Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 2488 curved, #12-16"},
+      {"name": "Thread", "description": "Uni 8/0 Olive"},
+      {"name": "Abdomen", "description": "Green Antron or green dubbing"},
+      {"name": "Rib", "description": "Fine gold wire"},
+      {"name": "Wing pads", "description": "Dark gray hen back or CDC folded flat over thorax"},
+      {"name": "Soft hackle", "description": "Partridge or brown hen (2 turns)"},
+      {"name": "Thorax", "description": "Olive-brown dubbing"}
+    ],
+    "steps": [
+      "Mount curved hook. Lay olive thread to bend.",
+      "Tie in fine gold wire.",
+      "Dub a bright green abdomen to 65%.",
+      "Rib in 5 turns.",
+      "Tie in dark gray hen back flat over thorax area as wing pads.",
+      "Dub olive-brown thorax.",
+      "Wrap 2 turns of soft partridge hackle, tie off.",
+      "Whip finish, head cement."
+    ]
+  },
+  "rec_cranefly_adult_terrestrial": {
+    "recipe_id": "rec_cranefly_adult_terrestrial",
+    "fly_name": "Cranefly Adult (Terrestrial)",
+    "hook": "Tiemco TMC 5212 2XL, sizes 8-12",
+    "thread": "Uni 8/0 Tan or Gray",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5212 2XL, #8-12"},
+      {"name": "Thread", "description": "Uni 8/0 Tan"},
+      {"name": "Body", "description": "Tan or gray foam cylinder or dubbed body, segmented"},
+      {"name": "Wing", "description": "Two clear or light gray poly or CDC wings, angled back"},
+      {"name": "Legs", "description": "Knotted tan rubber legs (6), very long — cranefly legs are distinctive"},
+      {"name": "Thorax", "description": "Tan dubbing hump"}
+    ],
+    "steps": [
+      "Mount 2XL hook. Start thread at mid-shank.",
+      "Tie in a tan foam strip or dub a segmented tan body covering 2/3 of shank.",
+      "Dub a slight thorax hump behind the eye.",
+      "Tie in two pale poly or CDC wings angled back 45 degrees, one on each side.",
+      "Tie in 3 pairs of knotted tan rubber legs — cranefly legs are very long; leave extra length.",
+      "Build a neat head, whip finish, head cement."
+    ]
+  },
+  "rec_cranefly_larva_nymph": {
+    "recipe_id": "rec_cranefly_larva_nymph",
+    "fly_name": "Cranefly Larva (Nymph)",
+    "hook": "Tiemco TMC 5263 3XL or scud hook, sizes 8-12",
+    "thread": "Uni 8/0 Tan or Cream",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5263 3XL or TMC 2457 scud, #8-12"},
+      {"name": "Thread", "description": "Uni 8/0 Tan"},
+      {"name": "Body", "description": "Cream or tan Ultra Chenille (micro) or tan dubbing — segmented worm-like profile"},
+      {"name": "Rib", "description": "Tan or cream thread counter-wrapped for segmentation"},
+      {"name": "Head", "description": "Brown or dark head dubbing"}
+    ],
+    "steps": [
+      "Mount hook. Lay tan thread base to bend.",
+      "Tie in tan Ultra Chenille or dub a cream worm-like body the full shank length.",
+      "If using dubbing, counter-wrap with thread to create visible segmentation.",
+      "Build a small dark brown head at the eye.",
+      "Whip finish, head cement.",
+      "Optional: add a small black bead as the head for weight."
+    ]
+  },
+  "rec_flying_ant_terrestrial": {
+    "recipe_id": "rec_flying_ant_terrestrial",
+    "fly_name": "Flying Ant (Terrestrial)",
+    "hook": "Tiemco TMC 100, sizes 16-20",
+    "thread": "Uni 8/0 Black",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 100, #16-20"},
+      {"name": "Thread", "description": "Uni 8/0 Black"},
+      {"name": "Abdomen", "description": "Black dubbing, large round ball at rear"},
+      {"name": "Waist", "description": "Black thread, narrow pinch"},
+      {"name": "Thorax", "description": "Black dubbing, smaller ball at front"},
+      {"name": "Wings", "description": "White or clear poly yarn or CDC, figure-eight spent flat"},
+      {"name": "Legs", "description": "Black hackle 1-2 turns or omit for simplicity"}
+    ],
+    "steps": [
+      "Mount hook. At the rear 2/3, dub a fat round black ball abdomen.",
+      "Pinch thread tight to create a distinct narrow waist.",
+      "At mid-shank, tie in white poly yarn or CDC and figure-eight to form flat spent wings.",
+      "Dub a smaller black ball thorax at the front 1/3.",
+      "Optional: wrap 1-2 turns of black hackle at the waist between the body segments.",
+      "Whip finish, apply UV resin to the bodies for durability and shine."
+    ]
+  },
+  "rec_damselfly_nymph": {
+    "recipe_id": "rec_damselfly_nymph",
+    "fly_name": "Damselfly Nymph (Nymph)",
+    "hook": "Tiemco TMC 5263 3XL or TMC 200R, sizes 10-14",
+    "thread": "Uni 6/0 Olive",
+    "tying_materials": [
+      {"name": "Hook", "description": "Tiemco TMC 5263 3XL or TMC 200R, #10-14"},
+      {"name": "Thread", "description": "Uni 6/0 Olive"},
+      {"name": "Tail", "description": "3 olive marabou fibers or olive Zelon — mimics caudal gills"},
+      {"name": "Rib", "description": "Fine copper wire"},
+      {"name": "Abdomen", "description": "Olive Antron or dubbing, slim tapered"},
+      {"name": "Wingcase", "description": "Olive turkey tail or foam"},
+      {"name": "Legs", "description": "Olive partridge or sparse marabou"},
+      {"name": "Thorax", "description": "Olive dubbing, slightly fatter than abdomen"},
+      {"name": "Eyes", "description": "Small black mono eyes (optional)"}
+    ],
+    "steps": [
+      "Mount 3XL hook. Lay olive thread base to bend.",
+      "Tie in 3 olive marabou fibers as tail/caudal gills, splayed slightly.",
+      "Tie in fine copper wire.",
+      "Dub a slim tapered olive abdomen to 60% — damsel nymphs have a very slim body.",
+      "Rib in 6 turns.",
+      "Tie in olive turkey tail wingcase.",
+      "Tie in olive partridge legs on each side.",
+      "Dub a slightly fuller olive thorax, pull wingcase over.",
+      "Optional: attach small black mono eyes at the head.",
+      "Whip finish, head cement."
+    ]
   }
 }

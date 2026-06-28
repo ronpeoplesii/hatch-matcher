@@ -4,3490 +4,1707 @@
     "name": "Blue Winged Olive (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_002",
     "name": "Dark Blue Winged Olive (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_dark_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_003",
     "name": "Blue Winged Olive (Emerger)",
     "stage": "emerger",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_004",
     "name": "Dark Blue Winged Olive (Emerger)",
     "stage": "emerger",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22,
-      24
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22,24],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_dark_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_005",
     "name": "Blue Winged Olive (Dun)",
     "stage": "dun",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_006",
     "name": "Dark Blue Winged Olive (Dun)",
     "stage": "dun",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_dark_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_007",
     "name": "Blue Winged Olive (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_008",
     "name": "Dark Blue Winged Olive (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      3,
-      4,
-      5,
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 42,
-      "max_f": 55
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain","Pacific Northwest"],
+    "months": [3,4,5,9,10,11],
+    "water_temp_range": {"min_f": 42, "max_f": 55},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [18,20,22],
     "imitation_species": "Baetis",
     "recipe_id": "rec_blue_winged_olive_dark_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_009",
     "name": "Hendrickson (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 54
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Ephemerella subvaria",
     "recipe_id": "rec_hendrickson_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_010",
     "name": "Hendrickson (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 54
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Ephemerella subvaria",
     "recipe_id": "rec_hendrickson_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_011",
     "name": "Hendrickson (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 54
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Ephemerella subvaria",
     "recipe_id": "rec_hendrickson_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_012",
     "name": "Sulfur (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_013",
     "name": "Bright Sulfur (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_bright_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_014",
     "name": "Sulfur (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_015",
     "name": "Bright Sulfur (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_bright_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_016",
     "name": "Sulfur (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_017",
     "name": "Bright Sulfur (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_bright_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_018",
     "name": "Sulfur (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_019",
     "name": "Bright Sulfur (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 55, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Ephemerella invaria",
     "recipe_id": "rec_sulfur_bright_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_020",
     "name": "Green Drake (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain"
-    ],
-    "months": [
-      5,
-      6
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 60
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain"],
+    "months": [5,6],
+    "water_temp_range": {"min_f": 52, "max_f": 62},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Ephemera guttulata",
     "recipe_id": "rec_green_drake_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_021",
     "name": "Green Drake (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain"
-    ],
-    "months": [
-      5,
-      6
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 60
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain"],
+    "months": [5,6],
+    "water_temp_range": {"min_f": 52, "max_f": 62},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Ephemera guttulata",
     "recipe_id": "rec_green_drake_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_022",
     "name": "Green Drake (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Rocky Mountain"
-    ],
-    "months": [
-      5,
-      6
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 60
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Midwest","Rocky Mountain"],
+    "months": [5,6],
+    "water_temp_range": {"min_f": 52, "max_f": 62},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Ephemera guttulata",
     "recipe_id": "rec_green_drake_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_023",
     "name": "Light Cahill (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 60,
-      "max_f": 68
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
-    "imitation_species": "Stenonema",
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["freestone"],
+    "size_range": [12,14,16],
+    "imitation_species": "Maccaffertium vicarium",
     "recipe_id": "rec_light_cahill_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_024",
     "name": "Light Cahill (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 60,
-      "max_f": 68
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
-    "imitation_species": "Stenonema",
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["freestone"],
+    "size_range": [12,14,16],
+    "imitation_species": "Maccaffertium vicarium",
     "recipe_id": "rec_light_cahill_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_025",
     "name": "Light Cahill (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 60,
-      "max_f": 68
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
-    "imitation_species": "Stenonema",
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["freestone"],
+    "size_range": [12,14,16],
+    "imitation_species": "Maccaffertium vicarium",
     "recipe_id": "rec_light_cahill_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_026",
     "name": "Pale Morning Dun (PMD) (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_027",
     "name": "Light Pale Morning Dun (PMD) (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__light_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_028",
     "name": "Pale Morning Dun (PMD) (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_029",
     "name": "Light Pale Morning Dun (PMD) (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__light_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_030",
     "name": "Pale Morning Dun (PMD) (Dun)",
     "stage": "dun",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_031",
     "name": "Light Pale Morning Dun (PMD) (Dun)",
     "stage": "dun",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__light_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_032",
     "name": "Pale Morning Dun (PMD) (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_033",
     "name": "Light Pale Morning Dun (PMD) (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [16,18],
     "imitation_species": "Ephemerella excrucians",
     "recipe_id": "rec_pale_morning_dun__pmd__light_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_034",
     "name": "Western Trico (Nymph)",
     "stage": "nymph",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Midwest",
-      "Southwest"
-    ],
-    "months": [
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 58,
-      "max_f": 68
-    },
-    "water_types": [
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      22,
-      24,
-      26
-    ],
+    "biomes": ["Rocky Mountain","Midwest","Southwest","Northeast"],
+    "months": [7,8,9],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["spring_creek","tailwater"],
+    "size_range": [22,24,26],
     "imitation_species": "Tricorythodes",
     "recipe_id": "rec_western_trico_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_035",
     "name": "Western Trico (Dun)",
     "stage": "dun",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Midwest",
-      "Southwest"
-    ],
-    "months": [
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 58,
-      "max_f": 68
-    },
-    "water_types": [
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      22,
-      24,
-      26
-    ],
+    "biomes": ["Rocky Mountain","Midwest","Southwest","Northeast"],
+    "months": [7,8,9],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["spring_creek","tailwater"],
+    "size_range": [22,24,26],
     "imitation_species": "Tricorythodes",
     "recipe_id": "rec_western_trico_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_036",
     "name": "Western Trico (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Rocky Mountain",
-      "Midwest",
-      "Southwest"
-    ],
-    "months": [
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 58,
-      "max_f": 68
-    },
-    "water_types": [
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      22,
-      24,
-      26
-    ],
+    "biomes": ["Rocky Mountain","Midwest","Southwest","Northeast"],
+    "months": [7,8,9],
+    "water_temp_range": {"min_f": 58, "max_f": 68},
+    "water_types": ["spring_creek","tailwater"],
+    "size_range": [22,24,26],
     "imitation_species": "Tricorythodes",
     "recipe_id": "rec_western_trico_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_037",
     "name": "March Brown (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Pacific Northwest",
-      "Northeast"
-    ],
-    "months": [
-      3,
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 44,
-      "max_f": 50
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
-    "imitation_species": "Rhithrogena morrisoni",
+    "biomes": ["Pacific Northwest","Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [10,12,14],
+    "imitation_species": "Rhithrogena morrisoni / Maccaffertium vicarium",
     "recipe_id": "rec_march_brown_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_038",
     "name": "March Brown (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Pacific Northwest",
-      "Northeast"
-    ],
-    "months": [
-      3,
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 44,
-      "max_f": 50
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
-    "imitation_species": "Rhithrogena morrisoni",
+    "biomes": ["Pacific Northwest","Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [10,12,14],
+    "imitation_species": "Rhithrogena morrisoni / Maccaffertium vicarium",
     "recipe_id": "rec_march_brown_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_039",
     "name": "March Brown (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Pacific Northwest",
-      "Northeast"
-    ],
-    "months": [
-      3,
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 44,
-      "max_f": 50
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
-    "imitation_species": "Rhithrogena morrisoni",
+    "biomes": ["Pacific Northwest","Northeast","Midwest"],
+    "months": [3,4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [10,12,14],
+    "imitation_species": "Rhithrogena morrisoni / Maccaffertium vicarium",
     "recipe_id": "rec_march_brown_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_040",
     "name": "Quill Gordon (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Southeast",
-      "Northeast"
-    ],
-    "months": [
-      4
-    ],
-    "water_temp_range": {
-      "min_f": 46,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Southeast","Northeast"],
+    "months": [3,4],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [12,14],
     "imitation_species": "Epeorus pleuralis",
     "recipe_id": "rec_quill_gordon_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_041",
     "name": "Quill Gordon (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Southeast",
-      "Northeast"
-    ],
-    "months": [
-      4
-    ],
-    "water_temp_range": {
-      "min_f": 46,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Southeast","Northeast"],
+    "months": [3,4],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [12,14],
     "imitation_species": "Epeorus pleuralis",
     "recipe_id": "rec_quill_gordon_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_042",
     "name": "Quill Gordon (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Southeast",
-      "Northeast"
-    ],
-    "months": [
-      4
-    ],
-    "water_temp_range": {
-      "min_f": 46,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Southeast","Northeast"],
+    "months": [3,4],
+    "water_temp_range": {"min_f": 44, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [12,14],
     "imitation_species": "Epeorus pleuralis",
     "recipe_id": "rec_quill_gordon_standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_043",
     "name": "Isonychia (Slate Drake) (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Southeast",
-      "Midwest"
-    ],
-    "months": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Southeast","Midwest"],
+    "months": [5,6,7,8,9],
+    "water_temp_range": {"min_f": 50, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [10,12],
     "imitation_species": "Isonychia bicolor",
     "recipe_id": "rec_isonychia__slate_drake__standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_044",
     "name": "Isonychia (Slate Drake) (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Southeast",
-      "Midwest"
-    ],
-    "months": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Southeast","Midwest"],
+    "months": [5,6,7,8,9],
+    "water_temp_range": {"min_f": 50, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [10,12],
     "imitation_species": "Isonychia bicolor",
     "recipe_id": "rec_isonychia__slate_drake__standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_045",
     "name": "Isonychia (Slate Drake) (Spinner)",
     "stage": "spinner",
     "difficulty": "advanced",
-    "biomes": [
-      "Northeast",
-      "Southeast",
-      "Midwest"
-    ],
-    "months": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      10,
-      12
-    ],
+    "biomes": ["Northeast","Southeast","Midwest"],
+    "months": [5,6,7,8,9],
+    "water_temp_range": {"min_f": 50, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [10,12],
     "imitation_species": "Isonychia bicolor",
     "recipe_id": "rec_isonychia__slate_drake__standard_spinner",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_046",
     "name": "Tan Elk Hair Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_tan_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_047",
     "name": "Olive Elk Hair Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_olive_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_048",
     "name": "Black Elk Hair Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_black_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_049",
     "name": "Tan Elk Hair Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_tan_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_050",
     "name": "Olive Elk Hair Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_olive_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_051",
     "name": "Black Elk Hair Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_black_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_052",
     "name": "Tan Elk Hair Caddis (Dun)",
     "stage": "dun",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_tan_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_053",
     "name": "Olive Elk Hair Caddis (Dun)",
     "stage": "dun",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_olive_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_054",
     "name": "Black Elk Hair Caddis (Dun)",
     "stage": "dun",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 50,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek",
-      "tailwater"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16,18],
     "imitation_species": "Hydropsyche",
     "recipe_id": "rec_elk_hair_caddis_black_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_055",
     "name": "Grannom Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_056",
     "name": "Dark Grannom Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_dark_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_057",
     "name": "Grannom Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_058",
     "name": "Dark Grannom Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_dark_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_059",
     "name": "Grannom Caddis (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_060",
     "name": "Dark Grannom Caddis (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      4,
-      5
-    ],
-    "water_temp_range": {
-      "min_f": 45,
-      "max_f": 52
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast"],
+    "months": [4,5],
+    "water_temp_range": {"min_f": 44, "max_f": 54},
+    "water_types": ["freestone"],
+    "size_range": [14,16],
     "imitation_species": "Brachycentrus",
     "recipe_id": "rec_grannom_caddis_dark_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_061",
     "name": "October Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 56
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [6,8,10],
     "imitation_species": "Dicosmoecus",
     "recipe_id": "rec_october_caddis_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon"]
   },
   {
     "id": "fly_062",
     "name": "October Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 56
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [6,8,10],
     "imitation_species": "Dicosmoecus",
     "recipe_id": "rec_october_caddis_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon"]
   },
   {
     "id": "fly_063",
     "name": "October Caddis (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      9,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 48,
-      "max_f": 56
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 56},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [6,8,10],
     "imitation_species": "Dicosmoecus",
     "recipe_id": "rec_october_caddis_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon"]
   },
   {
     "id": "fly_064",
     "name": "Cinnamon Caddis (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Midwest",
-      "Southeast",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Midwest","Southeast","Southwest","Northeast","Rocky Mountain"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 55, "max_f": 70},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16,18],
     "imitation_species": "Cheumatopsyche",
     "recipe_id": "rec_cinnamon_caddis_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_065",
     "name": "Cinnamon Caddis (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Midwest",
-      "Southeast",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Midwest","Southeast","Southwest","Northeast","Rocky Mountain"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 55, "max_f": 70},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16,18],
     "imitation_species": "Cheumatopsyche",
     "recipe_id": "rec_cinnamon_caddis_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_066",
     "name": "Cinnamon Caddis (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Midwest",
-      "Southeast",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Midwest","Southeast","Southwest","Northeast","Rocky Mountain"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 55, "max_f": 70},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16,18],
     "imitation_species": "Cheumatopsyche",
     "recipe_id": "rec_cinnamon_caddis_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_067",
     "name": "Salmonfly (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 54,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      4,
-      6,
-      8
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [4,5,6],
+    "water_temp_range": {"min_f": 48, "max_f": 60},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [4,6,8],
     "imitation_species": "Pteronarcys californica",
     "recipe_id": "rec_salmonfly_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon"]
   },
   {
     "id": "fly_068",
     "name": "Salmonfly (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 54,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      4,
-      6,
-      8
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [4,5,6],
+    "water_temp_range": {"min_f": 48, "max_f": 60},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [4,6,8],
     "imitation_species": "Pteronarcys californica",
     "recipe_id": "rec_salmonfly_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon"]
   },
   {
     "id": "fly_069",
     "name": "Golden Stonefly (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 56,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Hesperoperla pacifica",
     "recipe_id": "rec_golden_stonefly_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_070",
     "name": "High-Vis Golden Stonefly (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 56,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Hesperoperla pacifica",
     "recipe_id": "rec_golden_stonefly_high-vis_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_071",
     "name": "Golden Stonefly (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 56,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Hesperoperla pacifica",
     "recipe_id": "rec_golden_stonefly_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_072",
     "name": "High-Vis Golden Stonefly (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 56,
-      "max_f": 65
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [8,10,12],
     "imitation_species": "Hesperoperla pacifica",
     "recipe_id": "rec_golden_stonefly_high-vis_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
   },
   {
     "id": "fly_073",
     "name": "Little Yellow Sallie (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Southeast",
-      "Northeast",
-      "Rocky Mountain"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 60
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Southeast","Northeast","Rocky Mountain","Midwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 62},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16],
     "imitation_species": "Isoperla",
     "recipe_id": "rec_little_yellow_sallie_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_074",
     "name": "Little Yellow Sallie (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Southeast",
-      "Northeast",
-      "Rocky Mountain"
-    ],
-    "months": [
-      5,
-      6,
-      7
-    ],
-    "water_temp_range": {
-      "min_f": 52,
-      "max_f": 60
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      14,
-      16
-    ],
+    "biomes": ["Southeast","Northeast","Rocky Mountain","Midwest"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 52, "max_f": 62},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16],
     "imitation_species": "Isoperla",
     "recipe_id": "rec_little_yellow_sallie_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_075",
     "name": "Early Black Stonefly (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest"
-    ],
-    "months": [
-      2,
-      3
-    ],
-    "water_temp_range": {
-      "min_f": 36,
-      "max_f": 45
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Pacific Northwest"],
+    "months": [1,2,3],
+    "water_temp_range": {"min_f": 33, "max_f": 46},
+    "water_types": ["freestone"],
+    "size_range": [16,18],
     "imitation_species": "Capniidae",
     "recipe_id": "rec_early_black_stonefly_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_076",
     "name": "Early Black Stonefly (Dun)",
     "stage": "dun",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest"
-    ],
-    "months": [
-      2,
-      3
-    ],
-    "water_temp_range": {
-      "min_f": 36,
-      "max_f": 45
-    },
-    "water_types": [
-      "freestone"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Pacific Northwest"],
+    "months": [1,2,3],
+    "water_temp_range": {"min_f": 33, "max_f": 46},
+    "water_types": ["freestone"],
+    "size_range": [16,18],
     "imitation_species": "Capniidae",
     "recipe_id": "rec_early_black_stonefly_standard_dun",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
   },
   {
     "id": "fly_077",
     "name": "Red Zebra Midge (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_red_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_078",
     "name": "Black Zebra Midge (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_black_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_079",
     "name": "Olive Zebra Midge (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_olive_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_080",
     "name": "Cream Zebra Midge (Nymph)",
     "stage": "nymph",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_cream_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_081",
     "name": "Red Zebra Midge (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_red_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_082",
     "name": "Black Zebra Midge (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_black_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_083",
     "name": "Olive Zebra Midge (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_olive_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_084",
     "name": "Cream Zebra Midge (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek",
-      "freestone"
-    ],
-    "size_range": [
-      18,
-      20,
-      22
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["tailwater","spring_creek","freestone"],
+    "size_range": [18,20,22],
     "imitation_species": "Chironomidae",
     "recipe_id": "rec_zebra_midge_cream_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_085",
     "name": "Blood Midge (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Midwest",
-      "Southwest"
-    ],
-    "months": [
-      3,
-      4,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 40,
-      "max_f": 68
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
-    "imitation_species": "Chironomus Muticus",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,10,11,12],
+    "water_temp_range": {"min_f": 38, "max_f": 65},
+    "water_types": ["tailwater","spring_creek","lake"],
+    "size_range": [16,18,20],
+    "imitation_species": "Chironomus plumosus",
     "recipe_id": "rec_blood_midge_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_086",
     "name": "Blood Midge (Emerger)",
     "stage": "emerger",
     "difficulty": "intermediate",
-    "biomes": [
-      "Midwest",
-      "Southwest"
-    ],
-    "months": [
-      3,
-      4,
-      10,
-      11
-    ],
-    "water_temp_range": {
-      "min_f": 40,
-      "max_f": 68
-    },
-    "water_types": [
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      16,
-      18
-    ],
-    "imitation_species": "Chironomus Muticus",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,10,11,12],
+    "water_temp_range": {"min_f": 38, "max_f": 65},
+    "water_types": ["tailwater","spring_creek","lake"],
+    "size_range": [16,18,20],
+    "imitation_species": "Chironomus plumosus",
     "recipe_id": "rec_blood_midge_standard_emerger",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
   },
   {
     "id": "fly_087",
     "name": "Red San Juan Worm (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 75
-    },
-    "water_types": [
-      "freestone",
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 75},
+    "water_types": ["freestone","tailwater","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Annelida",
     "recipe_id": "rec_san_juan_worm_red_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","carp"]
   },
   {
     "id": "fly_088",
     "name": "Pink San Juan Worm (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 75
-    },
-    "water_types": [
-      "freestone",
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 75},
+    "water_types": ["freestone","tailwater","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Annelida",
     "recipe_id": "rec_san_juan_worm_pink_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","carp"]
   },
   {
     "id": "fly_089",
     "name": "Squirmy-Orange San Juan Worm (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 75
-    },
-    "water_types": [
-      "freestone",
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 75},
+    "water_types": ["freestone","tailwater","spring_creek"],
+    "size_range": [12,14],
     "imitation_species": "Annelida",
     "recipe_id": "rec_san_juan_worm_squirmy-orange_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","carp"]
   },
   {
     "id": "fly_090",
     "name": "Prince Nymph (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["freestone","tailwater","spring_creek"],
+    "size_range": [12,14,16],
     "imitation_species": "Attractor Nymph",
     "recipe_id": "rec_prince_nymph_standard_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "whitefish", "carp"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","whitefish","carp"]
   },
   {
     "id": "fly_091",
     "name": "Beadhead Prince Nymph (Nymph)",
     "stage": "nymph",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "tailwater",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["freestone","tailwater","spring_creek"],
+    "size_range": [12,14,16],
     "imitation_species": "Attractor Nymph",
     "recipe_id": "rec_prince_nymph_beadhead_nymph",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "whitefish", "carp"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","whitefish","carp"]
   },
   {
     "id": "fly_092",
     "name": "Black Ant (Terrestrial)",
     "stage": "terrestrial",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 75
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [6,7,8,9],
+    "water_temp_range": {"min_f": 55, "max_f": 75},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16,18],
     "imitation_species": "Formicidae",
     "recipe_id": "rec_black_ant_standard_terrestrial",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","carp","panfish"]
   },
   {
     "id": "fly_093",
     "name": "Cinnamon Black Ant (Terrestrial)",
     "stage": "terrestrial",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      6,
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 55,
-      "max_f": 75
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      14,
-      16,
-      18
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [6,7,8,9],
+    "water_temp_range": {"min_f": 55, "max_f": 75},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [14,16,18],
     "imitation_species": "Formicidae",
     "recipe_id": "rec_black_ant_cinnamon_terrestrial",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","carp","panfish"]
   },
   {
     "id": "fly_094",
     "name": "Grasshopper (Terrestrial)",
     "stage": "terrestrial",
     "difficulty": "beginner",
-    "biomes": [
-      "Midwest",
-      "Rocky Mountain",
-      "Southwest"
-    ],
-    "months": [
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 60,
-      "max_f": 80
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Midwest","Rocky Mountain","Southwest","Northeast","Southeast"],
+    "months": [7,8,9],
+    "water_temp_range": {"min_f": 60, "max_f": 80},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [8,10,12],
     "imitation_species": "Orthoptera",
     "recipe_id": "rec_grasshopper_standard_terrestrial",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","bass","carp","panfish"]
   },
   {
     "id": "fly_095",
     "name": "Yellow Grasshopper (Terrestrial)",
     "stage": "terrestrial",
     "difficulty": "beginner",
-    "biomes": [
-      "Midwest",
-      "Rocky Mountain",
-      "Southwest"
-    ],
-    "months": [
-      7,
-      8,
-      9
-    ],
-    "water_temp_range": {
-      "min_f": 60,
-      "max_f": 80
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      8,
-      10,
-      12
-    ],
+    "biomes": ["Midwest","Rocky Mountain","Southwest","Northeast","Southeast"],
+    "months": [7,8,9],
+    "water_temp_range": {"min_f": 60, "max_f": 80},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [8,10,12],
     "imitation_species": "Orthoptera",
     "recipe_id": "rec_grasshopper_yellow_terrestrial",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","bass","carp","panfish"]
   },
   {
     "id": "fly_096",
     "name": "Beetle (Terrestrial)",
     "stage": "terrestrial",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast"
-    ],
-    "months": [
-      6,
-      7,
-      8
-    ],
-    "water_temp_range": {
-      "min_f": 58,
-      "max_f": 78
-    },
-    "water_types": [
-      "freestone",
-      "spring_creek"
-    ],
-    "size_range": [
-      12,
-      14,
-      16
-    ],
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [6,7,8,9],
+    "water_temp_range": {"min_f": 58, "max_f": 78},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [12,14,16],
     "imitation_species": "Coleoptera",
     "recipe_id": "rec_beetle_standard_terrestrial",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","carp","panfish"]
   },
   {
     "id": "fly_097",
     "name": "Black Woolly Bugger (Streamer)",
     "stage": "streamer",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      4,
-      6,
-      8,
-      10
-    ],
-    "imitation_species": "Anisoptera (Imitation)",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [4,6,8,10],
+    "imitation_species": "Leech / Baitfish attractor",
     "recipe_id": "rec_woolly_bugger_black_streamer",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon","bass","carp","panfish"]
   },
   {
     "id": "fly_098",
     "name": "Olive Woolly Bugger (Streamer)",
     "stage": "streamer",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      4,
-      6,
-      8,
-      10
-    ],
-    "imitation_species": "Anisoptera (Imitation)",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [4,6,8,10],
+    "imitation_species": "Leech / Baitfish attractor",
     "recipe_id": "rec_woolly_bugger_olive_streamer",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon","bass","carp","panfish"]
   },
   {
     "id": "fly_099",
     "name": "White Woolly Bugger (Streamer)",
     "stage": "streamer",
     "difficulty": "beginner",
-    "biomes": [
-      "Northeast",
-      "Midwest",
-      "Southeast",
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Southwest"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 34,
-      "max_f": 70
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      4,
-      6,
-      8,
-      10
-    ],
-    "imitation_species": "Anisoptera (Imitation)",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 34, "max_f": 70},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [4,6,8,10],
+    "imitation_species": "Leech / Baitfish attractor",
     "recipe_id": "rec_woolly_bugger_white_streamer",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon","bass","carp","panfish"]
   },
   {
     "id": "fly_100",
     "name": "Olive Sculpin Leech (Streamer)",
     "stage": "streamer",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Northeast"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 36,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      2,
-      4,
-      6
-    ],
-    "imitation_species": "Cottidae (Imitation)",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Northeast"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 36, "max_f": 62},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [2,4,6],
+    "imitation_species": "Cottidae (sculpin imitation)",
     "recipe_id": "rec_sculpin_leech_olive_streamer",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon","bass"]
   },
   {
     "id": "fly_101",
     "name": "Natural Sculpin Leech (Streamer)",
     "stage": "streamer",
     "difficulty": "intermediate",
-    "biomes": [
-      "Rocky Mountain",
-      "Pacific Northwest",
-      "Northeast"
-    ],
-    "months": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ],
-    "water_temp_range": {
-      "min_f": 36,
-      "max_f": 62
-    },
-    "water_types": [
-      "freestone",
-      "tailwater"
-    ],
-    "size_range": [
-      2,
-      4,
-      6
-    ],
-    "imitation_species": "Cottidae (Imitation)",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Northeast"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 36, "max_f": 62},
+    "water_types": ["freestone","tailwater"],
+    "size_range": [2,4,6],
+    "imitation_species": "Cottidae (sculpin imitation)",
     "recipe_id": "rec_sculpin_leech_natural_streamer",
-    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass"]
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead","salmon","bass"]
+  },
+  {
+    "id": "fly_102",
+    "name": "Mahogany Dun (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [8,9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 58},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Paraleptophlebia adoptiva / heteronea",
+    "recipe_id": "rec_mahogany_dun_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_103",
+    "name": "Mahogany Dun (Dun)",
+    "stage": "dun",
+    "difficulty": "intermediate",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [8,9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 58},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Paraleptophlebia adoptiva / heteronea",
+    "recipe_id": "rec_mahogany_dun_dun",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_104",
+    "name": "Mahogany Dun (Spinner)",
+    "stage": "spinner",
+    "difficulty": "advanced",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [8,9,10,11],
+    "water_temp_range": {"min_f": 46, "max_f": 58},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Paraleptophlebia adoptiva / heteronea",
+    "recipe_id": "rec_mahogany_dun_spinner",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_105",
+    "name": "Callibaetis (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 65},
+    "water_types": ["lake","spring_creek"],
+    "size_range": [14,16],
+    "imitation_species": "Callibaetis coloradensis",
+    "recipe_id": "rec_callibaetis_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
+  },
+  {
+    "id": "fly_106",
+    "name": "Callibaetis (Emerger)",
+    "stage": "emerger",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 65},
+    "water_types": ["lake","spring_creek"],
+    "size_range": [14,16],
+    "imitation_species": "Callibaetis coloradensis",
+    "recipe_id": "rec_callibaetis_emerger",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
+  },
+  {
+    "id": "fly_107",
+    "name": "Callibaetis (Dun)",
+    "stage": "dun",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 65},
+    "water_types": ["lake","spring_creek"],
+    "size_range": [14,16],
+    "imitation_species": "Callibaetis coloradensis",
+    "recipe_id": "rec_callibaetis_dun",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
+  },
+  {
+    "id": "fly_108",
+    "name": "Callibaetis (Spinner)",
+    "stage": "spinner",
+    "difficulty": "advanced",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9],
+    "water_temp_range": {"min_f": 48, "max_f": 65},
+    "water_types": ["lake","spring_creek"],
+    "size_range": [14,16],
+    "imitation_species": "Callibaetis coloradensis",
+    "recipe_id": "rec_callibaetis_spinner",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish","grayling"]
+  },
+  {
+    "id": "fly_109",
+    "name": "Pale Evening Dun (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Heptagenia elegantula",
+    "recipe_id": "rec_pale_evening_dun_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_110",
+    "name": "Pale Evening Dun (Dun)",
+    "stage": "dun",
+    "difficulty": "intermediate",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Heptagenia elegantula",
+    "recipe_id": "rec_pale_evening_dun_dun",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_111",
+    "name": "Pale Evening Dun (Spinner)",
+    "stage": "spinner",
+    "difficulty": "advanced",
+    "biomes": ["Northeast","Rocky Mountain","Pacific Northwest","Midwest"],
+    "months": [5,6,7,8],
+    "water_temp_range": {"min_f": 52, "max_f": 65},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [14,16],
+    "imitation_species": "Heptagenia elegantula",
+    "recipe_id": "rec_pale_evening_dun_spinner",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout"]
+  },
+  {
+    "id": "fly_112",
+    "name": "Hexagenia (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Midwest","Southeast","Northeast"],
+    "months": [5,6,7],
+    "water_temp_range": {"min_f": 58, "max_f": 72},
+    "water_types": ["lake","freestone"],
+    "size_range": [4,6,8],
+    "imitation_species": "Hexagenia limbata",
+    "recipe_id": "rec_hexagenia_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","panfish"]
+  },
+  {
+    "id": "fly_113",
+    "name": "Hexagenia (Dun)",
+    "stage": "dun",
+    "difficulty": "intermediate",
+    "biomes": ["Midwest","Southeast","Northeast"],
+    "months": [6,7],
+    "water_temp_range": {"min_f": 62, "max_f": 74},
+    "water_types": ["lake","freestone"],
+    "size_range": [4,6,8],
+    "imitation_species": "Hexagenia limbata",
+    "recipe_id": "rec_hexagenia_dun",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","panfish"]
+  },
+  {
+    "id": "fly_114",
+    "name": "Hexagenia (Spinner)",
+    "stage": "spinner",
+    "difficulty": "advanced",
+    "biomes": ["Midwest","Southeast","Northeast"],
+    "months": [6,7],
+    "water_temp_range": {"min_f": 62, "max_f": 74},
+    "water_types": ["lake","freestone"],
+    "size_range": [4,6,8],
+    "imitation_species": "Hexagenia limbata",
+    "recipe_id": "rec_hexagenia_spinner",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","panfish"]
+  },
+  {
+    "id": "fly_115",
+    "name": "Skwala Stonefly (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [2,3,4],
+    "water_temp_range": {"min_f": 38, "max_f": 50},
+    "water_types": ["freestone"],
+    "size_range": [8,10],
+    "imitation_species": "Skwala americana",
+    "recipe_id": "rec_skwala_stonefly_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish"]
+  },
+  {
+    "id": "fly_116",
+    "name": "Skwala Stonefly (Dun)",
+    "stage": "dun",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest"],
+    "months": [3,4],
+    "water_temp_range": {"min_f": 42, "max_f": 52},
+    "water_types": ["freestone"],
+    "size_range": [8,10],
+    "imitation_species": "Skwala americana",
+    "recipe_id": "rec_skwala_stonefly_dun",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish"]
+  },
+  {
+    "id": "fly_117",
+    "name": "Green Caddis Larva (Nymph)",
+    "stage": "nymph",
+    "difficulty": "beginner",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 36, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [12,14,16],
+    "imitation_species": "Rhyacophila",
+    "recipe_id": "rec_green_caddis_larva_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish"]
+  },
+  {
+    "id": "fly_118",
+    "name": "Green Caddis Pupa (Emerger)",
+    "stage": "emerger",
+    "difficulty": "intermediate",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8,9,10],
+    "water_temp_range": {"min_f": 44, "max_f": 68},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [12,14,16],
+    "imitation_species": "Rhyacophila",
+    "recipe_id": "rec_green_caddis_pupa_emerger",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","whitefish"]
+  },
+  {
+    "id": "fly_119",
+    "name": "Cranefly Adult (Terrestrial)",
+    "stage": "terrestrial",
+    "difficulty": "intermediate",
+    "biomes": ["Pacific Northwest","Northeast","Midwest"],
+    "months": [8,9,10,11],
+    "water_temp_range": {"min_f": 44, "max_f": 60},
+    "water_types": ["freestone","spring_creek"],
+    "size_range": [8,10,12],
+    "imitation_species": "Tipula",
+    "recipe_id": "rec_cranefly_adult_terrestrial",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
+  },
+  {
+    "id": "fly_120",
+    "name": "Cranefly Larva (Nymph)",
+    "stage": "nymph",
+    "difficulty": "beginner",
+    "biomes": ["Pacific Northwest","Northeast","Midwest","Rocky Mountain"],
+    "months": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "water_temp_range": {"min_f": 36, "max_f": 62},
+    "water_types": ["freestone","spring_creek","tailwater"],
+    "size_range": [8,10,12],
+    "imitation_species": "Tipula",
+    "recipe_id": "rec_cranefly_larva_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","steelhead"]
+  },
+  {
+    "id": "fly_121",
+    "name": "Flying Ant (Terrestrial)",
+    "stage": "terrestrial",
+    "difficulty": "beginner",
+    "biomes": ["Northeast","Midwest","Southeast","Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [8,9],
+    "water_temp_range": {"min_f": 58, "max_f": 78},
+    "water_types": ["freestone","spring_creek","lake"],
+    "size_range": [16,18,20],
+    "imitation_species": "Camponotus / Lasius",
+    "recipe_id": "rec_flying_ant_terrestrial",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","panfish","carp"]
+  },
+  {
+    "id": "fly_122",
+    "name": "Damselfly Nymph (Nymph)",
+    "stage": "nymph",
+    "difficulty": "intermediate",
+    "biomes": ["Rocky Mountain","Pacific Northwest","Southwest"],
+    "months": [4,5,6,7,8],
+    "water_temp_range": {"min_f": 50, "max_f": 68},
+    "water_types": ["lake"],
+    "size_range": [10,12,14],
+    "imitation_species": "Zygoptera",
+    "recipe_id": "rec_damselfly_nymph",
+    "target_species": ["brown_trout","rainbow_trout","brook_trout","bass","panfish"]
   }
 ]
