@@ -476,6 +476,7 @@ function renderResults(flies) {
     return;
   }
 
+  lastMatchedFlies = flies;
   const displayFlies = applySpeciesFilter(flies);
 
   if (displayFlies.length === 0 && flies.length > 0) {
@@ -804,6 +805,148 @@ window.submitPhotoMatch = async () => {
     btn.textContent = "🔍 Identify & Match";
   }
 };
+
+// ============================================================================
+// SHARE RESULTS CARD
+// ============================================================================
+
+let lastMatchedFlies = [];
+
+window.shareResults = () => {
+  const flies = lastMatchedFlies.slice(0, 5);
+  if (flies.length === 0) return;
+
+  const biomeLabels = {
+    appalachian: "Appalachian & Limestone",
+    rocky_mountain: "Rocky Mountain",
+    pacific_coastal: "Pacific Rainforest & Coastal",
+    boreal_shield: "Great Lakes & Boreal Shield",
+    transitional_plains: "Midwest & Plains",
+    warmwater_south: "Southern & Coastal Plain"
+  };
+
+  const monthName = new Date().toLocaleString("default", { month: "long" });
+  const biome = biomeLabels[currentConditions.biome] || currentConditions.biome;
+
+  // Draw card on canvas
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1080;
+  const ctx = canvas.getContext("2d");
+
+  // Background
+  ctx.fillStyle = "#141417";
+  ctx.fillRect(0, 0, 1080, 1080);
+
+  // Green accent bar top
+  ctx.fillStyle = "#10b981";
+  ctx.fillRect(0, 0, 1080, 8);
+
+  // App name
+  ctx.fillStyle = "#10b981";
+  ctx.font = "bold 52px -apple-system, BlinkMacSystemFont, sans-serif";
+  ctx.fillText("🎣 Hatch Matcher", 80, 100);
+
+  // Tagline
+  ctx.fillStyle = "#71717a";
+  ctx.font = "32px -apple-system, BlinkMacSystemFont, sans-serif";
+  ctx.fillText("hatch-matcher.vercel.app", 80, 150);
+
+  // Divider
+  ctx.strokeStyle = "#27272a";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(80, 175);
+  ctx.lineTo(1000, 175);
+  ctx.stroke();
+
+  // Conditions
+  ctx.fillStyle = "#a1a1aa";
+  ctx.font = "28px -apple-system, BlinkMacSystemFont, sans-serif";
+  ctx.fillText(`📍 ${biome}   📅 ${monthName}   🌡️ ${currentConditions.waterTemp}°F`, 80, 225);
+
+  // Section label
+  ctx.fillStyle = "#52525b";
+  ctx.font = "bold 24px -apple-system, BlinkMacSystemFont, sans-serif";
+  ctx.fillText("TOP MATCHED PATTERNS", 80, 285);
+
+  // Fly cards
+  flies.forEach((fly, i) => {
+    const y = 310 + i * 140;
+    // Card bg
+    ctx.fillStyle = "#202023";
+    roundRect(ctx, 80, y, 920, 120, 16);
+    ctx.fill();
+
+    // Green dot
+    ctx.fillStyle = "#10b981";
+    ctx.beginPath();
+    ctx.arc(120, y + 60, 8, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Fly name
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 34px -apple-system, BlinkMacSystemFont, sans-serif";
+    ctx.fillText(fly.name, 148, y + 48);
+
+    // Species + size
+    ctx.fillStyle = "#a1a1aa";
+    ctx.font = "26px -apple-system, BlinkMacSystemFont, sans-serif";
+    const sizeStr = fly.size_range && fly.size_range.length > 0 ? `  ·  #${fly.size_range.slice(0,2).join(", #")}` : "";
+    ctx.fillText(`${fly.imitation_species}${sizeStr}`, 148, y + 88);
+
+    // Stage pill
+    ctx.fillStyle = "#052e16";
+    roundRect(ctx, 870, y + 38, 110, 44, 22);
+    ctx.fill();
+    ctx.fillStyle = "#10b981";
+    ctx.font = "bold 20px -apple-system, BlinkMacSystemFont, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(fly.stage.toUpperCase(), 925, y + 66);
+    ctx.textAlign = "left";
+  });
+
+  // Bottom label
+  ctx.fillStyle = "#3f3f46";
+  ctx.font = "24px -apple-system, BlinkMacSystemFont, sans-serif";
+  ctx.fillText("Free fly fishing app — match the hatch, build your box, tie the pattern.", 80, 1040);
+
+  // Convert to blob and share
+  canvas.toBlob(async (blob) => {
+    const file = new File([blob], "hatch-matcher-results.png", { type: "image/png" });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: "Hatch Matcher Results",
+          text: `Fishing ${biome} in ${monthName} — here's what I'm throwing. hatch-matcher.vercel.app`
+        });
+        return;
+      } catch {}
+    }
+    // Fallback: download the image
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "hatch-matcher-results.png";
+    a.click();
+    URL.revokeObjectURL(url);
+  }, "image/png");
+};
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
 
 // ============================================================================
 // HATCHING NOW BANNER
