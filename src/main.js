@@ -518,7 +518,9 @@ window.submitAiRecommend = async () => {
         }
       })
     });
-    const data = await res.json();
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch { throw new Error(`Server returned: ${text.slice(0, 120)}`); }
     if (data.error) throw new Error(data.error);
     // Bold any **text** markdown
     const html = data.answer.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#e4e4e7;">$1</strong>');
