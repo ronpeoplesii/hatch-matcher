@@ -3,6 +3,7 @@
     "id": "fly_001",
     "name": "Blue Winged Olive (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -39,6 +40,7 @@
     "id": "fly_002",
     "name": "Dark Blue Winged Olive (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -75,6 +77,7 @@
     "id": "fly_003",
     "name": "Blue Winged Olive (Emerger)",
     "stage": "emerger",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -111,6 +114,7 @@
     "id": "fly_004",
     "name": "Dark Blue Winged Olive (Emerger)",
     "stage": "emerger",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -148,6 +152,7 @@
     "id": "fly_005",
     "name": "Blue Winged Olive (Dun)",
     "stage": "dun",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -184,6 +189,7 @@
     "id": "fly_006",
     "name": "Dark Blue Winged Olive (Dun)",
     "stage": "dun",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -220,6 +226,7 @@
     "id": "fly_007",
     "name": "Blue Winged Olive (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -256,6 +263,7 @@
     "id": "fly_008",
     "name": "Dark Blue Winged Olive (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -292,6 +300,7 @@
     "id": "fly_009",
     "name": "Hendrickson (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest"
@@ -320,6 +329,7 @@
     "id": "fly_010",
     "name": "Hendrickson (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest"
@@ -348,6 +358,7 @@
     "id": "fly_011",
     "name": "Hendrickson (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest"
@@ -376,6 +387,7 @@
     "id": "fly_012",
     "name": "Sulfur (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -408,6 +420,7 @@
     "id": "fly_013",
     "name": "Bright Sulfur (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -440,6 +453,7 @@
     "id": "fly_014",
     "name": "Sulfur (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -472,6 +486,7 @@
     "id": "fly_015",
     "name": "Bright Sulfur (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -504,6 +519,7 @@
     "id": "fly_016",
     "name": "Sulfur (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -536,6 +552,7 @@
     "id": "fly_017",
     "name": "Bright Sulfur (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -568,6 +585,7 @@
     "id": "fly_018",
     "name": "Sulfur (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -600,6 +618,7 @@
     "id": "fly_019",
     "name": "Bright Sulfur (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -632,6 +651,7 @@
     "id": "fly_020",
     "name": "Green Drake (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -662,6 +682,7 @@
     "id": "fly_021",
     "name": "Green Drake (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -692,6 +713,7 @@
     "id": "fly_022",
     "name": "Green Drake (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -722,6 +744,7 @@
     "id": "fly_023",
     "name": "Light Cahill (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -752,6 +775,7 @@
     "id": "fly_024",
     "name": "Light Cahill (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -782,6 +806,7 @@
     "id": "fly_025",
     "name": "Light Cahill (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -812,6 +837,7 @@
     "id": "fly_026",
     "name": "Pale Morning Dun (PMD) (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -843,6 +869,7 @@
     "id": "fly_027",
     "name": "Light Pale Morning Dun (PMD) (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -874,6 +901,7 @@
     "id": "fly_028",
     "name": "Pale Morning Dun (PMD) (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -905,6 +933,7 @@
     "id": "fly_029",
     "name": "Light Pale Morning Dun (PMD) (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -936,6 +965,7 @@
     "id": "fly_030",
     "name": "Pale Morning Dun (PMD) (Dun)",
     "stage": "dun",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -967,6 +997,7 @@
     "id": "fly_031",
     "name": "Light Pale Morning Dun (PMD) (Dun)",
     "stage": "dun",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -998,6 +1029,7 @@
     "id": "fly_032",
     "name": "Pale Morning Dun (PMD) (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -1029,6 +1061,7 @@
     "id": "fly_033",
     "name": "Light Pale Morning Dun (PMD) (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -1060,6 +1093,7 @@
     "id": "fly_034",
     "name": "Western Trico (Nymph)",
     "stage": "nymph",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Midwest",
@@ -1091,6 +1125,7 @@
     "id": "fly_035",
     "name": "Western Trico (Dun)",
     "stage": "dun",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Midwest",
@@ -1122,6 +1157,7 @@
     "id": "fly_036",
     "name": "Western Trico (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Rocky Mountain",
       "Midwest",
@@ -1153,6 +1189,7 @@
     "id": "fly_037",
     "name": "March Brown (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Pacific Northwest",
       "Northeast"
@@ -1181,6 +1218,7 @@
     "id": "fly_038",
     "name": "March Brown (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Pacific Northwest",
       "Northeast"
@@ -1209,6 +1247,7 @@
     "id": "fly_039",
     "name": "March Brown (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Pacific Northwest",
       "Northeast"
@@ -1237,6 +1276,7 @@
     "id": "fly_040",
     "name": "Quill Gordon (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Southeast",
       "Northeast"
@@ -1263,6 +1303,7 @@
     "id": "fly_041",
     "name": "Quill Gordon (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Southeast",
       "Northeast"
@@ -1289,6 +1330,7 @@
     "id": "fly_042",
     "name": "Quill Gordon (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Southeast",
       "Northeast"
@@ -1315,6 +1357,7 @@
     "id": "fly_043",
     "name": "Isonychia (Slate Drake) (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Southeast",
@@ -1346,6 +1389,7 @@
     "id": "fly_044",
     "name": "Isonychia (Slate Drake) (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Southeast",
@@ -1377,6 +1421,7 @@
     "id": "fly_045",
     "name": "Isonychia (Slate Drake) (Spinner)",
     "stage": "spinner",
+    "difficulty": "advanced",
     "biomes": [
       "Northeast",
       "Southeast",
@@ -1408,6 +1453,7 @@
     "id": "fly_046",
     "name": "Tan Elk Hair Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1446,6 +1492,7 @@
     "id": "fly_047",
     "name": "Olive Elk Hair Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1484,6 +1531,7 @@
     "id": "fly_048",
     "name": "Black Elk Hair Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1522,6 +1570,7 @@
     "id": "fly_049",
     "name": "Tan Elk Hair Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1560,6 +1609,7 @@
     "id": "fly_050",
     "name": "Olive Elk Hair Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1598,6 +1648,7 @@
     "id": "fly_051",
     "name": "Black Elk Hair Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1636,6 +1687,7 @@
     "id": "fly_052",
     "name": "Tan Elk Hair Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1674,6 +1726,7 @@
     "id": "fly_053",
     "name": "Olive Elk Hair Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1712,6 +1765,7 @@
     "id": "fly_054",
     "name": "Black Elk Hair Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1750,6 +1804,7 @@
     "id": "fly_055",
     "name": "Grannom Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1778,6 +1833,7 @@
     "id": "fly_056",
     "name": "Dark Grannom Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1806,6 +1862,7 @@
     "id": "fly_057",
     "name": "Grannom Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1834,6 +1891,7 @@
     "id": "fly_058",
     "name": "Dark Grannom Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1862,6 +1920,7 @@
     "id": "fly_059",
     "name": "Grannom Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1890,6 +1949,7 @@
     "id": "fly_060",
     "name": "Dark Grannom Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -1918,6 +1978,7 @@
     "id": "fly_061",
     "name": "October Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest"
@@ -1947,6 +2008,7 @@
     "id": "fly_062",
     "name": "October Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest"
@@ -1976,6 +2038,7 @@
     "id": "fly_063",
     "name": "October Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest"
@@ -2005,6 +2068,7 @@
     "id": "fly_064",
     "name": "Cinnamon Caddis (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Midwest",
       "Southeast",
@@ -2035,6 +2099,7 @@
     "id": "fly_065",
     "name": "Cinnamon Caddis (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Midwest",
       "Southeast",
@@ -2065,6 +2130,7 @@
     "id": "fly_066",
     "name": "Cinnamon Caddis (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Midwest",
       "Southeast",
@@ -2095,6 +2161,7 @@
     "id": "fly_067",
     "name": "Salmonfly (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest"
@@ -2125,6 +2192,7 @@
     "id": "fly_068",
     "name": "Salmonfly (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest"
@@ -2155,6 +2223,7 @@
     "id": "fly_069",
     "name": "Golden Stonefly (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -2185,6 +2254,7 @@
     "id": "fly_070",
     "name": "High-Vis Golden Stonefly (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -2215,6 +2285,7 @@
     "id": "fly_071",
     "name": "Golden Stonefly (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -2245,6 +2316,7 @@
     "id": "fly_072",
     "name": "High-Vis Golden Stonefly (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -2275,6 +2347,7 @@
     "id": "fly_073",
     "name": "Little Yellow Sallie (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Southeast",
       "Northeast",
@@ -2305,6 +2378,7 @@
     "id": "fly_074",
     "name": "Little Yellow Sallie (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Southeast",
       "Northeast",
@@ -2335,6 +2409,7 @@
     "id": "fly_075",
     "name": "Early Black Stonefly (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest"
@@ -2362,6 +2437,7 @@
     "id": "fly_076",
     "name": "Early Black Stonefly (Dun)",
     "stage": "dun",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest"
@@ -2389,6 +2465,7 @@
     "id": "fly_077",
     "name": "Red Zebra Midge (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2433,6 +2510,7 @@
     "id": "fly_078",
     "name": "Black Zebra Midge (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2477,6 +2555,7 @@
     "id": "fly_079",
     "name": "Olive Zebra Midge (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2521,6 +2600,7 @@
     "id": "fly_080",
     "name": "Cream Zebra Midge (Nymph)",
     "stage": "nymph",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2565,6 +2645,7 @@
     "id": "fly_081",
     "name": "Red Zebra Midge (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2609,6 +2690,7 @@
     "id": "fly_082",
     "name": "Black Zebra Midge (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2653,6 +2735,7 @@
     "id": "fly_083",
     "name": "Olive Zebra Midge (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2697,6 +2780,7 @@
     "id": "fly_084",
     "name": "Cream Zebra Midge (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2741,6 +2825,7 @@
     "id": "fly_085",
     "name": "Blood Midge (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Midwest",
       "Southwest"
@@ -2771,6 +2856,7 @@
     "id": "fly_086",
     "name": "Blood Midge (Emerger)",
     "stage": "emerger",
+    "difficulty": "intermediate",
     "biomes": [
       "Midwest",
       "Southwest"
@@ -2801,6 +2887,7 @@
     "id": "fly_087",
     "name": "Red San Juan Worm (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2844,6 +2931,7 @@
     "id": "fly_088",
     "name": "Pink San Juan Worm (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2887,6 +2975,7 @@
     "id": "fly_089",
     "name": "Squirmy-Orange San Juan Worm (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2930,6 +3019,7 @@
     "id": "fly_090",
     "name": "Prince Nymph (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -2974,6 +3064,7 @@
     "id": "fly_091",
     "name": "Beadhead Prince Nymph (Nymph)",
     "stage": "nymph",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3018,6 +3109,7 @@
     "id": "fly_092",
     "name": "Black Ant (Terrestrial)",
     "stage": "terrestrial",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3053,6 +3145,7 @@
     "id": "fly_093",
     "name": "Cinnamon Black Ant (Terrestrial)",
     "stage": "terrestrial",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3088,6 +3181,7 @@
     "id": "fly_094",
     "name": "Grasshopper (Terrestrial)",
     "stage": "terrestrial",
+    "difficulty": "beginner",
     "biomes": [
       "Midwest",
       "Rocky Mountain",
@@ -3119,6 +3213,7 @@
     "id": "fly_095",
     "name": "Yellow Grasshopper (Terrestrial)",
     "stage": "terrestrial",
+    "difficulty": "beginner",
     "biomes": [
       "Midwest",
       "Rocky Mountain",
@@ -3150,6 +3245,7 @@
     "id": "fly_096",
     "name": "Beetle (Terrestrial)",
     "stage": "terrestrial",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3181,6 +3277,7 @@
     "id": "fly_097",
     "name": "Black Woolly Bugger (Streamer)",
     "stage": "streamer",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3225,6 +3322,7 @@
     "id": "fly_098",
     "name": "Olive Woolly Bugger (Streamer)",
     "stage": "streamer",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3269,6 +3367,7 @@
     "id": "fly_099",
     "name": "White Woolly Bugger (Streamer)",
     "stage": "streamer",
+    "difficulty": "beginner",
     "biomes": [
       "Northeast",
       "Midwest",
@@ -3313,6 +3412,7 @@
     "id": "fly_100",
     "name": "Olive Sculpin Leech (Streamer)",
     "stage": "streamer",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",
@@ -3353,6 +3453,7 @@
     "id": "fly_101",
     "name": "Natural Sculpin Leech (Streamer)",
     "stage": "streamer",
+    "difficulty": "intermediate",
     "biomes": [
       "Rocky Mountain",
       "Pacific Northwest",

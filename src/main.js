@@ -1294,7 +1294,10 @@ window.openPatternDetail = (flyId, returnScreen) => {
           </div>
           <p style="margin:0; font-size:0.82rem; color:#71717a; font-style:italic;">${fly.imitation_species}</p>
         </div>
-        <span style="font-size:0.7rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:12px;">${fly.stage}</span>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; margin-left:12px; flex-shrink:0;">
+          <span style="font-size:0.7rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;">${fly.stage}</span>
+          ${difficultyBadge(fly.difficulty)}
+        </div>
       </div>
       <p style="margin:0 0 12px; color:#d4d4d8; font-size:0.85rem;"><span style="color:#a1a1aa; font-weight:600;">Hook Size:</span> ${sizes}</p>
       ${hookLine}${threadLine}
@@ -1360,6 +1363,38 @@ const VAULT_GROUPS = [
 const ALL_STAGES = ["nymph", "emerger", "dun", "spinner", "terrestrial", "streamer"];
 let activeStageFilter = null;
 let activeSpeciesFilter = null;
+let activeDifficultyFilter = null;
+
+const DIFFICULTY_CONFIG = {
+  beginner:     { label: "🟢 Beginner",     color: "#10b981", bg: "#052e16", border: "#166534" },
+  intermediate: { label: "🟡 Intermediate", color: "#f59e0b", bg: "#1c1500", border: "#92400e" },
+  advanced:     { label: "🔴 Advanced",     color: "#ef4444", bg: "#1c0505", border: "#7f1d1d" }
+};
+
+function difficultyBadge(difficulty) {
+  const cfg = DIFFICULTY_CONFIG[difficulty];
+  if (!cfg) return "";
+  return `<span style="font-size:0.68rem; color:${cfg.color}; background:${cfg.bg}; border:1px solid ${cfg.border}; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;">${cfg.label}</span>`;
+}
+
+function difficultyPillsHtml(setFn) {
+  return `
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
+      ${[{ key: null, label: "All Levels" }, ...Object.entries(DIFFICULTY_CONFIG).map(([k, v]) => ({ key: k, label: v.label }))].map(({ key, label }) => {
+        const isActive = activeDifficultyFilter === key;
+        const cfg = key ? DIFFICULTY_CONFIG[key] : null;
+        return `<button onclick="${setFn}(${key === null ? "null" : `'${key}'`})"
+          style="padding:4px 10px; border-radius:20px; font-size:0.72rem; font-weight:600; cursor:pointer; border:1px solid ${isActive && cfg ? cfg.border : "#3f3f46"}; background:${isActive && cfg ? cfg.bg : "#202023"}; color:${isActive && cfg ? cfg.color : "#a1a1aa"};">
+          ${label}
+        </button>`;
+      }).join("")}
+    </div>`;
+}
+
+function applyDifficultyFilter(flies) {
+  if (!activeDifficultyFilter) return flies;
+  return flies.filter(f => f.difficulty === activeDifficultyFilter);
+}
 
 const SPECIES_LIST = [
   { key: "brown_trout",   label: "🟤 Brown Trout" },
@@ -1409,6 +1444,7 @@ function renderVaultBrowse(container) {
     let flies = hatchDatabase.filter(f => group.species.includes(f.imitation_species));
     if (activeStageFilter) flies = flies.filter(f => f.stage === activeStageFilter);
     flies = applySpeciesFilter(flies);
+    flies = applyDifficultyFilter(flies);
     if (flies.length === 0) return "";
     return `
       <div style="margin-bottom:20px;">
@@ -1422,7 +1458,10 @@ function renderVaultBrowse(container) {
                 <span style="color:#52525b; font-size:0.75rem; margin-left:6px; font-style:italic;">${fly.imitation_species}</span>
                 ${sizes ? `<span style="display:block; font-size:0.72rem; color:#71717a; margin-top:2px;">${sizes}</span>` : ""}
               </div>
-              <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; margin-left:8px;">${fly.stage}</span>
+              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; margin-left:8px; flex-shrink:0;">
+                <span style="font-size:0.68rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;">${fly.stage}</span>
+                ${difficultyBadge(fly.difficulty)}
+              </div>
             </div>
           `;
         }).join("")}
@@ -1431,11 +1470,20 @@ function renderVaultBrowse(container) {
   }).join("");
 
   container.style.display = "block";
-  container.innerHTML = stagePillsHtml + speciesPillsHtml("setVaultSpeciesFilter") + groupsHtml;
+  container.innerHTML = stagePillsHtml + speciesPillsHtml("setVaultSpeciesFilter") + difficultyPillsHtml("setVaultDifficultyFilter") + groupsHtml;
 }
 
 window.setVaultStageFilter = (stage) => {
   activeStageFilter = stage;
+  const container = document.getElementById("search-dropdown-results");
+  const searchInput = document.getElementById("global-search");
+  if (container && searchInput && !searchInput.value.trim()) {
+    renderVaultBrowse(container);
+  }
+};
+
+window.setVaultDifficultyFilter = (difficulty) => {
+  activeDifficultyFilter = difficulty;
   const container = document.getElementById("search-dropdown-results");
   const searchInput = document.getElementById("global-search");
   if (container && searchInput && !searchInput.value.trim()) {
