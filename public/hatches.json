@@ -32,7 +32,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_standard_nymph"
+    "recipe_id": "rec_blue_winged_olive_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_002",
@@ -67,7 +68,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_dark_nymph"
+    "recipe_id": "rec_blue_winged_olive_dark_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_003",
@@ -102,7 +104,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_standard_emerger"
+    "recipe_id": "rec_blue_winged_olive_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_004",
@@ -138,7 +141,8 @@
       24
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_dark_emerger"
+    "recipe_id": "rec_blue_winged_olive_dark_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_005",
@@ -173,7 +177,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_standard_dun"
+    "recipe_id": "rec_blue_winged_olive_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_006",
@@ -208,7 +213,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_dark_dun"
+    "recipe_id": "rec_blue_winged_olive_dark_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_007",
@@ -243,7 +249,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_standard_spinner"
+    "recipe_id": "rec_blue_winged_olive_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_008",
@@ -278,7 +285,8 @@
       22
     ],
     "imitation_species": "Baetis",
-    "recipe_id": "rec_blue_winged_olive_dark_spinner"
+    "recipe_id": "rec_blue_winged_olive_dark_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_009",
@@ -305,7 +313,8 @@
       14
     ],
     "imitation_species": "Ephemerella subvaria",
-    "recipe_id": "rec_hendrickson_standard_nymph"
+    "recipe_id": "rec_hendrickson_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_010",
@@ -332,7 +341,8 @@
       14
     ],
     "imitation_species": "Ephemerella subvaria",
-    "recipe_id": "rec_hendrickson_standard_dun"
+    "recipe_id": "rec_hendrickson_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_011",
@@ -359,7 +369,8 @@
       14
     ],
     "imitation_species": "Ephemerella subvaria",
-    "recipe_id": "rec_hendrickson_standard_spinner"
+    "recipe_id": "rec_hendrickson_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_012",
@@ -390,7 +401,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_standard_nymph"
+    "recipe_id": "rec_sulfur_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_013",
@@ -421,7 +433,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_bright_nymph"
+    "recipe_id": "rec_sulfur_bright_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_014",
@@ -452,7 +465,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_standard_emerger"
+    "recipe_id": "rec_sulfur_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_015",
@@ -483,7 +497,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_bright_emerger"
+    "recipe_id": "rec_sulfur_bright_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_016",
@@ -514,7 +529,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_standard_dun"
+    "recipe_id": "rec_sulfur_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_017",
@@ -545,7 +561,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_bright_dun"
+    "recipe_id": "rec_sulfur_bright_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_018",
@@ -576,7 +593,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_standard_spinner"
+    "recipe_id": "rec_sulfur_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_019",
@@ -607,7 +625,8 @@
       18
     ],
     "imitation_species": "Ephemerella invaria",
-    "recipe_id": "rec_sulfur_bright_spinner"
+    "recipe_id": "rec_sulfur_bright_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_020",
@@ -636,7 +655,8 @@
       12
     ],
     "imitation_species": "Ephemera guttulata",
-    "recipe_id": "rec_green_drake_standard_nymph"
+    "recipe_id": "rec_green_drake_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_021",
@@ -665,7 +685,8 @@
       12
     ],
     "imitation_species": "Ephemera guttulata",
-    "recipe_id": "rec_green_drake_standard_dun"
+    "recipe_id": "rec_green_drake_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_022",
@@ -694,7 +715,8 @@
       12
     ],
     "imitation_species": "Ephemera guttulata",
-    "recipe_id": "rec_green_drake_standard_spinner"
+    "recipe_id": "rec_green_drake_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_023",
@@ -723,7 +745,8 @@
       16
     ],
     "imitation_species": "Stenonema",
-    "recipe_id": "rec_light_cahill_standard_nymph"
+    "recipe_id": "rec_light_cahill_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_024",
@@ -752,7 +775,8 @@
       16
     ],
     "imitation_species": "Stenonema",
-    "recipe_id": "rec_light_cahill_standard_dun"
+    "recipe_id": "rec_light_cahill_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_025",
@@ -781,7 +805,8 @@
       16
     ],
     "imitation_species": "Stenonema",
-    "recipe_id": "rec_light_cahill_standard_spinner"
+    "recipe_id": "rec_light_cahill_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_026",
@@ -811,7 +836,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__standard_nymph"
+    "recipe_id": "rec_pale_morning_dun__pmd__standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_027",
@@ -841,7 +867,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__light_nymph"
+    "recipe_id": "rec_pale_morning_dun__pmd__light_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_028",
@@ -871,7 +898,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__standard_emerger"
+    "recipe_id": "rec_pale_morning_dun__pmd__standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_029",
@@ -901,7 +929,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__light_emerger"
+    "recipe_id": "rec_pale_morning_dun__pmd__light_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_030",
@@ -931,7 +960,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__standard_dun"
+    "recipe_id": "rec_pale_morning_dun__pmd__standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_031",
@@ -961,7 +991,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__light_dun"
+    "recipe_id": "rec_pale_morning_dun__pmd__light_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_032",
@@ -991,7 +1022,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__standard_spinner"
+    "recipe_id": "rec_pale_morning_dun__pmd__standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_033",
@@ -1021,7 +1053,8 @@
       18
     ],
     "imitation_species": "Ephemerella excrucians",
-    "recipe_id": "rec_pale_morning_dun__pmd__light_spinner"
+    "recipe_id": "rec_pale_morning_dun__pmd__light_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_034",
@@ -1051,7 +1084,8 @@
       26
     ],
     "imitation_species": "Tricorythodes",
-    "recipe_id": "rec_western_trico_standard_nymph"
+    "recipe_id": "rec_western_trico_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_035",
@@ -1081,7 +1115,8 @@
       26
     ],
     "imitation_species": "Tricorythodes",
-    "recipe_id": "rec_western_trico_standard_dun"
+    "recipe_id": "rec_western_trico_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_036",
@@ -1111,7 +1146,8 @@
       26
     ],
     "imitation_species": "Tricorythodes",
-    "recipe_id": "rec_western_trico_standard_spinner"
+    "recipe_id": "rec_western_trico_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_037",
@@ -1138,7 +1174,8 @@
       14
     ],
     "imitation_species": "Rhithrogena morrisoni",
-    "recipe_id": "rec_march_brown_standard_nymph"
+    "recipe_id": "rec_march_brown_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_038",
@@ -1165,7 +1202,8 @@
       14
     ],
     "imitation_species": "Rhithrogena morrisoni",
-    "recipe_id": "rec_march_brown_standard_emerger"
+    "recipe_id": "rec_march_brown_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_039",
@@ -1192,7 +1230,8 @@
       14
     ],
     "imitation_species": "Rhithrogena morrisoni",
-    "recipe_id": "rec_march_brown_standard_dun"
+    "recipe_id": "rec_march_brown_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_040",
@@ -1217,7 +1256,8 @@
       14
     ],
     "imitation_species": "Epeorus pleuralis",
-    "recipe_id": "rec_quill_gordon_standard_nymph"
+    "recipe_id": "rec_quill_gordon_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_041",
@@ -1242,7 +1282,8 @@
       14
     ],
     "imitation_species": "Epeorus pleuralis",
-    "recipe_id": "rec_quill_gordon_standard_dun"
+    "recipe_id": "rec_quill_gordon_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_042",
@@ -1267,7 +1308,8 @@
       14
     ],
     "imitation_species": "Epeorus pleuralis",
-    "recipe_id": "rec_quill_gordon_standard_spinner"
+    "recipe_id": "rec_quill_gordon_standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_043",
@@ -1297,7 +1339,8 @@
       12
     ],
     "imitation_species": "Isonychia bicolor",
-    "recipe_id": "rec_isonychia__slate_drake__standard_nymph"
+    "recipe_id": "rec_isonychia__slate_drake__standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_044",
@@ -1327,7 +1370,8 @@
       12
     ],
     "imitation_species": "Isonychia bicolor",
-    "recipe_id": "rec_isonychia__slate_drake__standard_dun"
+    "recipe_id": "rec_isonychia__slate_drake__standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_045",
@@ -1357,7 +1401,8 @@
       12
     ],
     "imitation_species": "Isonychia bicolor",
-    "recipe_id": "rec_isonychia__slate_drake__standard_spinner"
+    "recipe_id": "rec_isonychia__slate_drake__standard_spinner",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_046",
@@ -1394,7 +1439,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_tan_nymph"
+    "recipe_id": "rec_elk_hair_caddis_tan_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_047",
@@ -1431,7 +1477,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_olive_nymph"
+    "recipe_id": "rec_elk_hair_caddis_olive_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_048",
@@ -1468,7 +1515,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_black_nymph"
+    "recipe_id": "rec_elk_hair_caddis_black_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_049",
@@ -1505,7 +1553,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_tan_emerger"
+    "recipe_id": "rec_elk_hair_caddis_tan_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_050",
@@ -1542,7 +1591,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_olive_emerger"
+    "recipe_id": "rec_elk_hair_caddis_olive_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_051",
@@ -1579,7 +1629,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_black_emerger"
+    "recipe_id": "rec_elk_hair_caddis_black_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_052",
@@ -1616,7 +1667,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_tan_dun"
+    "recipe_id": "rec_elk_hair_caddis_tan_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_053",
@@ -1653,7 +1705,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_olive_dun"
+    "recipe_id": "rec_elk_hair_caddis_olive_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_054",
@@ -1690,7 +1743,8 @@
       18
     ],
     "imitation_species": "Hydropsyche",
-    "recipe_id": "rec_elk_hair_caddis_black_dun"
+    "recipe_id": "rec_elk_hair_caddis_black_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_055",
@@ -1717,7 +1771,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_standard_nymph"
+    "recipe_id": "rec_grannom_caddis_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_056",
@@ -1744,7 +1799,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_dark_nymph"
+    "recipe_id": "rec_grannom_caddis_dark_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_057",
@@ -1771,7 +1827,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_standard_emerger"
+    "recipe_id": "rec_grannom_caddis_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_058",
@@ -1798,7 +1855,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_dark_emerger"
+    "recipe_id": "rec_grannom_caddis_dark_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_059",
@@ -1825,7 +1883,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_standard_dun"
+    "recipe_id": "rec_grannom_caddis_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_060",
@@ -1852,7 +1911,8 @@
       16
     ],
     "imitation_species": "Brachycentrus",
-    "recipe_id": "rec_grannom_caddis_dark_dun"
+    "recipe_id": "rec_grannom_caddis_dark_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_061",
@@ -1880,7 +1940,8 @@
       10
     ],
     "imitation_species": "Dicosmoecus",
-    "recipe_id": "rec_october_caddis_standard_nymph"
+    "recipe_id": "rec_october_caddis_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
   },
   {
     "id": "fly_062",
@@ -1908,7 +1969,8 @@
       10
     ],
     "imitation_species": "Dicosmoecus",
-    "recipe_id": "rec_october_caddis_standard_emerger"
+    "recipe_id": "rec_october_caddis_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
   },
   {
     "id": "fly_063",
@@ -1936,7 +1998,8 @@
       10
     ],
     "imitation_species": "Dicosmoecus",
-    "recipe_id": "rec_october_caddis_standard_dun"
+    "recipe_id": "rec_october_caddis_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
   },
   {
     "id": "fly_064",
@@ -1965,7 +2028,8 @@
       18
     ],
     "imitation_species": "Cheumatopsyche",
-    "recipe_id": "rec_cinnamon_caddis_standard_nymph"
+    "recipe_id": "rec_cinnamon_caddis_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_065",
@@ -1994,7 +2058,8 @@
       18
     ],
     "imitation_species": "Cheumatopsyche",
-    "recipe_id": "rec_cinnamon_caddis_standard_emerger"
+    "recipe_id": "rec_cinnamon_caddis_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_066",
@@ -2023,7 +2088,8 @@
       18
     ],
     "imitation_species": "Cheumatopsyche",
-    "recipe_id": "rec_cinnamon_caddis_standard_dun"
+    "recipe_id": "rec_cinnamon_caddis_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_067",
@@ -2052,7 +2118,8 @@
       8
     ],
     "imitation_species": "Pteronarcys californica",
-    "recipe_id": "rec_salmonfly_standard_nymph"
+    "recipe_id": "rec_salmonfly_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
   },
   {
     "id": "fly_068",
@@ -2081,7 +2148,8 @@
       8
     ],
     "imitation_species": "Pteronarcys californica",
-    "recipe_id": "rec_salmonfly_standard_dun"
+    "recipe_id": "rec_salmonfly_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon"]
   },
   {
     "id": "fly_069",
@@ -2110,7 +2178,8 @@
       12
     ],
     "imitation_species": "Hesperoperla pacifica",
-    "recipe_id": "rec_golden_stonefly_standard_nymph"
+    "recipe_id": "rec_golden_stonefly_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_070",
@@ -2139,7 +2208,8 @@
       12
     ],
     "imitation_species": "Hesperoperla pacifica",
-    "recipe_id": "rec_golden_stonefly_high-vis_nymph"
+    "recipe_id": "rec_golden_stonefly_high-vis_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_071",
@@ -2168,7 +2238,8 @@
       12
     ],
     "imitation_species": "Hesperoperla pacifica",
-    "recipe_id": "rec_golden_stonefly_standard_dun"
+    "recipe_id": "rec_golden_stonefly_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_072",
@@ -2197,7 +2268,8 @@
       12
     ],
     "imitation_species": "Hesperoperla pacifica",
-    "recipe_id": "rec_golden_stonefly_high-vis_dun"
+    "recipe_id": "rec_golden_stonefly_high-vis_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead"]
   },
   {
     "id": "fly_073",
@@ -2226,7 +2298,8 @@
       16
     ],
     "imitation_species": "Isoperla",
-    "recipe_id": "rec_little_yellow_sallie_standard_nymph"
+    "recipe_id": "rec_little_yellow_sallie_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_074",
@@ -2255,7 +2328,8 @@
       16
     ],
     "imitation_species": "Isoperla",
-    "recipe_id": "rec_little_yellow_sallie_standard_dun"
+    "recipe_id": "rec_little_yellow_sallie_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_075",
@@ -2281,7 +2355,8 @@
       18
     ],
     "imitation_species": "Capniidae",
-    "recipe_id": "rec_early_black_stonefly_standard_nymph"
+    "recipe_id": "rec_early_black_stonefly_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_076",
@@ -2307,7 +2382,8 @@
       18
     ],
     "imitation_species": "Capniidae",
-    "recipe_id": "rec_early_black_stonefly_standard_dun"
+    "recipe_id": "rec_early_black_stonefly_standard_dun",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout"]
   },
   {
     "id": "fly_077",
@@ -2350,7 +2426,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_red_nymph"
+    "recipe_id": "rec_zebra_midge_red_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_078",
@@ -2393,7 +2470,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_black_nymph"
+    "recipe_id": "rec_zebra_midge_black_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_079",
@@ -2436,7 +2514,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_olive_nymph"
+    "recipe_id": "rec_zebra_midge_olive_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_080",
@@ -2479,7 +2558,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_cream_nymph"
+    "recipe_id": "rec_zebra_midge_cream_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_081",
@@ -2522,7 +2602,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_red_emerger"
+    "recipe_id": "rec_zebra_midge_red_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_082",
@@ -2565,7 +2646,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_black_emerger"
+    "recipe_id": "rec_zebra_midge_black_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_083",
@@ -2608,7 +2690,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_olive_emerger"
+    "recipe_id": "rec_zebra_midge_olive_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_084",
@@ -2651,7 +2734,8 @@
       22
     ],
     "imitation_species": "Chironomidae",
-    "recipe_id": "rec_zebra_midge_cream_emerger"
+    "recipe_id": "rec_zebra_midge_cream_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_085",
@@ -2680,7 +2764,8 @@
       18
     ],
     "imitation_species": "Chironomus Muticus",
-    "recipe_id": "rec_blood_midge_standard_nymph"
+    "recipe_id": "rec_blood_midge_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_086",
@@ -2709,7 +2794,8 @@
       18
     ],
     "imitation_species": "Chironomus Muticus",
-    "recipe_id": "rec_blood_midge_standard_emerger"
+    "recipe_id": "rec_blood_midge_standard_emerger",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "grayling"]
   },
   {
     "id": "fly_087",
@@ -2751,7 +2837,8 @@
       14
     ],
     "imitation_species": "Annelida",
-    "recipe_id": "rec_san_juan_worm_red_nymph"
+    "recipe_id": "rec_san_juan_worm_red_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
   },
   {
     "id": "fly_088",
@@ -2793,7 +2880,8 @@
       14
     ],
     "imitation_species": "Annelida",
-    "recipe_id": "rec_san_juan_worm_pink_nymph"
+    "recipe_id": "rec_san_juan_worm_pink_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
   },
   {
     "id": "fly_089",
@@ -2835,7 +2923,8 @@
       14
     ],
     "imitation_species": "Annelida",
-    "recipe_id": "rec_san_juan_worm_squirmy-orange_nymph"
+    "recipe_id": "rec_san_juan_worm_squirmy-orange_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "whitefish", "carp"]
   },
   {
     "id": "fly_090",
@@ -2878,7 +2967,8 @@
       16
     ],
     "imitation_species": "Attractor Nymph",
-    "recipe_id": "rec_prince_nymph_standard_nymph"
+    "recipe_id": "rec_prince_nymph_standard_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "whitefish", "carp"]
   },
   {
     "id": "fly_091",
@@ -2921,7 +3011,8 @@
       16
     ],
     "imitation_species": "Attractor Nymph",
-    "recipe_id": "rec_prince_nymph_beadhead_nymph"
+    "recipe_id": "rec_prince_nymph_beadhead_nymph",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "whitefish", "carp"]
   },
   {
     "id": "fly_092",
@@ -2955,7 +3046,8 @@
       18
     ],
     "imitation_species": "Formicidae",
-    "recipe_id": "rec_black_ant_standard_terrestrial"
+    "recipe_id": "rec_black_ant_standard_terrestrial",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_093",
@@ -2989,7 +3081,8 @@
       18
     ],
     "imitation_species": "Formicidae",
-    "recipe_id": "rec_black_ant_cinnamon_terrestrial"
+    "recipe_id": "rec_black_ant_cinnamon_terrestrial",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_094",
@@ -3019,7 +3112,8 @@
       12
     ],
     "imitation_species": "Orthoptera",
-    "recipe_id": "rec_grasshopper_standard_terrestrial"
+    "recipe_id": "rec_grasshopper_standard_terrestrial",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_095",
@@ -3049,7 +3143,8 @@
       12
     ],
     "imitation_species": "Orthoptera",
-    "recipe_id": "rec_grasshopper_yellow_terrestrial"
+    "recipe_id": "rec_grasshopper_yellow_terrestrial",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_096",
@@ -3079,7 +3174,8 @@
       16
     ],
     "imitation_species": "Coleoptera",
-    "recipe_id": "rec_beetle_standard_terrestrial"
+    "recipe_id": "rec_beetle_standard_terrestrial",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_097",
@@ -3122,7 +3218,8 @@
       10
     ],
     "imitation_species": "Anisoptera (Imitation)",
-    "recipe_id": "rec_woolly_bugger_black_streamer"
+    "recipe_id": "rec_woolly_bugger_black_streamer",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_098",
@@ -3165,7 +3262,8 @@
       10
     ],
     "imitation_species": "Anisoptera (Imitation)",
-    "recipe_id": "rec_woolly_bugger_olive_streamer"
+    "recipe_id": "rec_woolly_bugger_olive_streamer",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_099",
@@ -3208,7 +3306,8 @@
       10
     ],
     "imitation_species": "Anisoptera (Imitation)",
-    "recipe_id": "rec_woolly_bugger_white_streamer"
+    "recipe_id": "rec_woolly_bugger_white_streamer",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass", "carp", "panfish"]
   },
   {
     "id": "fly_100",
@@ -3247,7 +3346,8 @@
       6
     ],
     "imitation_species": "Cottidae (Imitation)",
-    "recipe_id": "rec_sculpin_leech_olive_streamer"
+    "recipe_id": "rec_sculpin_leech_olive_streamer",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass"]
   },
   {
     "id": "fly_101",
@@ -3286,6 +3386,7 @@
       6
     ],
     "imitation_species": "Cottidae (Imitation)",
-    "recipe_id": "rec_sculpin_leech_natural_streamer"
+    "recipe_id": "rec_sculpin_leech_natural_streamer",
+    "target_species": ["brown_trout", "rainbow_trout", "brook_trout", "steelhead", "salmon", "bass"]
   }
 ]

@@ -430,11 +430,12 @@ function renderResults(flies) {
   }
 
   if (summary) {
-    if (flies.length === 0) {
-      summary.textContent = "";
-    } else {
-      summary.textContent = `${flies.length} pattern${flies.length === 1 ? "" : "s"} matched:`;
-    }
+    const filtered = applySpeciesFilter(flies);
+    const count = filtered.length;
+    summary.innerHTML = flies.length === 0 ? "" : `
+      <span style="display:block; margin-bottom:8px;">${count} pattern${count === 1 ? "" : "s"} matched${activeSpeciesFilter ? ` for ${SPECIES_LIST.find(s=>s.key===activeSpeciesFilter)?.label||activeSpeciesFilter}` : ""}:</span>
+      ${speciesPillsHtml("setResultsSpeciesFilter")}
+    `;
   }
 
   if (flies.length === 0) {
@@ -475,7 +476,14 @@ function renderResults(flies) {
     return;
   }
 
-  resultsContainer.innerHTML = flies.map(fly => {
+  const displayFlies = applySpeciesFilter(flies);
+
+  if (displayFlies.length === 0 && flies.length > 0) {
+    resultsContainer.innerHTML = `<div style="padding:20px; background:#202023; border:1px dashed #3f3f46; border-radius:12px; text-align:center;"><p style="color:#a1a1aa;">No patterns matched for this species filter. Try a different species or clear the filter.</p></div>`;
+    return;
+  }
+
+  resultsContainer.innerHTML = displayFlies.map(fly => {
     const sizeString = fly.size_range && fly.size_range.length > 0
       ? `Sizes: #${fly.size_range.join(', #')}`
       : 'Universal Size';
@@ -1020,6 +1028,14 @@ window.openPatternDetail = (flyId, returnScreen) => {
         ${materials.map(m => `<li style="margin-bottom:3px;">${m}</li>`).join("")}
       </ul>
       ${stepsHtml}
+      ${fly.target_species && fly.target_species.length > 0 ? `
+        <p style="margin:14px 0 6px; font-weight:700; color:#a1a1aa; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em;">🎯 Target Species</p>
+        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+          ${fly.target_species.map(s => {
+            const found = SPECIES_LIST.find(x => x.key === s);
+            return `<span style="font-size:0.75rem; background:#202023; border:1px solid #3f3f46; padding:3px 10px; border-radius:20px; color:#a1a1aa;">${found ? found.label : s}</span>`;
+          }).join("")}
+        </div>` : ""}
     </div>
   `;
 
@@ -1068,10 +1084,42 @@ const VAULT_GROUPS = [
 
 const ALL_STAGES = ["nymph", "emerger", "dun", "spinner", "terrestrial", "streamer"];
 let activeStageFilter = null;
+let activeSpeciesFilter = null;
+
+const SPECIES_LIST = [
+  { key: "brown_trout",   label: "🟤 Brown Trout" },
+  { key: "rainbow_trout", label: "🌈 Rainbow Trout" },
+  { key: "brook_trout",   label: "🔵 Brook Trout" },
+  { key: "steelhead",     label: "⚡ Steelhead" },
+  { key: "salmon",        label: "🐟 Salmon" },
+  { key: "whitefish",     label: "⚪ Whitefish" },
+  { key: "bass",          label: "🎯 Bass" },
+  { key: "carp",          label: "🟡 Carp" },
+  { key: "panfish",       label: "🟠 Panfish" },
+  { key: "grayling",      label: "💜 Grayling" }
+];
+
+function speciesPillsHtml(setFn) {
+  return `
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
+      ${[{ key: null, label: "All Species" }, ...SPECIES_LIST].map(({ key, label }) => {
+        const isActive = activeSpeciesFilter === key;
+        return `<button onclick="${setFn}(${key === null ? "null" : `'${key}'`})"
+          style="padding:4px 10px; border-radius:20px; font-size:0.72rem; font-weight:600; cursor:pointer; border:1px solid ${isActive ? "#10b981" : "#3f3f46"}; background:${isActive ? "#052e16" : "#202023"}; color:${isActive ? "#10b981" : "#a1a1aa"};">
+          ${label}
+        </button>`;
+      }).join("")}
+    </div>`;
+}
+
+function applySpeciesFilter(flies) {
+  if (!activeSpeciesFilter) return flies;
+  return flies.filter(f => (f.target_species || []).includes(activeSpeciesFilter));
+}
 
 function renderVaultBrowse(container) {
-  const pillsHtml = `
-    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+  const stagePillsHtml = `
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
       ${["All", ...ALL_STAGES].map(stage => {
         const isActive = stage === "All" ? activeStageFilter === null : activeStageFilter === stage;
         return `<button onclick="setVaultStageFilter(${stage === "All" ? "null" : `'${stage}'`})"
@@ -1085,6 +1133,7 @@ function renderVaultBrowse(container) {
   const groupsHtml = VAULT_GROUPS.map(group => {
     let flies = hatchDatabase.filter(f => group.species.includes(f.imitation_species));
     if (activeStageFilter) flies = flies.filter(f => f.stage === activeStageFilter);
+    flies = applySpeciesFilter(flies);
     if (flies.length === 0) return "";
     return `
       <div style="margin-bottom:20px;">
@@ -1107,11 +1156,25 @@ function renderVaultBrowse(container) {
   }).join("");
 
   container.style.display = "block";
-  container.innerHTML = pillsHtml + groupsHtml;
+  container.innerHTML = stagePillsHtml + speciesPillsHtml("setVaultSpeciesFilter") + groupsHtml;
 }
 
 window.setVaultStageFilter = (stage) => {
   activeStageFilter = stage;
+  const container = document.getElementById("search-dropdown-results");
+  const searchInput = document.getElementById("global-search");
+  if (container && searchInput && !searchInput.value.trim()) {
+    renderVaultBrowse(container);
+  }
+};
+
+window.setResultsSpeciesFilter = (species) => {
+  activeSpeciesFilter = species;
+  matchTheHatch();
+};
+
+window.setVaultSpeciesFilter = (species) => {
+  activeSpeciesFilter = species;
   const container = document.getElementById("search-dropdown-results");
   const searchInput = document.getElementById("global-search");
   if (container && searchInput && !searchInput.value.trim()) {
