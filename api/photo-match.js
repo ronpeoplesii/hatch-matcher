@@ -1,8 +1,8 @@
-import Anthropic from "@anthropic-ai/sdk";
+const Anthropic = require("@anthropic-ai/sdk");
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -50,13 +50,12 @@ If the image does not show an insect or aquatic invertebrate, respond with:
     });
 
     const text = message.content[0].text.trim();
-    // Extract JSON even if model wraps it in markdown
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) return res.status(200).json({ error: "Could not parse response" });
 
     res.status(200).json(JSON.parse(jsonMatch[0]));
   } catch (err) {
     console.error("Photo match API error:", err);
-    res.status(500).json({ error: "Failed to identify insect" });
+    res.status(500).json({ error: err.message || "Failed to identify insect" });
   }
-}
+};
