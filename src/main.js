@@ -123,6 +123,31 @@ window.deleteTripEntry = (id) => {
   renderTripLogList();
 };
 
+window.exportTripLog = () => {
+  if (tripLog.length === 0) {
+    alert("No trips logged yet — nothing to export.");
+    return;
+  }
+
+  const headers = ["Date", "Location", "Pattern", "Conditions", "Notes"];
+  const rows = tripLog.map(e => [
+    e.date || "",
+    e.location || "",
+    e.pattern || "",
+    e.conditions || "",
+    (e.notes || "").replace(/"/g, '""')
+  ].map(v => `"${v}"`).join(","));
+
+  const csv = [headers.join(","), ...rows].join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `hatch-matcher-trip-log-${new Date().toISOString().split("T")[0]}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
 function renderTripLogList() {
   const list = document.getElementById("trip-log-list");
   if (!list) return;

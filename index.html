@@ -288,7 +288,7 @@
       <p style="margin-bottom:12px;">Your personal fishing journal.</p>
       <div style="background:#1a2e1a; border:1px solid #166534; border-radius:10px; padding:12px 14px;">
         <p style="font-size:0.78rem; color:#86efac; margin:0; line-height:1.6;">
-          🔒 <strong style="color:#bbf7d0;">Your data never leaves your device.</strong> Trip entries are stored only in your browser's local storage — they are never uploaded, transmitted, or seen by anyone. No account, no server, no tracking. Clearing your browser data will erase your log, so export or screenshot entries you want to keep long term.
+          🔒 <strong style="color:#bbf7d0;">Your data never leaves your device.</strong> Trip entries are stored only in your browser's local storage — they are never uploaded, transmitted, or seen by anyone. No account, no server, no tracking. Use the Export button below to save a backup CSV before clearing your browser data.
         </p>
       </div>
     </div>
@@ -307,7 +307,8 @@
     </div>
 
     <div id="trip-log-list"></div>
-    <button onclick="switchScreen('step-trip-log', 'step-home')" class="btn btn-vault" style="margin-top:8px;">← Back to Home</button>
+    <button onclick="exportTripLog()" class="btn btn-vault" style="margin-top:8px;">📥 Export Log as CSV</button>
+    <button onclick="switchScreen('step-trip-log', 'step-home')" class="btn btn-vault" style="margin-top:0;">← Back to Home</button>
   </div>
 
   <!-- ABOUT SCREEN -->
