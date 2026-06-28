@@ -528,7 +528,26 @@ window.advanceToNextScreen = function(currentScreenId, nextScreenId) {
 // 7. GLOBAL WINDOW INTERFACE WRAPPERS (MATCHING YOUR INDEX.HTML)
 // ============================================================================
 
-// Automated streamside detection
+// Weather code → description + emoji
+function describeWeather(code) {
+  if (code === 0) return { desc: "Clear skies", emoji: "☀️" };
+  if (code <= 2) return { desc: "Partly cloudy", emoji: "⛅" };
+  if (code === 3) return { desc: "Overcast", emoji: "☁️" };
+  if (code <= 49) return { desc: "Foggy", emoji: "🌫️" };
+  if (code <= 59) return { desc: "Drizzle", emoji: "🌦️" };
+  if (code <= 69) return { desc: "Rain", emoji: "🌧️" };
+  if (code <= 79) return { desc: "Snow", emoji: "❄️" };
+  if (code <= 84) return { desc: "Rain showers", emoji: "🌧️" };
+  if (code <= 99) return { desc: "Thunderstorms", emoji: "⛈️" };
+  return { desc: "Unknown", emoji: "🌡️" };
+}
+
+// Estimate water temp from air temp (water lags air by ~10-15°F in most seasons)
+function estimateWaterTemp(airTempF) {
+  return Math.round(Math.max(33, airTempF * 0.75 + 5));
+}
+
+// Automated streamside detection with live weather
 window.detectLocation = () => {
   if (!navigator.geolocation) {
     alert("Location services are not supported by your browser configuration.");
@@ -538,24 +557,19 @@ window.detectLocation = () => {
   const gpsStatus = document.getElementById("gps-status");
   if (gpsStatus) {
     gpsStatus.style.display = "block";
-    gpsStatus.innerText = "🛰️ Resolving stream coordinates...";
+    gpsStatus.innerText = "🛰️ Resolving location & weather...";
   }
 
   navigator.geolocation.getCurrentPosition(
-    (position) => {
+    async (position) => {
       const { latitude, longitude } = position.coords;
-      let detectedBiome = "appalachian"; // Default fallback to PA limestone country
-      
-      // Coordinate mapping tailored to your specific biome keys
-      if (longitude < -105) {
-        detectedBiome = "rocky_mountain";
-      } else if (longitude < -120) {
-        detectedBiome = "pacific_coastal";
-      } else if (longitude < -80 && longitude > -97) {
-        detectedBiome = "boreal_shield";
-      } else if (latitude < 36) {
-        detectedBiome = "warmwater_south";
-      }
+
+      // Biome detection
+      let detectedBiome = "appalachian";
+      if (longitude < -120) detectedBiome = "pacific_coastal";
+      else if (longitude < -105) detectedBiome = "rocky_mountain";
+      else if (longitude < -80 && longitude > -97) detectedBiome = "boreal_shield";
+      else if (latitude < 36) detectedBiome = "warmwater_south";
 
       const biomeLabels = {
         appalachian: "Appalachian & Limestone (East)",
@@ -566,27 +580,71 @@ window.detectLocation = () => {
         warmwater_south: "Southern & Coastal Plain"
       };
 
-      console.log(`Banded location to biome: ${detectedBiome}`);
       currentConditions.biome = detectedBiome;
 
+      // Fetch live weather from Open-Meteo (free, no API key)
+      let weatherHtml = "";
+      try {
+        const wxRes = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude.toFixed(4)}&longitude=${longitude.toFixed(4)}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
+        );
+        const wx = await wxRes.json();
+        const airTemp = Math.round(wx.current.temperature_2m);
+        const windSpeed = Math.round(wx.current.wind_speed_10m);
+        const humidity = wx.current.relative_humidity_2m;
+        const { desc, emoji } = describeWeather(wx.current.weather_code);
+        const estWaterTemp = estimateWaterTemp(airTemp);
+
+        // Pre-fill the temp slider with estimated water temp
+        currentConditions.waterTemp = estWaterTemp;
+        const slider = document.getElementById("temp-slider");
+        const display = document.getElementById("temp-display");
+        if (slider) slider.value = estWaterTemp;
+        if (display) display.innerText = `${estWaterTemp}°F`;
+
+        // Update home screen weather widget
+        renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp });
+
+        weatherHtml = `<span style="font-size:0.78rem; font-weight:400; color:#71717a;">${emoji} ${airTemp}°F air · ~${estWaterTemp}°F water est.</span>`;
+      } catch (e) {
+        console.warn("Weather fetch failed:", e);
+      }
+
       if (gpsStatus) {
-        gpsStatus.innerHTML = `📍 Detected: <strong>${biomeLabels[detectedBiome] || detectedBiome}</strong><br><span style="font-size:0.78rem; font-weight:400; color:#71717a;">Advancing in 2 seconds...</span>`;
+        gpsStatus.innerHTML = `📍 <strong>${biomeLabels[detectedBiome]}</strong><br>${weatherHtml}<br><span style="font-size:0.78rem; font-weight:400; color:#71717a;">Advancing in 2 seconds...</span>`;
       }
 
       matchTheHatch();
-
-      setTimeout(() => {
-        advanceToNextScreen("step-region", "step-environment");
-      }, 2000);
+      setTimeout(() => advanceToNextScreen("step-region", "step-environment"), 2000);
     },
     (error) => {
-      console.error("Error detecting location, defaulting to appalachian:", error);
+      console.error("GPS error:", error);
       currentConditions.biome = "appalachian";
       matchTheHatch();
       advanceToNextScreen("step-region", "step-environment");
     }
   );
 };
+
+function renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp }) {
+  const widget = document.getElementById("weather-widget");
+  if (!widget) return;
+  widget.style.display = "block";
+  widget.innerHTML = `
+    <p style="font-size:0.72rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">📡 Live Conditions Near You</p>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <span style="font-size:2rem; font-weight:700; color:#fff;">${airTemp}°F</span>
+        <span style="font-size:0.88rem; color:#a1a1aa; margin-left:8px;">${emoji} ${desc}</span>
+      </div>
+      <div style="text-align:right; font-size:0.8rem; color:#71717a; line-height:1.8;">
+        <span style="display:block;">💨 ${windSpeed} mph</span>
+        <span style="display:block;">💧 ${humidity}% humidity</span>
+        <span style="display:block; color:#10b981; font-weight:600;">~${estWaterTemp}°F est. water</span>
+      </div>
+    </div>
+  `;
+}
 
 // Manual region button selection handler
 window.selectRegion = (regionName) => {
