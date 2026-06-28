@@ -173,17 +173,7 @@
     </div>
     <button onclick="selectEnvironment('river_stream')" class="btn"><span>River / Stream (Moving Water)</span> <span>→</span></button>
     <button onclick="selectEnvironment('lake_pond')" class="btn"><span>Lake / Pond (Stillwater)</span> <span>→</span></button>
-  </div>
-
-  <!-- NEW STEP 1.7: TARGET SPECIES -->
-  <div id="step-species" class="screen-container">
-    <div style="margin-bottom: 24px;">
-      <h2>Target Species</h2>
-      <p>What species are you targeting? The algorithm cross-references diet profiles to narrow down presentation sizes.</p>
-    </div>
-    <button onclick="selectSpecies('trout')" class="btn"><span>Trout (Coldwater Biotics)</span> <span>→</span></button>
-    <button onclick="selectSpecies('bass')" class="btn"><span>Bass (Predatory / Warmwater)</span> <span>→</span></button>
-    <button onclick="selectSpecies('panfish')" class="btn"><span>Panfish / Bluegill (Opportunistic)</span> <span>→</span></button>
+    <button onclick="advanceToNextScreen('step-environment', 'step-region')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
   <!-- STEP 2: WATER TEMPERATURE -->
@@ -191,7 +181,7 @@
     <div class="card">
       <h2>Stream Temperature</h2>
       <p>What is the active water temperature? Matcher filtering limits patterns based on metabolic triggers.</p>
-      
+
       <div class="slider-container">
         <span id="temp-display">55°F</span>
         <input type="range" id="temp-slider" min="32" max="85" value="55" oninput="updateTempDisplay(this.value)">
@@ -200,6 +190,7 @@
       <button onclick="submitTemp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green);">
         Continue Matrix
       </button>
+      <button onclick="advanceToNextScreen('step-temp', 'step-environment')" class="btn btn-vault" style="margin-top: 8px;">← Back</button>
     </div>
   </div>
 
@@ -212,6 +203,7 @@
     <button onclick="selectWater('riffle')" class="btn">Riffle (Fast, Shallow Broken Water)</button>
     <button onclick="selectWater('run')" class="btn">Run (Moving, Deeper Channel)</button>
     <button onclick="selectWater('pool')" class="btn">Pool (Slow, Deep Water Flat)</button>
+    <button onclick="advanceToNextScreen('step-water', 'step-temp')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
   <!-- STEP 4: RISE FORM -->
@@ -223,14 +215,17 @@
     <button onclick="selectRise('splashy')" class="btn">Splashy (Active Surface Takes)</button>
     <button onclick="selectRise('sipping')" class="btn">Sipping (Subtle Dimple or Bubbles)</button>
     <button onclick="selectRise('bulging')" class="btn">Bulging / Flashing (Subsurface Activity)</button>
+    <button onclick="advanceToNextScreen('step-rise', 'step-water')" class="btn btn-vault" style="margin-top: 10px;">← Back</button>
   </div>
 
   <!-- STEP 5: MATCH RESULTS -->
   <div id="step-results" class="screen-container">
     <h2>Top Matched Hatches</h2>
-    <p>The matrix filtered biological conditions down to these optimal patterns:</p>
+    <div id="results-context" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:0.82rem; color:#a1a1aa; line-height:1.6;"></div>
+    <p id="results-summary" style="margin-bottom:12px;"></p>
     <div id="results-list"></div>
-    <button onclick="resetApp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 16px;">
+    <button onclick="advanceToNextScreen('step-results', 'step-rise')" class="btn btn-vault" style="margin-top: 16px;">← Back</button>
+    <button onclick="resetApp()" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 8px;">
       🔄 Restart Matcher
     </button>
   </div>
