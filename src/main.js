@@ -582,12 +582,14 @@ window.detectLocation = () => {
 
       currentConditions.biome = detectedBiome;
 
-      // Fetch live weather from Open-Meteo (free, no API key)
+      // Fetch weather + USGS in parallel
       let weatherHtml = "";
       try {
-        const wxRes = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude.toFixed(4)}&longitude=${longitude.toFixed(4)}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`
-        );
+        const [wxRes, usgsData] = await Promise.all([
+          fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude.toFixed(4)}&longitude=${longitude.toFixed(4)}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`),
+          fetchUSGSData(latitude, longitude)
+        ]);
+
         const wx = await wxRes.json();
         const airTemp = Math.round(wx.current.temperature_2m);
         const windSpeed = Math.round(wx.current.wind_speed_10m);
@@ -595,17 +597,19 @@ window.detectLocation = () => {
         const { desc, emoji } = describeWeather(wx.current.weather_code);
         const estWaterTemp = estimateWaterTemp(airTemp);
 
-        // Pre-fill the temp slider with estimated water temp
-        currentConditions.waterTemp = estWaterTemp;
+        // Use real USGS water temp if available, otherwise use estimate
+        const finalWaterTemp = usgsData ? usgsData.waterTemp : estWaterTemp;
+        currentConditions.waterTemp = finalWaterTemp;
         const slider = document.getElementById("temp-slider");
         const display = document.getElementById("temp-display");
-        if (slider) slider.value = estWaterTemp;
-        if (display) display.innerText = `${estWaterTemp}°F`;
+        if (slider) slider.value = finalWaterTemp;
+        if (display) display.innerText = `${finalWaterTemp}°F`;
 
-        // Update home screen weather widget
-        renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp });
+        renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp, usgs: usgsData });
 
-        weatherHtml = `<span style="font-size:0.78rem; font-weight:400; color:#71717a;">${emoji} ${airTemp}°F air · ~${estWaterTemp}°F water est.</span>`;
+        weatherHtml = usgsData
+          ? `<span style="font-size:0.78rem; font-weight:400; color:#71717a;">${emoji} ${airTemp}°F air · <strong style="color:#10b981;">${usgsData.waterTemp}°F water (USGS live)</strong></span>`
+          : `<span style="font-size:0.78rem; font-weight:400; color:#71717a;">${emoji} ${airTemp}°F air · ~${estWaterTemp}°F water est.</span>`;
       } catch (e) {
         console.warn("Weather fetch failed:", e);
       }
@@ -626,10 +630,25 @@ window.detectLocation = () => {
   );
 };
 
-function renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp }) {
+function renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWaterTemp, usgs }) {
   const widget = document.getElementById("weather-widget");
   if (!widget) return;
   widget.style.display = "block";
+
+  const waterTempHtml = usgs
+    ? `<span style="display:block; color:#10b981; font-weight:700;">${usgs.waterTemp}°F water <span style="font-size:0.7rem; font-weight:400; color:#52525b;">(USGS live)</span></span>`
+    : `<span style="display:block; color:#10b981; font-weight:600;">~${estWaterTemp}°F water <span style="font-size:0.7rem; font-weight:400; color:#52525b;">(estimated)</span></span>`;
+
+  const usgsHtml = usgs ? `
+    <div style="margin-top:10px; padding-top:10px; border-top:1px solid #27272a; font-size:0.78rem; color:#71717a; line-height:1.8;">
+      <span style="color:#a1a1aa; font-weight:600;">📍 ${usgs.siteName}</span><br>
+      <span>Flow: <strong style="color:#e4e4e7;">${usgs.flow} CFS</strong></span>
+      &nbsp;·&nbsp;
+      <span>Stage: <strong style="color:#e4e4e7;">${usgs.stage} ft</strong></span>
+      &nbsp;·&nbsp;
+      <a href="https://waterdata.usgs.gov/monitoring-location/${usgs.siteNo}" target="_blank" style="color:#10b981; text-decoration:none;">Full gauge →</a>
+    </div>` : "";
+
   widget.innerHTML = `
     <p style="font-size:0.72rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">📡 Live Conditions Near You</p>
     <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -640,10 +659,65 @@ function renderWeatherWidget({ airTemp, windSpeed, humidity, desc, emoji, estWat
       <div style="text-align:right; font-size:0.8rem; color:#71717a; line-height:1.8;">
         <span style="display:block;">💨 ${windSpeed} mph</span>
         <span style="display:block;">💧 ${humidity}% humidity</span>
-        <span style="display:block; color:#10b981; font-weight:600;">~${estWaterTemp}°F est. water</span>
+        ${waterTempHtml}
       </div>
     </div>
+    ${usgsHtml}
   `;
+}
+
+// Fetch nearest USGS stream gauge with water temp + flow data
+async function fetchUSGSData(lat, lon) {
+  const delta = 0.5; // ~35 mile bounding box
+  const bbox = `${(lon - delta).toFixed(4)},${(lat - delta).toFixed(4)},${(lon + delta).toFixed(4)},${(lat + delta).toFixed(4)}`;
+
+  try {
+    const res = await fetch(
+      `https://waterservices.usgs.gov/nwis/iv/?format=json&bBox=${bbox}&parameterCd=00010,00060,00065&siteType=ST&siteStatus=active`
+    );
+    const data = await res.json();
+    const sites = data?.value?.timeSeries;
+    if (!sites || sites.length === 0) return null;
+
+    // Group by site, collect available parameters
+    const siteMap = {};
+    for (const ts of sites) {
+      const siteNo = ts.sourceInfo.siteCode[0].value;
+      const siteName = ts.sourceInfo.siteName;
+      const siteGeo = ts.sourceInfo.geoLocation.geogLocation;
+      const paramCode = ts.variable.variableCode[0].value;
+      const value = parseFloat(ts.values[0]?.value[0]?.value);
+
+      if (!siteMap[siteNo]) {
+        siteMap[siteNo] = { siteNo, siteName, lat: siteGeo.latitude, lon: siteGeo.longitude };
+      }
+      if (paramCode === "00010" && !isNaN(value)) siteMap[siteNo].waterTempC = value;
+      if (paramCode === "00060" && !isNaN(value)) siteMap[siteNo].flow = Math.round(value);
+      if (paramCode === "00065" && !isNaN(value)) siteMap[siteNo].stage = value.toFixed(2);
+    }
+
+    // Find closest site that has water temp data
+    const sitesWithTemp = Object.values(siteMap).filter(s => s.waterTempC !== undefined);
+    if (sitesWithTemp.length === 0) return null;
+
+    const closest = sitesWithTemp.reduce((best, site) => {
+      const dist = Math.hypot(site.lat - lat, site.lon - lon);
+      return dist < Math.hypot(best.lat - lat, best.lon - lon) ? site : best;
+    });
+
+    const waterTempF = Math.round(closest.waterTempC * 9 / 5 + 32);
+
+    return {
+      siteNo: closest.siteNo,
+      siteName: closest.siteName.replace(/ AT .+/, "").replace(/ NR .+/, "").trim(),
+      waterTemp: waterTempF,
+      flow: closest.flow ?? "N/A",
+      stage: closest.stage ?? "N/A"
+    };
+  } catch (e) {
+    console.warn("USGS fetch failed:", e);
+    return null;
+  }
 }
 
 // Manual region button selection handler
