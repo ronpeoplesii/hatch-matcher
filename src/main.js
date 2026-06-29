@@ -1749,13 +1749,14 @@ window.openAuditView = () => {
               <span>Months: <strong style="color:#a1a1aa;">${months}</strong></span><br>
               <span>Biomes: <strong style="color:#a1a1aa;">${(fly.biomes||[]).join(", ") || "—"}</strong></span>
             </div>
+            <a href="mailto:rpeoples@gmail.com?subject=Pattern Correction: ${encodeURIComponent(fly.name)}&body=Pattern: ${encodeURIComponent(fly.name)}%0AID: ${fly.id}%0A%0AWhat needs fixing:%0A" style="display:inline-block; margin-top:6px; font-size:0.72rem; color:#52525b; text-decoration:none; border:1px solid #3f3f46; padding:3px 10px; border-radius:20px;">⚠️ Report correction</a>
           </div>`;
       }).join("")}
     </div>
   `).join("");
 
   screen.querySelector("#audit-content").innerHTML = `
-    <p style="font-size:0.82rem; color:#71717a; margin-bottom:16px;">${hatchDatabase.length} patterns · ${Object.keys(bySpecies).length} species · tap any issue and email a correction</p>
+    <p style="font-size:0.82rem; color:#71717a; margin-bottom:16px;">${hatchDatabase.length} patterns · ${Object.keys(bySpecies).length} species · use the report button on any pattern to flag a correction</p>
     ${html}
   `;
 
