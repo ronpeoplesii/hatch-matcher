@@ -311,6 +311,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Render "hatching this week" on home screen
     renderHatchingNow();
+    renderPatternOfWeek();
 
     // Handle shared box URL if present
     loadSharedBox();
@@ -1081,6 +1082,44 @@ function roundRect(ctx, x, y, w, h, r) {
 }
 
 // ============================================================================
+// PATTERN OF THE WEEK
+// ============================================================================
+
+function renderPatternOfWeek() {
+  const banner = document.getElementById("pattern-of-week");
+  if (!banner || hatchDatabase.length === 0) return;
+
+  // Pick a pattern deterministically by ISO week number so it's the same for all users
+  const now = new Date();
+  const startOfYear = new Date(now.getFullYear(), 0, 1);
+  const weekNum = Math.floor((now - startOfYear) / (7 * 24 * 60 * 60 * 1000));
+  const month = now.getMonth() + 1;
+
+  // Prefer patterns active this month for relevance
+  const active = hatchDatabase.filter(f => (f.months || []).includes(month));
+  const pool = active.length >= 5 ? active : hatchDatabase;
+  const fly = pool[weekNum % pool.length];
+  if (!fly) return;
+
+  const cfg = DIFFICULTY_CONFIG[fly.difficulty] || {};
+  banner.style.display = "block";
+  banner.innerHTML = `
+    <p style="font-size:0.72rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">⭐ Pattern of the Week</p>
+    <div onclick="openPatternDetail('${fly.id}', 'step-home')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <p style="margin:0 0 2px; color:#e4e4e7; font-size:1rem; font-weight:700;">${fly.name}</p>
+        <p style="margin:0; color:#71717a; font-size:0.78rem; font-style:italic;">${fly.imitation_species}</p>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0; margin-left:12px;">
+        <span style="font-size:0.65rem; color:#10b981; background:#052e16; border:1px solid #166534; padding:2px 7px; border-radius:20px; text-transform:uppercase;">${fly.stage}</span>
+        ${fly.difficulty ? `<span style="font-size:0.65rem; color:${cfg.color}; background:${cfg.bg}; border:1px solid ${cfg.border}; padding:2px 7px; border-radius:20px; text-transform:uppercase;">${fly.difficulty}</span>` : ""}
+      </div>
+    </div>
+    <p style="margin:8px 0 0; font-size:0.75rem; color:#52525b;">Tap to see the full recipe →</p>
+  `;
+}
+
+// ============================================================================
 // HATCHING NOW BANNER
 // ============================================================================
 
@@ -1250,11 +1289,12 @@ window.selectBoxMonth = (month) => {
     }
   }
 
-  // Wire up share button
+  // Wire up share buttons
   const shareBtn = document.getElementById("share-box-btn");
-  if (shareBtn) {
-    shareBtn.onclick = () => shareBox(biome, month);
-  }
+  if (shareBtn) shareBtn.onclick = () => shareBox(biome, month);
+
+  const shareImgBtn = document.getElementById("share-box-image-btn");
+  if (shareImgBtn) shareImgBtn.onclick = () => shareBoxImage(biomeLabels[biome] || biome, monthName, box);
 
   advanceToNextScreen("step-box-month", "step-box-results");
 };
@@ -1317,7 +1357,13 @@ window.openPatternDetail = (flyId, returnScreen) => {
     </div>
   `;
 
-  document.getElementById("pattern-detail-content").innerHTML = html;
+  const reportLink = `mailto:rpeoples@gmail.com?subject=Hatch Matcher Error Report: ${encodeURIComponent(fly.name)}&body=Pattern: ${encodeURIComponent(fly.name)}%0AID: ${fly.id}%0A%0AWhat's wrong:%0A`;
+
+  document.getElementById("pattern-detail-content").innerHTML = html + `
+    <div style="text-align:center; margin-top:4px;">
+      <a href="${reportLink}" style="font-size:0.75rem; color:#52525b; text-decoration:none;">⚠️ Report an error in this pattern</a>
+    </div>
+  `;
 
   const backBtn = document.getElementById("pattern-back-btn");
   backBtn.onclick = () => advanceToNextScreen("step-pattern-detail", patternDetailReturnScreen);
@@ -1590,6 +1636,131 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join('');
   });
 });
+
+// ============================================================================
+// SHARE BOX IMAGE CARD
+// ============================================================================
+
+window.shareBoxImage = (biomeLabel, monthName, box) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1080;
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#141417";
+  ctx.fillRect(0, 0, 1080, 1080);
+  ctx.fillStyle = "#10b981";
+  ctx.fillRect(0, 0, 1080, 8);
+
+  ctx.fillStyle = "#10b981";
+  ctx.font = "bold 52px Arial, sans-serif";
+  ctx.fillText("🎣 Hatch Matcher", 80, 100);
+
+  ctx.fillStyle = "#71717a";
+  ctx.font = "30px Arial, sans-serif";
+  ctx.fillText("hatchmatcher.app", 80, 148);
+
+  ctx.strokeStyle = "#27272a";
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(80, 172); ctx.lineTo(1000, 172); ctx.stroke();
+
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 38px Arial, sans-serif";
+  ctx.fillText(`📦 My Box — ${biomeLabel}`, 80, 225);
+
+  ctx.fillStyle = "#a1a1aa";
+  ctx.font = "28px Arial, sans-serif";
+  ctx.fillText(`📅 ${monthName}  ·  ${box.length} patterns`, 80, 268);
+
+  const cols = 2;
+  const cardW = 460, cardH = 72, gapX = 40, gapY = 16;
+  const startX = 80, startY = 310;
+
+  box.slice(0, 12).forEach((fly, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const x = startX + col * (cardW + gapX);
+    const y = startY + row * (cardH + gapY);
+
+    ctx.fillStyle = "#202023";
+    ctx.beginPath();
+    ctx.roundRect(x, y, cardW, cardH, 10);
+    ctx.fill();
+
+    ctx.fillStyle = "#e4e4e7";
+    ctx.font = "bold 22px Arial, sans-serif";
+    ctx.fillText(fly.name, x + 16, y + 28);
+
+    ctx.fillStyle = "#71717a";
+    ctx.font = "18px Arial, sans-serif";
+    const sizes = fly.size_range?.length ? `#${fly.size_range.join(", #")}` : "";
+    ctx.fillText(`${fly.stage}${sizes ? "  " + sizes : ""}`, x + 16, y + 54);
+  });
+
+  ctx.fillStyle = "#10b981";
+  ctx.fillRect(0, 1072, 1080, 8);
+
+  canvas.toBlob(blob => {
+    const file = new File([blob], "my-fly-box.png", { type: "image/png" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ title: "My Fly Box — Hatch Matcher", files: [file] });
+    } else {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "my-fly-box.png";
+      a.click();
+    }
+  });
+};
+
+// ============================================================================
+// AUDIT VIEW
+// ============================================================================
+
+window.openAuditView = () => {
+  const screen = document.getElementById("step-audit");
+  if (!screen) return;
+
+  const bySpecies = {};
+  hatchDatabase.forEach(fly => {
+    const s = fly.imitation_species || "Unknown";
+    if (!bySpecies[s]) bySpecies[s] = [];
+    bySpecies[s].push(fly);
+  });
+
+  const html = Object.entries(bySpecies).sort(([a],[b]) => a.localeCompare(b)).map(([species, flies]) => `
+    <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:12px; padding:16px; margin-bottom:10px;">
+      <p style="font-size:0.72rem; font-weight:700; color:#10b981; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">${species}</p>
+      ${flies.map(fly => {
+        const sizes = fly.size_range?.length ? `#${fly.size_range.join(", #")}` : "—";
+        const months = fly.months?.length ? fly.months.map(m => new Date(2000,m-1).toLocaleString("default",{month:"short"})).join(", ") : "—";
+        const temps = fly.water_temp_range ? `${fly.water_temp_range.min_f}–${fly.water_temp_range.max_f}°F` : "—";
+        const cfg = DIFFICULTY_CONFIG[fly.difficulty];
+        return `
+          <div style="padding:10px 0; border-bottom:1px solid #27272a;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="color:#e4e4e7; font-size:0.9rem; font-weight:600;">${fly.name}</span>
+              ${cfg ? `<span style="font-size:0.65rem; color:${cfg.color}; background:${cfg.bg}; border:1px solid ${cfg.border}; padding:2px 7px; border-radius:20px;">${fly.difficulty}</span>` : ""}
+            </div>
+            <div style="font-size:0.75rem; color:#71717a; line-height:1.8;">
+              <span>Stage: <strong style="color:#a1a1aa;">${fly.stage}</strong></span> &nbsp;·&nbsp;
+              <span>Sizes: <strong style="color:#a1a1aa;">${sizes}</strong></span> &nbsp;·&nbsp;
+              <span>Temps: <strong style="color:#a1a1aa;">${temps}</strong></span><br>
+              <span>Months: <strong style="color:#a1a1aa;">${months}</strong></span><br>
+              <span>Biomes: <strong style="color:#a1a1aa;">${(fly.biomes||[]).join(", ") || "—"}</strong></span>
+            </div>
+          </div>`;
+      }).join("")}
+    </div>
+  `).join("");
+
+  screen.querySelector("#audit-content").innerHTML = `
+    <p style="font-size:0.82rem; color:#71717a; margin-bottom:16px;">${hatchDatabase.length} patterns · ${Object.keys(bySpecies).length} species · tap any issue and email a correction</p>
+    ${html}
+  `;
+
+  switchScreen("step-about", "step-audit");
+};
 
 // ============================================================================
 // QR CODE

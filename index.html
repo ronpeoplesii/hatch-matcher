@@ -49,6 +49,9 @@
     <!-- Live Weather Widget -->
     <div id="weather-widget" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:16px 20px; margin-bottom:12px;"></div>
 
+    <!-- Pattern of the Week -->
+    <div id="pattern-of-week" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:16px 20px; margin-bottom:12px;"></div>
+
     <!-- Hatching Now Banner -->
     <div id="hatching-now" style="display:none; background:#1c1c1f; border:1px solid #27272a; border-radius:14px; padding:16px 20px; margin-bottom:12px;"></div>
 
@@ -123,7 +126,8 @@
     <h2>Your Recommended Box</h2>
     <div id="box-context" style="background:#1c1c1f; border:1px solid #27272a; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:0.82rem; color:#a1a1aa; line-height:1.6;"></div>
     <div id="box-list"></div>
-    <button onclick="switchScreen('step-box-results', 'step-box-month')" class="btn btn-vault" style="margin-top: 16px;">← Back</button>
+    <button id="share-box-image-btn" class="btn btn-vault" style="margin-top:16px; background:#10b981; border-color:#10b981;">📸 Share My Box</button>
+    <button onclick="switchScreen('step-box-results', 'step-box-month')" class="btn btn-vault" style="margin-top: 8px;">← Back</button>
     <button onclick="switchScreen('step-box-results', 'step-home')" class="btn btn-vault" style="background: var(--accent-green); border-color: var(--accent-green); margin-top: 8px;">🏠 Home</button>
   </div>
 
@@ -230,6 +234,16 @@
     <p style="margin-bottom:16px;">Patterns you've starred across the app.</p>
     <div id="favorites-list"></div>
     <button onclick="switchScreen('step-favorites', 'step-home')" class="btn btn-vault" style="margin-top: 8px;">← Back to Home</button>
+  </div>
+
+  <!-- PATTERN AUDIT SCREEN -->
+  <div id="step-audit" class="screen-container">
+    <div style="margin-bottom:16px;">
+      <h2>Pattern Audit</h2>
+      <p style="color:#71717a; font-size:0.88rem;">All patterns with full data — verify sizes, months, temps, and biomes.</p>
+    </div>
+    <div id="audit-content"></div>
+    <button onclick="switchScreen('step-audit', 'step-about')" class="btn btn-vault" style="margin-top:8px;">← Back to About</button>
   </div>
 
   <!-- AI RECOMMEND SCREEN -->
@@ -360,6 +374,7 @@
       <button onclick="window.showQRCode()" style="background:#202023; border:1px solid #3f3f46; color:#e4e4e7; font-weight:600; font-size:0.9rem; padding:11px 20px; border-radius:12px; cursor:pointer; width:100%;">📱 Show QR Code</button>
     </div>
 
+    <button onclick="openAuditView()" class="btn btn-vault" style="margin-top:4px; font-size:0.88rem; color:#71717a;">🔍 Review All 122 Patterns</button>
     <button onclick="switchScreen('step-about', 'step-home')" class="btn btn-vault" style="margin-top:4px;">← Back to Home</button>
   </div>
 
