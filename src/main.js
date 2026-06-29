@@ -982,7 +982,7 @@ window.shareResults = () => {
   // Tagline
   ctx.fillStyle = "#71717a";
   ctx.font = "32px -apple-system, BlinkMacSystemFont, sans-serif";
-  ctx.fillText("hatch-matcher.vercel.app", 80, 150);
+  ctx.fillText("hatchmatcher.app", 80, 150);
 
   // Divider
   ctx.strokeStyle = "#27272a";
@@ -1051,7 +1051,7 @@ window.shareResults = () => {
         await navigator.share({
           files: [file],
           title: "Hatch Matcher Results",
-          text: `Fishing ${biome} in ${monthName} — here's what I'm throwing. hatch-matcher.vercel.app`
+          text: `Fishing ${biome} in ${monthName} — here's what I'm throwing. hatchmatcher.app`
         });
         return;
       } catch {}
@@ -1590,3 +1590,102 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join('');
   });
 });
+
+// ============================================================================
+// QR CODE
+// ============================================================================
+
+window.showQRCode = () => {
+  const modal = document.getElementById("qr-modal");
+  const container = document.getElementById("qr-container");
+  modal.style.display = "flex";
+
+  // Clear previous
+  container.innerHTML = "";
+
+  QRCode.toCanvas(document.createElement("canvas"), "https://hatchmatcher.app", {
+    width: 220,
+    margin: 1,
+    color: { dark: "#000000", light: "#ffffff" }
+  }, (err, canvas) => {
+    if (err) { container.innerHTML = "<p style='color:red;font-size:0.8rem;'>QR generation failed</p>"; return; }
+    container.appendChild(canvas);
+  });
+};
+
+window.downloadQRCard = () => {
+  const card = document.createElement("canvas");
+  card.width = 600;
+  card.height = 800;
+  const ctx = card.getContext("2d");
+
+  // Background
+  ctx.fillStyle = "#141417";
+  ctx.fillRect(0, 0, 600, 800);
+
+  // Green top bar
+  ctx.fillStyle = "#10b981";
+  ctx.fillRect(0, 0, 600, 8);
+
+  // App name
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 52px -apple-system, sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("Hatch Matcher", 300, 90);
+
+  // Tagline
+  ctx.fillStyle = "#10b981";
+  ctx.font = "bold 22px -apple-system, sans-serif";
+  ctx.fillText("Match the hatch. Tie the right fly.", 300, 130);
+
+  // Generate QR onto card
+  QRCode.toCanvas(document.createElement("canvas"), "https://hatchmatcher.app", {
+    width: 280, margin: 1, color: { dark: "#000000", light: "#ffffff" }
+  }, (err, qrCanvas) => {
+    if (err) return;
+
+    // White QR background box
+    const qrX = 160, qrY = 165, qrSize = 280, pad = 16;
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.roundRect(qrX - pad, qrY - pad, qrSize + pad * 2, qrSize + pad * 2, 16);
+    ctx.fill();
+    ctx.drawImage(qrCanvas, qrX, qrY, qrSize, qrSize);
+
+    // URL
+    ctx.fillStyle = "#a1a1aa";
+    ctx.font = "24px -apple-system, sans-serif";
+    ctx.fillText("hatchmatcher.app", 300, 510);
+
+    // Divider
+    ctx.strokeStyle = "#27272a";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(60, 540); ctx.lineTo(540, 540);
+    ctx.stroke();
+
+    // Feature bullets
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#d4d4d8";
+    ctx.font = "20px -apple-system, sans-serif";
+    const features = [
+      "🪰  Match the hatch by conditions",
+      "📦  Plan your fly box by region & month",
+      "📖  122 patterns with full tying recipes",
+      "🌡️  Live USGS stream gauge & weather",
+      "🤖  AI guide & photo bug identification",
+      "✅  Free. No ads. Always."
+    ];
+    features.forEach((f, i) => ctx.fillText(f, 70, 580 + i * 34));
+
+    // Bottom bar
+    ctx.fillStyle = "#10b981";
+    ctx.fillRect(0, 792, 600, 8);
+
+    // Download
+    const link = document.createElement("a");
+    link.download = "hatchmatcher-qr.png";
+    link.href = card.toDataURL("image/png");
+    link.click();
+  });
+};
