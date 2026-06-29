@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatch Matcher Matrix</title>
   <link rel="manifest" href="/manifest.webmanifest">
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
   <style>
     :root {
       --bg-dark: #141417;
@@ -368,7 +367,9 @@
   <div id="qr-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:1000; justify-content:center; align-items:center; padding:20px;">
     <div style="background:#1c1c1f; border:1px solid #27272a; border-radius:20px; padding:28px; max-width:340px; width:100%; text-align:center;">
       <p style="font-size:0.72rem; font-weight:700; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">Scan to Open Hatch Matcher</p>
-      <div id="qr-container" style="background:#fff; border-radius:12px; padding:16px; display:inline-block; margin-bottom:16px;"></div>
+      <div id="qr-container" style="background:#fff; border-radius:12px; padding:16px; display:inline-block; margin-bottom:16px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://hatchmatcher.app&color=000000&bgcolor=ffffff&margin=1" width="220" height="220" alt="QR Code for hatchmatcher.app" style="display:block; border-radius:4px;" />
+      </div>
       <p style="color:#e4e4e7; font-weight:700; font-size:1rem; margin-bottom:4px;">hatchmatcher.app</p>
       <p style="color:#71717a; font-size:0.8rem; margin-bottom:20px;">Free fly fishing hatch matcher &amp; pattern vault</p>
       <button onclick="window.downloadQRCard()" style="background:#10b981; color:#fff; font-weight:700; font-size:0.9rem; padding:11px 20px; border-radius:12px; cursor:pointer; border:none; width:100%; margin-bottom:10px;">⬇ Download Card</button>
