@@ -36,7 +36,7 @@ Ron Peoples — fly fisherman, volunteer with The Mayfly Project (Smethport, PA 
 - Vercel Analytics: enabled via @vercel/analytics inject()
 
 ## Tech Stack Details
-- `src/main.js` — all app logic (~1600+ lines)
+- `src/main.js` — all app logic (~1700+ lines)
 - `index.html` — all screen HTML (single page app)
 - `public/hatches.json` — 122 fly patterns
 - `public/recipes.json` — 122 tying recipes keyed by recipe_id
